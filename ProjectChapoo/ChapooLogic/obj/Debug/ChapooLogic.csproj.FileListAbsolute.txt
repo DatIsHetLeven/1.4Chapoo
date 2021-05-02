@@ -1,0 +1,12 @@
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csprojAssemblyReference.cache
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.CoreCompileInputs.cache
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\bin\Debug\ChapooLogic.dll
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\bin\Debug\ChapooLogic.pdb
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\bin\Debug\ChapoModel.dll
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\bin\Debug\ChapooDAL.dll
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\bin\Debug\ChapoModel.pdb
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\bin\Debug\ChapooDAL.pdb
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\bin\Debug\ChapooDAL.dll.config
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.CopyComplete
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.dll
+C:\Users\Murat\Desktop\ChapooProject\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.pdb
