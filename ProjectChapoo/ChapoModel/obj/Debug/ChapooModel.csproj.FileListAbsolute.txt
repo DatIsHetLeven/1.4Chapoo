@@ -10,3 +10,9 @@ C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapoModel\obj\Debug\ChapooModel.
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapoModel\obj\Debug\ChapooModel.csproj.CoreCompileInputs.cache
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapoModel\obj\Debug\ChapoModel.dll
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapoModel\obj\Debug\ChapoModel.pdb
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapoModel\bin\Debug\ChapoModel.dll
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapoModel\bin\Debug\ChapoModel.pdb
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapoModel\obj\Debug\ChapooModel.csprojAssemblyReference.cache
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapoModel\obj\Debug\ChapooModel.csproj.CoreCompileInputs.cache
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapoModel\obj\Debug\ChapoModel.dll
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapoModel\obj\Debug\ChapoModel.pdb

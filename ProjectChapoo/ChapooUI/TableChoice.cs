@@ -44,14 +44,22 @@ namespace ChapooUI
         //Reservate Table
         private void btn_Reservate_Click(object sender, EventArgs e)
         {
-                table_Service.SetTableReservate(TableId);
-                MessageBox.Show("Table has been reservated");
+            table_Service.SetTableReservate(TableId);
+            MessageBox.Show("Table has been reservated");
         }
-
+        // Free a table
         private void Btn_FreeTable_Click(object sender, EventArgs e)
         {
             table_Service.SetTableFree(TableId);
             MessageBox.Show("Table has been cleared");
+        }
+        // Form of Orders and option to add, remove and change an order
+        private void Btn_Orders_Click_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Order orderView = new Order();
+            orderView.ShowDialog();
+            this.Close();
         }
     }
 }
