@@ -102,6 +102,7 @@
             this.btn_Tafel_4.TabIndex = 13;
             this.btn_Tafel_4.Text = "4";
             this.btn_Tafel_4.UseVisualStyleBackColor = true;
+            this.btn_Tafel_4.Click += new System.EventHandler(this.btn_Tafel_4_Click);
             // 
             // btn_Tafel_3
             // 
@@ -111,6 +112,7 @@
             this.btn_Tafel_3.TabIndex = 12;
             this.btn_Tafel_3.Text = "3";
             this.btn_Tafel_3.UseVisualStyleBackColor = true;
+            this.btn_Tafel_3.Click += new System.EventHandler(this.btn_Tafel_3_Click);
             // 
             // btn_Tafel_2
             // 
@@ -120,6 +122,7 @@
             this.btn_Tafel_2.TabIndex = 11;
             this.btn_Tafel_2.Text = "2";
             this.btn_Tafel_2.UseVisualStyleBackColor = true;
+            this.btn_Tafel_2.Click += new System.EventHandler(this.btn_Tafel_2_Click);
             // 
             // btn_Tafel_1
             // 
@@ -129,6 +132,7 @@
             this.btn_Tafel_1.TabIndex = 10;
             this.btn_Tafel_1.Text = "1";
             this.btn_Tafel_1.UseVisualStyleBackColor = true;
+            this.btn_Tafel_1.Click += new System.EventHandler(this.btn_Tafel_1_Click);
             // 
             // Dashboard
             // 
