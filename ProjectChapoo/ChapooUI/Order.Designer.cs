@@ -32,24 +32,23 @@ namespace ChapooUI
             this.components = new System.ComponentModel.Container();
             this.Pnl_Orderdrink = new System.Windows.Forms.Panel();
             this.Pnl_Orderitems = new System.Windows.Forms.Panel();
-            this.Btn_Drinkpanel = new System.Windows.Forms.Button();
             this.Btn_Senditems = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
+            this.Cb_edititemsamount = new System.Windows.Forms.ComboBox();
+            this.Cb_edititems = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.Rtb_extraedit = new System.Windows.Forms.RichTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.Cb_orderitems = new System.Windows.Forms.ComboBox();
+            this.Cb_orderitemsamount = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.Rtb_extraorder = new System.Windows.Forms.RichTextBox();
             this.Btn_Addorder = new System.Windows.Forms.Button();
             this.Btn_Back = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
@@ -59,18 +58,18 @@ namespace ChapooUI
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Btn_Senddrink = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.Cb_Drinkeditamount = new System.Windows.Forms.ComboBox();
+            this.Cb_Drinkedit = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Btn_Deletedrink = new System.Windows.Forms.Button();
+            this.Btn_Editdrink = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.Cb_Drinkadd = new System.Windows.Forms.ComboBox();
+            this.Cb_Drinkamount = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
+            this.Btn_Adddrink = new System.Windows.Forms.Button();
             this.Btn_Backdrinks = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.Lv_Currentdrink = new System.Windows.Forms.ListView();
@@ -81,6 +80,9 @@ namespace ChapooUI
             this.Drank = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.drankToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.gerechtenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.drankenToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Pnl_Orderdrink.SuspendLayout();
             this.Pnl_Orderitems.SuspendLayout();
             this.groupBox5.SuspendLayout();
@@ -88,49 +90,34 @@ namespace ChapooUI
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.contextMenuStrip2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // Pnl_Orderdrink
             // 
-            this.Pnl_Orderdrink.Controls.Add(this.Pnl_Orderitems);
             this.Pnl_Orderdrink.Controls.Add(this.Btn_Senddrink);
             this.Pnl_Orderdrink.Controls.Add(this.groupBox3);
             this.Pnl_Orderdrink.Controls.Add(this.groupBox4);
             this.Pnl_Orderdrink.Controls.Add(this.Btn_Backdrinks);
             this.Pnl_Orderdrink.Controls.Add(this.label14);
             this.Pnl_Orderdrink.Controls.Add(this.Lv_Currentdrink);
-            this.Pnl_Orderdrink.Location = new System.Drawing.Point(2, 3);
+            this.Pnl_Orderdrink.Location = new System.Drawing.Point(6, 38);
             this.Pnl_Orderdrink.Name = "Pnl_Orderdrink";
-            this.Pnl_Orderdrink.Size = new System.Drawing.Size(1579, 737);
+            this.Pnl_Orderdrink.Size = new System.Drawing.Size(1579, 749);
             this.Pnl_Orderdrink.TabIndex = 10;
             // 
             // Pnl_Orderitems
             // 
-            this.Pnl_Orderitems.Controls.Add(this.Btn_Drinkpanel);
             this.Pnl_Orderitems.Controls.Add(this.Btn_Senditems);
             this.Pnl_Orderitems.Controls.Add(this.groupBox5);
             this.Pnl_Orderitems.Controls.Add(this.groupBox6);
             this.Pnl_Orderitems.Controls.Add(this.Btn_Back);
             this.Pnl_Orderitems.Controls.Add(this.label19);
             this.Pnl_Orderitems.Controls.Add(this.Lv_Currentorder);
-            this.Pnl_Orderitems.Location = new System.Drawing.Point(3, 0);
+            this.Pnl_Orderitems.Location = new System.Drawing.Point(0, 38);
             this.Pnl_Orderitems.Name = "Pnl_Orderitems";
-            this.Pnl_Orderitems.Size = new System.Drawing.Size(1579, 734);
+            this.Pnl_Orderitems.Size = new System.Drawing.Size(1597, 759);
             this.Pnl_Orderitems.TabIndex = 16;
-            // 
-            // Btn_Drinkpanel
-            // 
-            this.Btn_Drinkpanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.Btn_Drinkpanel.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Drinkpanel.Location = new System.Drawing.Point(1330, 641);
-            this.Btn_Drinkpanel.Name = "Btn_Drinkpanel";
-            this.Btn_Drinkpanel.Size = new System.Drawing.Size(218, 62);
-            this.Btn_Drinkpanel.TabIndex = 16;
-            this.Btn_Drinkpanel.Text = "Order drink";
-            this.Btn_Drinkpanel.UseVisualStyleBackColor = true;
-            this.Btn_Drinkpanel.Click += new System.EventHandler(this.Btn_Drinkpanel_Click);
             // 
             // Btn_Senditems
             // 
@@ -140,7 +127,7 @@ namespace ChapooUI
             this.Btn_Senditems.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btn_Senditems.Location = new System.Drawing.Point(346, 639);
             this.Btn_Senditems.Name = "Btn_Senditems";
-            this.Btn_Senditems.Size = new System.Drawing.Size(376, 62);
+            this.Btn_Senditems.Size = new System.Drawing.Size(376, 64);
             this.Btn_Senditems.TabIndex = 15;
             this.Btn_Senditems.Text = "Send order";
             this.Btn_Senditems.UseVisualStyleBackColor = true;
@@ -148,10 +135,10 @@ namespace ChapooUI
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.comboBox5);
-            this.groupBox5.Controls.Add(this.comboBox6);
+            this.groupBox5.Controls.Add(this.Cb_edititemsamount);
+            this.groupBox5.Controls.Add(this.Cb_edititems);
             this.groupBox5.Controls.Add(this.label8);
-            this.groupBox5.Controls.Add(this.richTextBox3);
+            this.groupBox5.Controls.Add(this.Rtb_extraedit);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Controls.Add(this.label15);
             this.groupBox5.Controls.Add(this.button7);
@@ -164,21 +151,23 @@ namespace ChapooUI
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Bewerk bestelling";
             // 
-            // comboBox5
+            // Cb_edititemsamount
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(22, 129);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(333, 30);
-            this.comboBox5.TabIndex = 16;
+            this.Cb_edititemsamount.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_edititemsamount.FormattingEnabled = true;
+            this.Cb_edititemsamount.Location = new System.Drawing.Point(22, 129);
+            this.Cb_edititemsamount.Name = "Cb_edititemsamount";
+            this.Cb_edititemsamount.Size = new System.Drawing.Size(333, 29);
+            this.Cb_edititemsamount.TabIndex = 16;
             // 
-            // comboBox6
+            // Cb_edititems
             // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(22, 61);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(333, 30);
-            this.comboBox6.TabIndex = 15;
+            this.Cb_edititems.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_edititems.FormattingEnabled = true;
+            this.Cb_edititems.Location = new System.Drawing.Point(22, 61);
+            this.Cb_edititems.Name = "Cb_edititems";
+            this.Cb_edititems.Size = new System.Drawing.Size(333, 29);
+            this.Cb_edititems.TabIndex = 15;
             // 
             // label8
             // 
@@ -189,14 +178,14 @@ namespace ChapooUI
             this.label8.TabIndex = 14;
             this.label8.Text = "Extra informatie";
             // 
-            // richTextBox3
+            // Rtb_extraedit
             // 
-            this.richTextBox3.Font = new System.Drawing.Font("Microsoft YaHei Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox3.Location = new System.Drawing.Point(22, 210);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(333, 236);
-            this.richTextBox3.TabIndex = 13;
-            this.richTextBox3.Text = "";
+            this.Rtb_extraedit.Font = new System.Drawing.Font("Microsoft YaHei Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rtb_extraedit.Location = new System.Drawing.Point(22, 210);
+            this.Rtb_extraedit.Name = "Rtb_extraedit";
+            this.Rtb_extraedit.Size = new System.Drawing.Size(333, 236);
+            this.Rtb_extraedit.TabIndex = 13;
+            this.Rtb_extraedit.Text = "";
             // 
             // label11
             // 
@@ -236,12 +225,12 @@ namespace ChapooUI
             // 
             // groupBox6
             // 
-            this.groupBox6.Controls.Add(this.comboBox7);
-            this.groupBox6.Controls.Add(this.comboBox8);
+            this.groupBox6.Controls.Add(this.Cb_orderitems);
+            this.groupBox6.Controls.Add(this.Cb_orderitemsamount);
             this.groupBox6.Controls.Add(this.label16);
             this.groupBox6.Controls.Add(this.label17);
             this.groupBox6.Controls.Add(this.label18);
-            this.groupBox6.Controls.Add(this.richTextBox4);
+            this.groupBox6.Controls.Add(this.Rtb_extraorder);
             this.groupBox6.Controls.Add(this.Btn_Addorder);
             this.groupBox6.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -252,21 +241,23 @@ namespace ChapooUI
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Voeg gerecht toe";
             // 
-            // comboBox7
+            // Cb_orderitems
             // 
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Location = new System.Drawing.Point(21, 61);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(333, 30);
-            this.comboBox7.TabIndex = 13;
+            this.Cb_orderitems.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_orderitems.FormattingEnabled = true;
+            this.Cb_orderitems.Location = new System.Drawing.Point(21, 61);
+            this.Cb_orderitems.Name = "Cb_orderitems";
+            this.Cb_orderitems.Size = new System.Drawing.Size(333, 29);
+            this.Cb_orderitems.TabIndex = 13;
             // 
-            // comboBox8
+            // Cb_orderitemsamount
             // 
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Location = new System.Drawing.Point(21, 129);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(333, 30);
-            this.comboBox8.TabIndex = 12;
+            this.Cb_orderitemsamount.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_orderitemsamount.FormattingEnabled = true;
+            this.Cb_orderitemsamount.Location = new System.Drawing.Point(21, 129);
+            this.Cb_orderitemsamount.Name = "Cb_orderitemsamount";
+            this.Cb_orderitemsamount.Size = new System.Drawing.Size(333, 29);
+            this.Cb_orderitemsamount.TabIndex = 12;
             // 
             // label16
             // 
@@ -295,14 +286,14 @@ namespace ChapooUI
             this.label18.TabIndex = 8;
             this.label18.Text = "Gerechten";
             // 
-            // richTextBox4
+            // Rtb_extraorder
             // 
-            this.richTextBox4.Font = new System.Drawing.Font("Microsoft YaHei Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox4.Location = new System.Drawing.Point(21, 210);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(333, 236);
-            this.richTextBox4.TabIndex = 6;
-            this.richTextBox4.Text = "";
+            this.Rtb_extraorder.Font = new System.Drawing.Font("Microsoft YaHei Light", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Rtb_extraorder.Location = new System.Drawing.Point(21, 210);
+            this.Rtb_extraorder.Name = "Rtb_extraorder";
+            this.Rtb_extraorder.Size = new System.Drawing.Size(333, 236);
+            this.Rtb_extraorder.TabIndex = 6;
+            this.Rtb_extraorder.Text = "";
             // 
             // Btn_Addorder
             // 
@@ -329,7 +320,7 @@ namespace ChapooUI
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft YaHei", 16F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(31, 28);
+            this.label19.Location = new System.Drawing.Point(31, 32);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(289, 42);
             this.label19.TabIndex = 11;
@@ -377,44 +368,46 @@ namespace ChapooUI
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.comboBox1);
-            this.groupBox3.Controls.Add(this.comboBox2);
+            this.groupBox3.Controls.Add(this.Cb_Drinkeditamount);
+            this.groupBox3.Controls.Add(this.Cb_Drinkedit);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button3);
+            this.groupBox3.Controls.Add(this.Btn_Deletedrink);
+            this.groupBox3.Controls.Add(this.Btn_Editdrink);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(765, 353);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(375, 264);
             this.groupBox3.TabIndex = 14;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Bewerk bestelling";
+            this.groupBox3.Text = "Bewerk drankje";
             // 
-            // comboBox1
+            // Cb_Drinkeditamount
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(22, 129);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(333, 30);
-            this.comboBox1.TabIndex = 16;
+            this.Cb_Drinkeditamount.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_Drinkeditamount.FormattingEnabled = true;
+            this.Cb_Drinkeditamount.Location = new System.Drawing.Point(22, 129);
+            this.Cb_Drinkeditamount.Name = "Cb_Drinkeditamount";
+            this.Cb_Drinkeditamount.Size = new System.Drawing.Size(333, 29);
+            this.Cb_Drinkeditamount.TabIndex = 16;
             // 
-            // comboBox2
+            // Cb_Drinkedit
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(22, 61);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(333, 30);
-            this.comboBox2.TabIndex = 15;
+            this.Cb_Drinkedit.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_Drinkedit.FormattingEnabled = true;
+            this.Cb_Drinkedit.Location = new System.Drawing.Point(22, 61);
+            this.Cb_Drinkedit.Name = "Cb_Drinkedit";
+            this.Cb_Drinkedit.Size = new System.Drawing.Size(333, 29);
+            this.Cb_Drinkedit.TabIndex = 15;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(18, 36);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(91, 22);
+            this.label9.Size = new System.Drawing.Size(89, 33);
             this.label9.TabIndex = 12;
-            this.label9.Text = "Gerechten";
+            this.label9.Text = "Drank";
             // 
             // label10
             // 
@@ -425,31 +418,33 @@ namespace ChapooUI
             this.label10.TabIndex = 11;
             this.label10.Text = "Aantal";
             // 
-            // button2
+            // Btn_Deletedrink
             // 
-            this.button2.Location = new System.Drawing.Point(249, 203);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 55);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Verwijder";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Btn_Deletedrink.Location = new System.Drawing.Point(249, 203);
+            this.Btn_Deletedrink.Name = "Btn_Deletedrink";
+            this.Btn_Deletedrink.Size = new System.Drawing.Size(120, 55);
+            this.Btn_Deletedrink.TabIndex = 1;
+            this.Btn_Deletedrink.Text = "Verwijder";
+            this.Btn_Deletedrink.UseVisualStyleBackColor = true;
+            this.Btn_Deletedrink.Click += new System.EventHandler(this.Btn_Deletedrink_Click);
             // 
-            // button3
+            // Btn_Editdrink
             // 
-            this.button3.Location = new System.Drawing.Point(6, 203);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(237, 55);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Bewerk";
-            this.button3.UseVisualStyleBackColor = true;
+            this.Btn_Editdrink.Location = new System.Drawing.Point(6, 203);
+            this.Btn_Editdrink.Name = "Btn_Editdrink";
+            this.Btn_Editdrink.Size = new System.Drawing.Size(237, 55);
+            this.Btn_Editdrink.TabIndex = 0;
+            this.Btn_Editdrink.Text = "Bewerk";
+            this.Btn_Editdrink.UseVisualStyleBackColor = true;
+            this.Btn_Editdrink.Click += new System.EventHandler(this.Btn_Editdrink_Click);
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.comboBox3);
-            this.groupBox4.Controls.Add(this.comboBox4);
+            this.groupBox4.Controls.Add(this.Cb_Drinkadd);
+            this.groupBox4.Controls.Add(this.Cb_Drinkamount);
             this.groupBox4.Controls.Add(this.label12);
             this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.button4);
+            this.groupBox4.Controls.Add(this.Btn_Adddrink);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.groupBox4.Location = new System.Drawing.Point(765, 78);
@@ -457,23 +452,25 @@ namespace ChapooUI
             this.groupBox4.Size = new System.Drawing.Size(375, 264);
             this.groupBox4.TabIndex = 13;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Voeg gerecht toe";
+            this.groupBox4.Text = "Voeg drankje toe";
             // 
-            // comboBox3
+            // Cb_Drinkadd
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(21, 61);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(333, 30);
-            this.comboBox3.TabIndex = 13;
+            this.Cb_Drinkadd.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_Drinkadd.FormattingEnabled = true;
+            this.Cb_Drinkadd.Location = new System.Drawing.Point(21, 61);
+            this.Cb_Drinkadd.Name = "Cb_Drinkadd";
+            this.Cb_Drinkadd.Size = new System.Drawing.Size(333, 29);
+            this.Cb_Drinkadd.TabIndex = 13;
             // 
-            // comboBox4
+            // Cb_Drinkamount
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(21, 129);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(333, 30);
-            this.comboBox4.TabIndex = 12;
+            this.Cb_Drinkamount.Font = new System.Drawing.Font("Microsoft YaHei", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Cb_Drinkamount.FormattingEnabled = true;
+            this.Cb_Drinkamount.Location = new System.Drawing.Point(21, 129);
+            this.Cb_Drinkamount.Name = "Cb_Drinkamount";
+            this.Cb_Drinkamount.Size = new System.Drawing.Size(333, 29);
+            this.Cb_Drinkamount.TabIndex = 12;
             // 
             // label12
             // 
@@ -489,18 +486,19 @@ namespace ChapooUI
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(17, 36);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(91, 22);
+            this.label13.Size = new System.Drawing.Size(89, 33);
             this.label13.TabIndex = 8;
-            this.label13.Text = "Gerechten";
+            this.label13.Text = "Drank";
             // 
-            // button4
+            // Btn_Adddrink
             // 
-            this.button4.Location = new System.Drawing.Point(6, 203);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(363, 55);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Toevoegen ";
-            this.button4.UseVisualStyleBackColor = true;
+            this.Btn_Adddrink.Location = new System.Drawing.Point(6, 203);
+            this.Btn_Adddrink.Name = "Btn_Adddrink";
+            this.Btn_Adddrink.Size = new System.Drawing.Size(363, 55);
+            this.Btn_Adddrink.TabIndex = 2;
+            this.Btn_Adddrink.Text = "Toevoegen ";
+            this.Btn_Adddrink.UseVisualStyleBackColor = true;
+            this.Btn_Adddrink.Click += new System.EventHandler(this.Btn_Adddrink_Click);
             // 
             // Btn_Backdrinks
             // 
@@ -581,12 +579,49 @@ namespace ChapooUI
             this.drankToolStripMenuItem.Size = new System.Drawing.Size(131, 32);
             this.drankToolStripMenuItem.Text = "Drank";
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gerechtenToolStripMenuItem,
+            this.drankenToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1597, 35);
+            this.menuStrip1.TabIndex = 11;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // gerechtenToolStripMenuItem
+            // 
+            this.gerechtenToolStripMenuItem.BackColor = System.Drawing.SystemColors.MenuText;
+            this.gerechtenToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gerechtenToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.gerechtenToolStripMenuItem.Name = "gerechtenToolStripMenuItem";
+            this.gerechtenToolStripMenuItem.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.gerechtenToolStripMenuItem.Size = new System.Drawing.Size(139, 31);
+            this.gerechtenToolStripMenuItem.Text = "Gerechten";
+            this.gerechtenToolStripMenuItem.Click += new System.EventHandler(this.gerechtenToolStripMenuItem_Click_1);
+            // 
+            // drankenToolStripMenuItem
+            // 
+            this.drankenToolStripMenuItem.BackColor = System.Drawing.SystemColors.GrayText;
+            this.drankenToolStripMenuItem.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drankenToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.drankenToolStripMenuItem.Name = "drankenToolStripMenuItem";
+            this.drankenToolStripMenuItem.Size = new System.Drawing.Size(114, 31);
+            this.drankenToolStripMenuItem.Text = "Dranken";
+            this.drankenToolStripMenuItem.Click += new System.EventHandler(this.drankenToolStripMenuItem_Click);
+            // 
             // Order
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1597, 742);
+            this.ClientSize = new System.Drawing.Size(1597, 792);
+            this.Controls.Add(this.Pnl_Orderitems);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.Pnl_Orderdrink);
             this.Name = "Order";
             this.Text = "Order";
@@ -603,7 +638,10 @@ namespace ChapooUI
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.contextMenuStrip2.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -611,18 +649,18 @@ namespace ChapooUI
         private System.Windows.Forms.Panel Pnl_Orderdrink;
         private System.Windows.Forms.Button Btn_Senddrink;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox Cb_Drinkeditamount;
+        private System.Windows.Forms.ComboBox Cb_Drinkedit;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Btn_Deletedrink;
+        private System.Windows.Forms.Button Btn_Editdrink;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox Cb_Drinkadd;
+        private System.Windows.Forms.ComboBox Cb_Drinkamount;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button Btn_Adddrink;
         private System.Windows.Forms.Button Btn_Backdrinks;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ListView Lv_Currentdrink;
@@ -636,21 +674,21 @@ namespace ChapooUI
         private System.Windows.Forms.Panel Pnl_Orderitems;
         private System.Windows.Forms.Button Btn_Senditems;
         private System.Windows.Forms.GroupBox groupBox5;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
+        private System.Windows.Forms.ComboBox Cb_edititemsamount;
+        private System.Windows.Forms.ComboBox Cb_edititems;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox Rtb_extraedit;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox Cb_orderitems;
+        private System.Windows.Forms.ComboBox Cb_orderitemsamount;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.RichTextBox Rtb_extraorder;
         private System.Windows.Forms.Button Btn_Addorder;
         private System.Windows.Forms.Button Btn_Back;
         private System.Windows.Forms.Label label19;
@@ -658,6 +696,8 @@ namespace ChapooUI
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
         private System.Windows.Forms.ColumnHeader columnHeader8;
-        private System.Windows.Forms.Button Btn_Drinkpanel;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem gerechtenToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem drankenToolStripMenuItem;
     }
 }
