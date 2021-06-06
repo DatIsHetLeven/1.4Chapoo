@@ -14,16 +14,21 @@ namespace ChapooUI
 {
     public partial class Dashboard : Form
     {
+        Table_Service table_Service = new Table_Service();
+        List<Table> tableId = new List<Table>();
+        private User User;
+        public Dashboard(User user)
+        {
+            InitializeComponent();
+            this.User = user;
+            Dashboard dashboard = new Dashboard();
+            dashboard.ShowDialog();
+            this.Close();
+        }
         public Dashboard()
         {
             InitializeComponent();
-            Table_Service table_Service = new Table_Service();
-
-            DataTable dataTable = new DataTable();
-
-            List<Table> tableId = new List<Table>();
             tableId = table_Service.GetTables();
-
 
             List<Button> TableButtonList = new List<Button>();
             TableButtonList.Add(btn_Tafel_1);
@@ -31,20 +36,21 @@ namespace ChapooUI
             TableButtonList.Add(btn_Tafel_3);
             TableButtonList.Add(btn_Tafel_4);
 
-            foreach (Button item in TableButtonList)
+            // Check status
+            foreach (Button btn in TableButtonList)
             {
                 foreach (var i in tableId)
                 {
-                    if (i.TableStatus == 1)
-                    {
-                        item.BackColor = Color.Lime;
-                        tableId.Remove(i);
-                    }
-                    else
-                    {
-                        item.BackColor = Color.Red;
-                        tableId.Remove(i);
-                    }
+                    //Give tag Prop
+                    btn.Tag = i.TableId;
+                    //Check status of table
+                    if (i.TableStatus == 1)//Status = free
+                        btn.BackColor = Color.Lime;
+                    else if (i.TableStatus == 3)//status = current order
+                        btn.BackColor = Color.Blue;
+                    else//status = reservated
+                        btn.BackColor = Color.Red;
+                    tableId.Remove(i);
                     break;
                 }
             }
@@ -57,26 +63,34 @@ namespace ChapooUI
             tableChoice.ShowDialog();
             this.Close();
         }
-
-        //Table 1
+        //Log out -> login page
+        private void btn_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            login login = new login();
+            login.ShowDialog();
+            this.Close();
+        }
+        //Table1
         private void btn_Tafel_1_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(1);
+            goToTableChoiche(btn_Tafel_1.Tag.ToString());
         }
-
+        //Table 2
         private void btn_Tafel_2_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(2);
+            goToTableChoiche(btn_Tafel_2.Tag.ToString());
         }
 
-        private void btn_Tafel_3_Click(object sender, EventArgs e)
+        //Go to TableChoice.cs, method for table buttons
+        private void goToTableChoiche(string tableId)
         {
-            goToTableChoiche(3);
+            int tableNumber = int.Parse(tableId);
+            this.Hide();
+            TableChoice tableChoice = new TableChoice(tableNumber);
+            tableChoice.ShowDialog();
+            this.Close();
         }
 
-        private void btn_Tafel_4_Click(object sender, EventArgs e)
-        {
-            goToTableChoiche(4);
-        }
     }
 }
