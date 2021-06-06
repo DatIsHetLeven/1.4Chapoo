@@ -14,7 +14,8 @@ namespace ChapooUI
 {
     public partial class ResetPassword : Form
     {
-        User_Service User_Service = new User_Service();
+        private User_Service User_Service = new User_Service();
+        private login login;
         public ResetPassword()
         {
             InitializeComponent();
@@ -23,7 +24,7 @@ namespace ChapooUI
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            login login = new login();
+            login = new login();
             login.ShowDialog();
             this.Close();
         }

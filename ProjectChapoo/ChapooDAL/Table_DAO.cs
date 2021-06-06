@@ -12,37 +12,12 @@ namespace ChapooDAL
     {
         DataTable dataTable = new DataTable();
 
-        //Get all table status
-        public DataTable GetTableStatus(int TableId, int TableStatus)
+        //Change Table Status
+        public void ChangeTableStatus(int tableId, int status)
         {
-            string query = "select * from [Table] where TableId = '" + TableId + "' and   TableStatus =  '" + TableStatus + "' ";
-            DataTable dt = ExecuteSelectQuery(query);
-
-            return dt;
-        }
-        //Set table to status : reservated
-        public void SetTableReservated(int table)
-        {
-            string query = "Update [table] set TableStatus=2 where TableId=@tafelid";
-            query = query.Replace("@tafelid", table.ToString());
+            string query = $"Update [table] set TableStatus='{status}'where TableId='{tableId}'";
             ExecuteEditQuery(query);
         }
-
-        //Set table to status : Free
-        public void SetTableFree(int table)
-        {
-            string query = "Update [table] set TableStatus=1 where TableId=@tafelid";
-            query = query.Replace("@tafelid", table.ToString());
-            ExecuteEditQuery(query);
-        }
-        //Set table In use
-        public void SetTableInUse(int tableId)
-        {
-            string query = "Update [table] set TableStatus=3 where TableId=@tafelid";
-            query = query.Replace("@tafelid", tableId.ToString());
-            ExecuteEditQuery(query);
-        }
-
         //Get all table info 
         public List<Table> TableInfo()
         {
@@ -56,18 +31,12 @@ namespace ChapooDAL
             int TableStatus = 0;
 
             List<Table> TableList = new List<Table>();
-
             foreach (DataRow item in datatable.Rows)
             {
+                TableId = (int)item["TableId"];
+                TableStatus = (int)item["TableStatus"];
                 Table table = new Table(TableId, TableStatus);
-                {
-                    TableId = (int)item["TableId"];
-                    TableStatus = (int)item["TableStatus"];
-                    if (table.TableId != 0)
-                    {
-                        TableList.Add(table);
-                    }
-                };
+                TableList.Add(table);
             }
             return TableList;
         }

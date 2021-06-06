@@ -28,10 +28,9 @@ namespace ChapooDAL
             foreach (DataRow i in dataTable.Rows)
             {
                 userId = (int)i["UserId"];
-                userName = (string)i["userName"];
-                userPassword = (string)i["userPassword"];
+                userName = (string)i["userName"].ToString();
+                userPassword = (string)i["userPassword"].ToString();
                 userCode = (int)i["UserCode"];
-                //userKey = (string)i["userKey"];
             }
             return new User(userId, userName, title, userCode, userKey, userPassword);
         }
@@ -68,7 +67,6 @@ namespace ChapooDAL
                 userId = (int)dr["UserId"];
                 userName = (string)dr["userName"].ToString();
                 title = (string)dr["title"].ToString();
-                //userPassword = (string)dr["userPassword"];
                 userCode = (int)dr["UserCode"];
                 userKey = (string)dr["userKey"].ToString();
                 User user = new User(userId, userName, title, userCode, userKey, userPassword);

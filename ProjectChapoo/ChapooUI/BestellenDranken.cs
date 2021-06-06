@@ -20,23 +20,14 @@ namespace ChapooUI
         Table_Service table_Service = new Table_Service();
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         List<ChapoModel.MenuItem> allMenuItems = new List<ChapoModel.MenuItem>();
+        List<int> invoerAantal = new List<int>();
         int TableId;
-        public BestellenDranken(int tableId, List<ChapoModel.MenuItem> menuItem)
+        public BestellenDranken(int tableId, List<ChapoModel.MenuItem> menuItem, List<int> invoeraantal)
         {
             InitializeComponent();
             this.allMenuItems = menuItem;
             this.TableId = tableId;
-            List<int> invoerAantal = new List<int>();
-            invoerAantal.Add(1);
-            invoerAantal.Add(2);
-            invoerAantal.Add(3);
-            invoerAantal.Add(4);
-            invoerAantal.Add(5);
-            invoerAantal.Add(6);
-            invoerAantal.Add(7);
-            invoerAantal.Add(8);
-            invoerAantal.Add(9);
-            invoerAantal.Add(10);
+            this.invoerAantal = invoeraantal;
 
             drop_InvoerAantal.DataSource = invoerAantal;
             foreach (var item in menuItem)
@@ -62,7 +53,7 @@ namespace ChapooUI
                 int verm = prijs1 * invoer;
                 MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + verm.ToString());
                 selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm);
-                table_Service.SetTableInUse(TableId);
+                table_Service.ChangeTableStatus(TableId,3);
             }
             ShowSelectedItems();
         }
@@ -70,7 +61,7 @@ namespace ChapooUI
         private void Btn_GoDiner_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestellenDiner bestellenDiner = new BestellenDiner(TableId, allMenuItems);
+            BestellenDiner bestellenDiner = new BestellenDiner(TableId, allMenuItems, invoerAantal);
             bestellenDiner.ShowDialog();
             this.Close();
         }

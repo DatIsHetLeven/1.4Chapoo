@@ -20,13 +20,13 @@ namespace ChapooUI
         Table_Service table_Service = new Table_Service();
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         List<ChapoModel.MenuItem> menuItemList = new List<ChapoModel.MenuItem>();
+        List<int> invoerAantal = new List<int>();
         public Bestellen(int tableid)
         {
             InitializeComponent();
             this.TableId = tableid;
             MenuItem_Service menuItem_Service = new MenuItem_Service();
 
-            List<int> invoerAantal = new List<int>();
             invoerAantal.Add(1);
             invoerAantal.Add(2);
             invoerAantal.Add(3);
@@ -53,6 +53,7 @@ namespace ChapooUI
         //Button bestellen
         private void btn_bestellen_Click(object sender, EventArgs e)
         {
+            //Gekozen aantal
             int invoer = drop_InvoerAantal.SelectedIndex + 1;
             int item = datagrid_Lunch.CurrentCell.RowIndex;
             string prijs = datagrid_Lunch.Rows[item].Cells[0].FormattedValue.ToString();
@@ -60,10 +61,11 @@ namespace ChapooUI
 
             if (invoer > 0)
             {
+                //Daadwerklijke prijs berekenen. 
                 int verm = prijs1 * invoer;
                 MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + verm.ToString());
                 selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm);
-                table_Service.SetTableInUse(TableId);
+                table_Service.ChangeTableStatus(TableId,3);
             }
             ShowSelectedItems();
         }
@@ -78,7 +80,7 @@ namespace ChapooUI
         private void Btn_Go_Drinks_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestellenDranken bestellenDiner = new BestellenDranken(TableId, menuItemList);
+            BestellenDranken bestellenDiner = new BestellenDranken(TableId, menuItemList, invoerAantal);
             bestellenDiner.ShowDialog();
             this.Close();
         }
@@ -86,7 +88,7 @@ namespace ChapooUI
         private void Btn_Go_Diner_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestellenDiner bestellenDiner = new BestellenDiner(TableId, menuItemList);
+            BestellenDiner bestellenDiner = new BestellenDiner(TableId, menuItemList, invoerAantal);
             bestellenDiner.ShowDialog();
             this.Close();
         }
@@ -108,7 +110,7 @@ namespace ChapooUI
         {
             ShowSelectedItems();
         }
-
+        //Gekozen items bestellen -> sturen naar keuken
         private void button2_Click(object sender, EventArgs e)
         {
             ShowSelectedItems();

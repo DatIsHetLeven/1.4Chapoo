@@ -18,11 +18,13 @@ namespace ChapooUI
     {
         User_Service user_Service = new User_Service();
         List<User> userLists = new List<User>();
-        private User User;
-        public AdminAllUsers(User user)
+        private AdminChangePassword adminChangePassWord;
+        private AdminCreateUser adminCreateUser;
+        private AdminDashboard adminDashboard;
+
+        public AdminAllUsers()
         {
             InitializeComponent();
-            this.User = user;
         }
         private void AdminAllUsers_Load_1(object sender, EventArgs e)
         {
@@ -31,7 +33,6 @@ namespace ChapooUI
         //Get all data -> fill in lists
         public void GetAllData()
         {
-            //Create object list of userlist
             userLists = user_Service.getAllUsers();
             //Show data of all users
             dataGridView1.DataSource = userLists;
@@ -39,20 +40,22 @@ namespace ChapooUI
         //Create User
         private void Btn_CreateUser_Click(object sender, EventArgs e)
         {
-            AdminCreateUser adminCreateUser = new AdminCreateUser(User);
+            adminCreateUser = new AdminCreateUser();
+            adminCreateUser.GetAllUsersList(userLists);
             adminCreateUser.ShowDialog();
         }
         //Change Password
         private void Btn_ChangePassword_Click(object sender, EventArgs e)
         {
-            AdminChangePassword adminChangePassword = new AdminChangePassword(User);
-            adminChangePassword.ShowDialog();
+            adminChangePassWord = new AdminChangePassword();
+            adminChangePassWord.GetUserList(userLists);
+            adminChangePassWord.ShowDialog();
         }
         //Go back to dashboard
         private void btn_BackAdminDasboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            AdminDashboard adminDashboard = new AdminDashboard(User);
+            adminDashboard = new AdminDashboard();
             adminDashboard.ShowDialog();
             this.Close();
         }

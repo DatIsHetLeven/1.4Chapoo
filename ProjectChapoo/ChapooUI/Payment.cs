@@ -38,18 +38,18 @@ namespace ChapooUI
 
         private void btn_PayIdeal_Click(object sender, EventArgs e)
         {
-            table_Service.SetTableFree(TableId);
+            table_Service.ChangeTableStatus(TableId,1);
             FinishPayment();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            table_Service.SetTableFree(TableId);
+            table_Service.ChangeTableStatus(TableId,1);
             FinishPayment();
         }
         private void FinishPayment()
         {
-            //table_Service.SetTableFree(TableId);
+            table_Service.ChangeTableStatus(TableId,1);
 
             MessageBox.Show("Payment was successfully!");
             this.Hide();

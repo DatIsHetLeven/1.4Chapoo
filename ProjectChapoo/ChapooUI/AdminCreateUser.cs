@@ -14,13 +14,19 @@ namespace ChapooUI
 {
     public partial class AdminCreateUser : Form
     {
-        User_Service user_Service = new User_Service();
-        private User User;
-        public AdminCreateUser(User user)
+        private User_Service user_Service = new User_Service();
+        private List<User> UserLists = new List<User>();
+        private AdminAllUsers adminAllUsers;
+
+
+        public void GetAllUsersList(List<User> userLists)
+        {
+            this.UserLists = userLists;
+            GetAllData();
+        }
+        public AdminCreateUser()
         {
             InitializeComponent();
-            this.User = user;
-            GetAllData();
         }
 
         private void btn_CreateNewUser_Click(object sender, EventArgs e)
@@ -39,12 +45,10 @@ namespace ChapooUI
 
                 user_Service.createUser(userName, password, userRol);
                 MessageBox.Show("User has been created");
-                txt_NewUserName.Clear();
-                txt_UserPassword.Clear();
 
                 this.Hide();
-                AdminAllUsers admin = new AdminAllUsers(User);
-                admin.ShowDialog();
+                adminAllUsers = new AdminAllUsers();
+                adminAllUsers.ShowDialog();
                 this.Close();
 
             }
@@ -54,12 +58,10 @@ namespace ChapooUI
         public void GetAllData()
         {
             string titel;
-
-            List<User> userLists = new List<User>();
-            userLists = user_Service.getAllUsers();
             List<string> userTitle = new List<string>();
-            //Adding specifiek data form object to list
-            foreach (var item in userLists)
+
+            //Adding titles data form object to list
+            foreach (var item in UserLists)
             {
                 titel = item.title;
                 if (!userTitle.Contains(titel))

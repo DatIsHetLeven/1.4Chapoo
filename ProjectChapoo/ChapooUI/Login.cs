@@ -15,41 +15,19 @@ namespace ChapooUI
 {
     public partial class login : Form
     {
-        User_Service user_Service = new User_Service();
+        private Dashboard Dashboard;
+        private AdminDashboard adminDashboard;
+        private BarKitchenDashboard BarKitchenDashboard;
+        private User_Service user_Service = new User_Service();
         public login()
         {
             InitializeComponent();
         }
 
-
         //Buttin inloggen
         private void btn_Inloggen_Click_1(object sender, EventArgs e)
         {
-            //if (txt_LoginUsername.Text == "aa")
-            //{
-            //    this.Hide();
-            //    AdminDashboard adminDashboard = new AdminDashboard();
-            //    adminDashboard.ShowDialog();
-            //    this.Close();
-            //}
-
-            //if (txt_LoginUsername.Text == "a")
-            //{
-            //    this.Hide();
-            //    BarKitchenDashboard barKitchenDashboard = new BarKitchenDashboard();
-            //    barKitchenDashboard.ShowDialog();
-            //    this.Close();
-            //}
-            //else
-            //{
-            //    this.Hide();
-            //    Dashboard dashboardVieww = new Dashboard();
-            //    dashboardVieww.ShowDialog();
-            //    this.Close();
-            //}
-
-
-            //Check if username and password are not empty.\
+            //Check if username and password are not empty.
             if (txt_LoginUsername.Text != "" && txt_LoginPassword.Text != "")
             {
                 string userName = txt_LoginUsername.Text;
@@ -58,28 +36,29 @@ namespace ChapooUI
                 //If user exist
                 if (user.userName != "")
                 {
-                    //If user is Admin
+                    //If Admin
                     if (user.userCode == 3)
                     {
                         this.Hide();
-                        AdminDashboard adminDashboard = new AdminDashboard(user);
+                        adminDashboard = new AdminDashboard();
                         adminDashboard.ShowDialog();
                         this.Close();
                     }
-                    //If server
+                    //If bediende 
                     else if (user.userCode == 1)
                     {
                         this.Hide();
-                        Dashboard dashboardView = new Dashboard(user);
-                        dashboardView.ShowDialog();
+                        Dashboard = new Dashboard();
+                        Dashboard.DashboardUser(user);
+                        Dashboard.ShowDialog();
                         this.Close();
                     }
                     //if barman
                     else
                     {
                         this.Hide();
-                        BarKitchenDashboard barKitchenDashboard = new BarKitchenDashboard(user);
-                        barKitchenDashboard.ShowDialog();
+                        BarKitchenDashboard = new BarKitchenDashboard(user);
+                        BarKitchenDashboard.ShowDialog();
                         this.Close();
                     }
                 }

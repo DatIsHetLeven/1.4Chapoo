@@ -15,16 +15,16 @@ namespace ChapooUI
 {
     public partial class AdminDashboard : Form
     {
-        private User User;
-        public AdminDashboard(User user)
+        private AdminAllUsers adminAllUsers;
+        private login login;
+        public AdminDashboard()
         {
             InitializeComponent();
-            this.User = user;
         }
 
         private void btn_all_users_Click(object sender, EventArgs e)
         {
-            AdminAllUsers adminAllUsers = new AdminAllUsers(User);
+            adminAllUsers = new AdminAllUsers();
             this.Hide();
             adminAllUsers.ShowDialog();
             this.Close();
@@ -32,7 +32,7 @@ namespace ChapooUI
 
         private void btn_LogOut_Click(object sender, EventArgs e)
         {
-            login login = new login();
+            login = new login();
             this.Hide();
             login.ShowDialog();
             this.Close();
