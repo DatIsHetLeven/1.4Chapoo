@@ -46,6 +46,54 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAllUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAllUsers.Designer.cs">
+      <DependentUpon>AdminAllUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminChangePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminChangePassword.Designer.cs">
+      <DependentUpon>AdminChangePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminCreateUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminCreateUser.Designer.cs">
+      <DependentUpon>AdminCreateUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.Designer.cs">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BarKitchenDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BarKitchenDashboard.Designer.cs">
+      <DependentUpon>BarKitchenDashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bestellen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bestellen.Designer.cs">
+      <DependentUpon>Bestellen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BestellenDiner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BestellenDiner.Designer.cs">
+      <DependentUpon>BestellenDiner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BestellenDranken.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BestellenDranken.Designer.cs">
+      <DependentUpon>BestellenDranken.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,37 +106,73 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lunch.cs">
+    <Compile Include="OrderDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Lunch.Designer.cs">
-      <DependentUpon>Lunch.cs</DependentUpon>
+    <Compile Include="OrderDashboard.Designer.cs">
+      <DependentUpon>OrderDashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Payment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <Compile Include="Payment.Designer.cs">
+      <DependentUpon>Payment.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservate.Designer.cs">
+      <DependentUpon>Reservate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.Designer.cs">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="TableChoice.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TableChoice.Designer.cs">
       <DependentUpon>TableChoice.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminAllUsers.resx">
+      <DependentUpon>AdminAllUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminChangePassword.resx">
+      <DependentUpon>AdminChangePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminCreateUser.resx">
+      <DependentUpon>AdminCreateUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDashboard.resx">
+      <DependentUpon>AdminDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BarKitchenDashboard.resx">
+      <DependentUpon>BarKitchenDashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bestellen.resx">
+      <DependentUpon>Bestellen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BestellenDiner.resx">
+      <DependentUpon>BestellenDiner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BestellenDranken.resx">
+      <DependentUpon>BestellenDranken.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Lunch.resx">
-      <DependentUpon>Lunch.cs</DependentUpon>
+    <EmbeddedResource Include="OrderDashboard.resx">
+      <DependentUpon>OrderDashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
+    <EmbeddedResource Include="Payment.resx">
+      <DependentUpon>Payment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +183,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reservate.resx">
+      <DependentUpon>Reservate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResetPassword.resx">
+      <DependentUpon>ResetPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TableChoice.resx">
       <DependentUpon>TableChoice.cs</DependentUpon>
     </EmbeddedResource>

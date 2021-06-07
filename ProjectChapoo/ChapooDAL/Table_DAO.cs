@@ -5,12 +5,19 @@ using System.Data.SqlClient;
 using System.Data;
 using ChapoModel;
 
+
 namespace ChapooDAL
 {
     public class Table_DAO : Base
     {
         DataTable dataTable = new DataTable();
 
+        //Change Table Status
+        public void ChangeTableStatus(int tableId, int status)
+        {
+            string query = $"Update [table] set TableStatus='{status}'where TableId='{tableId}'";
+            ExecuteEditQuery(query);
+        }
         //Get all table info 
         public List<Table> TableInfo()
         {
@@ -24,34 +31,14 @@ namespace ChapooDAL
             int TableStatus = 0;
 
             List<Table> TableList = new List<Table>();
-
             foreach (DataRow item in datatable.Rows)
             {
+                TableId = (int)item["TableId"];
+                TableStatus = (int)item["TableStatus"];
                 Table table = new Table(TableId, TableStatus);
-                {
-                    TableId = (int)item["TableId"];
-                    TableStatus = (int)item["TableStatus"];
-                    if (table.TableId != 0)
-                    {
-                        TableList.Add(table);
-                    }
-                };
+                TableList.Add(table);
             }
             return TableList;
-        }
-        //reservated
-        public void SetTableReservated(int table)
-        {
-            string query = "Update [table] set TableStatus=2 where TableId=@tafelid";
-            query = query.Replace("@tafelid", table.ToString());
-            ExecuteEditQuery(query);
-        }
-        //Free
-        public void SetTableFree(int table)
-        {
-            string query = "Update [table] set TableStatus=1 where TableId=@tafelid";
-            query = query.Replace("@tafelid", table.ToString());
-            ExecuteEditQuery(query);
         }
     }
 }

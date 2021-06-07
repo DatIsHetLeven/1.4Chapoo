@@ -8,49 +8,58 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ChapooLogic;
+using ChapoModel;
 
 namespace ChapooUI
 {
     public partial class TableChoice : Form
     {
-        Table_Service table_Service = new Table_Service();
+        private Table_Service table_Service = new Table_Service();
         private int TableId;
-        public TableChoice()
-        {
-            InitializeComponent();
-        }
+        private Dashboard dashboard;
+        private OrderDashboard orderDashboard;
+        private Bestellen bestellen;
+
         public TableChoice(int tableId)
         {
             InitializeComponent();
             this.TableId = tableId;
             lbl_Show_Table_Number.Text = ("Tablenumber : " + TableId.ToString());
         }
-
-        private void btn_Menu_Click(object sender, EventArgs e)
+        //Go to menu -> order
+        private void btn_bestellen_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Menu menuView = new Menu();
-            menuView.ShowDialog();
+            bestellen = new Bestellen(TableId);
+            bestellen.ShowDialog();
             this.Close();
         }
-
+        //Go back to Dashboard.cs
         private void btn_Back_To_Dashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Dashboard dashboardView = new Dashboard();
-            dashboardView.ShowDialog();
+            dashboard = new Dashboard();
+            dashboard.ShowDialog();
             this.Close();
         }
-        //Reservate Table
+        //Go to orders current table
+        private void Btn_Go_Overzicht_Click(object sender, EventArgs e)
+        {
+            orderDashboard = new OrderDashboard(TableId);
+            this.Hide();
+            orderDashboard.ShowDialog();
+            this.Close();
+        }
+        //Reservate table
         private void btn_Reservate_Click(object sender, EventArgs e)
         {
-                table_Service.SetTableReservate(TableId);
-                MessageBox.Show("Table has been reservated");
+            table_Service.ChangeTableStatus(TableId,2);
+            MessageBox.Show("Table has been reservated");
         }
-
+        //Make table Free
         private void Btn_FreeTable_Click(object sender, EventArgs e)
         {
-            table_Service.SetTableFree(TableId);
+            table_Service.ChangeTableStatus(TableId,1);
             MessageBox.Show("Table has been cleared");
         }
     }
