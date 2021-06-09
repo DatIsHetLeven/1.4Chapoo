@@ -77,8 +77,8 @@ namespace ChapooUI
         private void btn_Back_To_Dashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Dashboard dashboardView = new Dashboard();
-            dashboardView.ShowDialog();
+            TableChoice tableChoiceView = new TableChoice(1);   // voor nu gaat hij altijd terug naar tafel 1 tafel menu
+            tableChoiceView.ShowDialog();
             this.Close();
         }
         private void ShowSelectedItems()

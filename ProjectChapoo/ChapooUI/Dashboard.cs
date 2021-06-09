@@ -21,7 +21,7 @@ namespace ChapooUI
         {
             UserId = user.userId;
             lbl_UserName.Tag = user;
-            lbl_UserName.Text = $"Geberuiker:{user.userName}";
+            lbl_UserName.Text = $"Ingelogd als: {user.userName}";
         }
         public Dashboard()
         {

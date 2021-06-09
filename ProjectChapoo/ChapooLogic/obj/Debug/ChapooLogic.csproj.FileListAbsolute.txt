@@ -29,8 +29,8 @@ C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapoModel.pdb
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapooDAL.pdb
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapooDAL.dll.config
-C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csprojAssemblyReference.cache
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.CoreCompileInputs.cache
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.CopyComplete
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.dll
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.pdb
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.AssemblyReference.cache

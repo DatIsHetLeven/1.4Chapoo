@@ -9,7 +9,7 @@ namespace ChapooDAL
 {
     public class Order_DAO : Base
     {
-        //Get
+        //Get Max
         public List<int> GetMaxId()
         {
             string query = $"select max([OrderId]) AS [id] from[order]";
@@ -27,7 +27,7 @@ namespace ChapooDAL
             }
             return MaxId;
         }
-        //order
+        //place order, and send to database table [order]
         public void InsertOrder(int orderId, int tableId, string menuItem, int prijs)
         {
             DateTime thisDay = DateTime.Today;
