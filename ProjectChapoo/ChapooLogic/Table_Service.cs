@@ -14,6 +14,12 @@ namespace ChapooLogic
     {
         Table_DAO table_DAO = new Table_DAO();
 
+        //Change TableStatus
+        public void ChangeTableStatus(int tableId, int status)
+        {
+            table_DAO.ChangeTableStatus(tableId, status);
+        }
+
         //Get tableinfo
         public List<Table> GetTables()
         {
@@ -21,18 +27,7 @@ namespace ChapooLogic
             tableList = table_DAO.TableInfo();
             return tableList;
         }
-
-        //Set table to status: Reservated
-        public void SetTableReservate(int tableId)
-        {
-            table_DAO.SetTableReservated(tableId);
-
-        }
-        //Set table to status : Free
-        public void SetTableFree(int tableId)
-        {
-            table_DAO.SetTableFree(tableId);
-        }
     }
 }
+
 

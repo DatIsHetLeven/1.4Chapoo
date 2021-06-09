@@ -1,22 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
-
+using System.Data;
+using ChapoModel;
 
 namespace ChapooDAL
 {
-    public class Order_DAO: Base
+    public class Order_DAO : Base
     {
-        public void Db_Write_Order(int orderid, string itemname, int itemamount)
+        //Get
+        public List<int> GetMaxId()
         {
-            string query = $"INSERT INTO dbo.orders (order_id, item_name, item_amount) VALUES (@order_id, @item_name, @item_amount)";
+            string query = $"select max([OrderId]) AS [id] from[order]";
+            return MaxId(ExecuteSelectQuery(query));
+        }
 
-            SqlParameter[] Writeorder =
+        private List<int> MaxId(DataTable datatable)
+        {
+            List<int> MaxId = new List<int>();
+
+            foreach (DataRow item in datatable.Rows)
             {
-                new SqlParameter("@order_id", orderid),
-                new SqlParameter("@item_name", itemname),
-                new SqlParameter("@item_amount", itemamount)
-            };
-            ExecuteSelectQuery(query, Writeorder);
+                int Id = (int)item["id"];
+                MaxId.Add(Id);
+            }
+            return MaxId;
+        }
+        //order
+        public void InsertOrder(int orderId, int tableId, string menuItem, int prijs)
+        {
+            DateTime thisDay = DateTime.Today;
+            string query = $"insert into [order] values('{orderId}', '{tableId}', '{menuItem}', '{prijs}', '{thisDay}')";
+            ExecuteEditQuery(query);
         }
     }
 }

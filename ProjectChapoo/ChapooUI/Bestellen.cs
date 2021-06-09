@@ -15,7 +15,7 @@ namespace ChapooUI
     public partial class Bestellen : Form
     {
         int TableId;
-        
+        List<ChapoModel.MenuItem> menuItems = new List<ChapoModel.MenuItem>();
         List<SelectedItem> selectedItemsMaking = new List<SelectedItem>();
         Table_Service table_Service = new Table_Service();
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
@@ -43,10 +43,8 @@ namespace ChapooUI
             menuItemList = menuItem_Service.GetMenuItems();
             foreach (var i in menuItemList)
             {
-                // 1 equals lunch menu items only..... database items 
-                if (i.MenuId == 1)
+                if (i.MenuId == 2)
                 {
-                    List<ChapoModel.MenuItem> menuItems = new List<ChapoModel.MenuItem>();
                     menuItems.Add(i);
                     datagrid_Lunch.DataSource = menuItems;
                 }
@@ -125,6 +123,7 @@ namespace ChapooUI
             }
             catch (Exception)
             {
+
                 MessageBox.Show("Niks om te bestellen");
             }
         }
