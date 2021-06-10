@@ -16,7 +16,6 @@ namespace ChapooUI
     public partial class login : Form
     {
         private Dashboard Dashboard;
-        private AdminDashboard adminDashboard;
         private BarKitchenDashboard BarKitchenDashboard;
         private User_Service user_Service = new User_Service();
         public login()
@@ -40,8 +39,8 @@ namespace ChapooUI
                     if (user.userCode == 3)
                     {
                         this.Hide();
-                        adminDashboard = new AdminDashboard();
-                        adminDashboard.ShowDialog();
+                        AdminAllUsers dashboard = new AdminAllUsers();
+                        dashboard.ShowDialog();
                         this.Close();
                     }
                     //If bediende 

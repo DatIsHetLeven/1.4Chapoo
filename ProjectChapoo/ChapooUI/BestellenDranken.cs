@@ -28,6 +28,7 @@ namespace ChapooUI
             this.allMenuItems = menuItem;
             this.TableId = tableId;
             this.invoerAantal = invoeraantal;
+            Lbl_Table_Drank.Text = ("Tafelnummer : " + TableId.ToString());
 
             drop_InvoerAantal.DataSource = invoerAantal;
             foreach (var item in menuItem)
@@ -77,7 +78,7 @@ namespace ChapooUI
         private void btn_Back_To_Dashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TableChoice tableChoiceView = new TableChoice(1);   // voor nu gaat hij altijd terug naar tafel 1 tafel menu
+            TableChoice tableChoiceView = new TableChoice(TableId);
             tableChoiceView.ShowDialog();
             this.Close();
         }

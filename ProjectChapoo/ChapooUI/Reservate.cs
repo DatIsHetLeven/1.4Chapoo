@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ChapooLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace ChapooUI
 {
     public partial class Reservate : Form
     {
-        public Reservate()
+        int TableId;
+        private TableChoice tabelchoice;
+        private Table_Service table_Service = new Table_Service();
+
+        public Reservate(int tableid)
         {
             InitializeComponent();
+            this.TableId = tableid;
+            lbl_TableNumber.Text = ("Tafelnummer : " + TableId.ToString());
 
             List<int> Uren = new List<int>();
             Uren.Add(12);
@@ -43,6 +50,24 @@ namespace ChapooUI
 
             drop_TijdUren.DataSource = Uren;
             drop_TijdMinuten.DataSource = Minuten;
+        }
+
+        private void btn_Terug_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            tabelchoice = new TableChoice(TableId);
+            tabelchoice.ShowDialog();
+            this.Close();
+        }
+
+        private void btn_Gereed_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            table_Service.ChangeTableStatus(TableId, 2);
+            MessageBox.Show($"Tafel {TableId} is gereserveerd onder naam : {txt_NaamKlant.Text}\nTijd {drop_TijdUren.Text}:{drop_TijdMinuten.Text}");
+            tabelchoice = new TableChoice(TableId);
+            tabelchoice.ShowDialog();
+            this.Close();
         }
     }
 }

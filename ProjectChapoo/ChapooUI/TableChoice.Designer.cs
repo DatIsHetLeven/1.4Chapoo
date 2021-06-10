@@ -71,7 +71,7 @@
             this.Btn_FreeTable.Location = new System.Drawing.Point(1592, 43);
             this.Btn_FreeTable.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Btn_FreeTable.Name = "Btn_FreeTable";
-            this.Btn_FreeTable.Size = new System.Drawing.Size(218, 96);
+            this.Btn_FreeTable.Size = new System.Drawing.Size(218, 80);
             this.Btn_FreeTable.TabIndex = 15;
             this.Btn_FreeTable.Text = "Free Table";
             this.Btn_FreeTable.UseVisualStyleBackColor = false;
@@ -82,10 +82,10 @@
             this.btn_Back_To_Dashboard.BackColor = System.Drawing.Color.Red;
             this.btn_Back_To_Dashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_Back_To_Dashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Back_To_Dashboard.Location = new System.Drawing.Point(58, 52);
+            this.btn_Back_To_Dashboard.Location = new System.Drawing.Point(55, 43);
             this.btn_Back_To_Dashboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Back_To_Dashboard.Name = "btn_Back_To_Dashboard";
-            this.btn_Back_To_Dashboard.Size = new System.Drawing.Size(182, 78);
+            this.btn_Back_To_Dashboard.Size = new System.Drawing.Size(182, 68);
             this.btn_Back_To_Dashboard.TabIndex = 14;
             this.btn_Back_To_Dashboard.Text = "Back";
             this.btn_Back_To_Dashboard.UseVisualStyleBackColor = false;
@@ -94,10 +94,11 @@
             // lbl_Show_Table_Number
             // 
             this.lbl_Show_Table_Number.AutoSize = true;
-            this.lbl_Show_Table_Number.Location = new System.Drawing.Point(387, 34);
+            this.lbl_Show_Table_Number.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lbl_Show_Table_Number.Location = new System.Drawing.Point(896, 346);
             this.lbl_Show_Table_Number.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbl_Show_Table_Number.Name = "lbl_Show_Table_Number";
-            this.lbl_Show_Table_Number.Size = new System.Drawing.Size(0, 20);
+            this.lbl_Show_Table_Number.Size = new System.Drawing.Size(0, 25);
             this.lbl_Show_Table_Number.TabIndex = 13;
             // 
             // btn_Reservate
@@ -114,6 +115,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(741, 52);
             this.pictureBox1.Name = "pictureBox1";

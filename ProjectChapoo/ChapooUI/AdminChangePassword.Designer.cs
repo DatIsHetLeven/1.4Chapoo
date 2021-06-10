@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminChangePassword));
             this.panel2 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_AddPrivateKey = new System.Windows.Forms.Button();
@@ -41,32 +42,39 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.btn_AddPrivateKey);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.txt_PrivateKey);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.drop_UserId);
-            this.panel2.Location = new System.Drawing.Point(22, 27);
+            this.panel2.Location = new System.Drawing.Point(-5, -3);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(304, 212);
+            this.panel2.Size = new System.Drawing.Size(544, 431);
             this.panel2.TabIndex = 35;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(86, 10);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(104, 34);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(115, 13);
+            this.label3.Size = new System.Drawing.Size(322, 36);
             this.label3.TabIndex = 28;
             this.label3.Text = "Change password user";
             // 
             // btn_AddPrivateKey
             // 
-            this.btn_AddPrivateKey.BackColor = System.Drawing.SystemColors.Window;
-            this.btn_AddPrivateKey.Location = new System.Drawing.Point(73, 177);
+            this.btn_AddPrivateKey.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.btn_AddPrivateKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btn_AddPrivateKey.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btn_AddPrivateKey.Location = new System.Drawing.Point(133, 297);
+            this.btn_AddPrivateKey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_AddPrivateKey.Name = "btn_AddPrivateKey";
-            this.btn_AddPrivateKey.Size = new System.Drawing.Size(137, 23);
+            this.btn_AddPrivateKey.Size = new System.Drawing.Size(252, 61);
             this.btn_AddPrivateKey.TabIndex = 33;
             this.btn_AddPrivateKey.Text = "Add Private Key";
             this.btn_AddPrivateKey.UseVisualStyleBackColor = false;
@@ -75,42 +83,50 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(20, 59);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(65, 137);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 13);
+            this.label7.Size = new System.Drawing.Size(74, 25);
             this.label7.TabIndex = 29;
             this.label7.Text = "User Id";
             // 
             // txt_PrivateKey
             // 
-            this.txt_PrivateKey.Location = new System.Drawing.Point(89, 94);
+            this.txt_PrivateKey.Location = new System.Drawing.Point(266, 201);
+            this.txt_PrivateKey.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_PrivateKey.Name = "txt_PrivateKey";
-            this.txt_PrivateKey.Size = new System.Drawing.Size(121, 20);
+            this.txt_PrivateKey.Size = new System.Drawing.Size(180, 26);
             this.txt_PrivateKey.TabIndex = 32;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(20, 97);
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(65, 200);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 13);
+            this.label8.Size = new System.Drawing.Size(118, 25);
             this.label8.TabIndex = 30;
             this.label8.Text = "Private Key:";
             // 
             // drop_UserId
             // 
             this.drop_UserId.FormattingEnabled = true;
-            this.drop_UserId.Location = new System.Drawing.Point(89, 56);
+            this.drop_UserId.Location = new System.Drawing.Point(266, 137);
+            this.drop_UserId.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.drop_UserId.Name = "drop_UserId";
-            this.drop_UserId.Size = new System.Drawing.Size(121, 21);
+            this.drop_UserId.Size = new System.Drawing.Size(180, 28);
             this.drop_UserId.TabIndex = 31;
             // 
             // AdminChangePassword
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(349, 267);
+            this.ClientSize = new System.Drawing.Size(524, 411);
             this.Controls.Add(this.panel2);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "AdminChangePassword";
             this.Text = "AdminChangePassword";
             this.panel2.ResumeLayout(false);

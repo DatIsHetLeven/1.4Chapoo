@@ -41,6 +41,8 @@
             this.btn_Go_Drinks = new System.Windows.Forms.Button();
             this.Btn_GoDiner = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Lbl_Table_Drank = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +64,7 @@
             this.Btn_Delete.Location = new System.Drawing.Point(402, 760);
             this.Btn_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(136, 40);
+            this.Btn_Delete.Size = new System.Drawing.Size(141, 40);
             this.Btn_Delete.TabIndex = 50;
             this.Btn_Delete.Text = "Verwijderen";
             this.Btn_Delete.UseVisualStyleBackColor = false;
@@ -190,11 +192,31 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Lbl_Table_Drank
+            // 
+            this.Lbl_Table_Drank.AutoSize = true;
+            this.Lbl_Table_Drank.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.Lbl_Table_Drank.Location = new System.Drawing.Point(309, 75);
+            this.Lbl_Table_Drank.Name = "Lbl_Table_Drank";
+            this.Lbl_Table_Drank.Size = new System.Drawing.Size(0, 36);
+            this.Lbl_Table_Drank.TabIndex = 54;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.Location = new System.Drawing.Point(303, 58);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 36);
+            this.label2.TabIndex = 54;
+            // 
             // BestellenDranken
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1271, 716);
+            this.ClientSize = new System.Drawing.Size(1908, 976);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.Lbl_Table_Drank);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.drop_InvoerAantal);
             this.Controls.Add(this.Btn_Delete);
@@ -234,5 +256,7 @@
         private System.Windows.Forms.Button btn_Go_Drinks;
         private System.Windows.Forms.Button Btn_GoDiner;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label Lbl_Table_Drank;
+        private System.Windows.Forms.Label label2;
     }
 }

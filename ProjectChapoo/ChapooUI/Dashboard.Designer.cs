@@ -53,7 +53,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(1574, 923);
+            this.label3.Location = new System.Drawing.Point(1560, 915);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(156, 25);
@@ -63,7 +63,7 @@
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Blue;
-            this.button2.Location = new System.Drawing.Point(1503, 907);
+            this.button2.Location = new System.Drawing.Point(1489, 899);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(63, 54);
@@ -74,7 +74,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(1574, 863);
+            this.label2.Location = new System.Drawing.Point(1560, 855);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(121, 25);
@@ -84,7 +84,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Lime;
-            this.button1.Location = new System.Drawing.Point(1503, 847);
+            this.button1.Location = new System.Drawing.Point(1489, 839);
             this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(63, 52);
@@ -95,7 +95,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(1574, 800);
+            this.label1.Location = new System.Drawing.Point(1560, 792);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(193, 25);
@@ -105,7 +105,7 @@
             // btn_Red
             // 
             this.btn_Red.BackColor = System.Drawing.Color.Red;
-            this.btn_Red.Location = new System.Drawing.Point(1503, 786);
+            this.btn_Red.Location = new System.Drawing.Point(1489, 778);
             this.btn_Red.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Red.Name = "btn_Red";
             this.btn_Red.Size = new System.Drawing.Size(63, 52);
@@ -129,10 +129,10 @@
             // btn_Tafel_10
             // 
             this.btn_Tafel_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_10.Location = new System.Drawing.Point(1408, 541);
+            this.btn_Tafel_10.Location = new System.Drawing.Point(1411, 500);
             this.btn_Tafel_10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_10.Name = "btn_Tafel_10";
-            this.btn_Tafel_10.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_10.Size = new System.Drawing.Size(226, 186);
             this.btn_Tafel_10.TabIndex = 39;
             this.btn_Tafel_10.Text = "10";
             this.btn_Tafel_10.UseVisualStyleBackColor = true;
@@ -141,10 +141,10 @@
             // btn_Tafel_9
             // 
             this.btn_Tafel_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_9.Location = new System.Drawing.Point(1086, 541);
+            this.btn_Tafel_9.Location = new System.Drawing.Point(1107, 500);
             this.btn_Tafel_9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_9.Name = "btn_Tafel_9";
-            this.btn_Tafel_9.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_9.Size = new System.Drawing.Size(239, 186);
             this.btn_Tafel_9.TabIndex = 38;
             this.btn_Tafel_9.Text = "9";
             this.btn_Tafel_9.UseVisualStyleBackColor = true;
@@ -153,10 +153,10 @@
             // btn_Tafel_8
             // 
             this.btn_Tafel_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_8.Location = new System.Drawing.Point(790, 541);
+            this.btn_Tafel_8.Location = new System.Drawing.Point(811, 500);
             this.btn_Tafel_8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_8.Name = "btn_Tafel_8";
-            this.btn_Tafel_8.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_8.Size = new System.Drawing.Size(234, 186);
             this.btn_Tafel_8.TabIndex = 37;
             this.btn_Tafel_8.Text = "8";
             this.btn_Tafel_8.UseVisualStyleBackColor = true;
@@ -165,10 +165,10 @@
             // btn_Tafel_7
             // 
             this.btn_Tafel_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_7.Location = new System.Drawing.Point(496, 541);
+            this.btn_Tafel_7.Location = new System.Drawing.Point(517, 500);
             this.btn_Tafel_7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_7.Name = "btn_Tafel_7";
-            this.btn_Tafel_7.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_7.Size = new System.Drawing.Size(235, 186);
             this.btn_Tafel_7.TabIndex = 36;
             this.btn_Tafel_7.Text = "7";
             this.btn_Tafel_7.UseVisualStyleBackColor = true;
@@ -177,10 +177,10 @@
             // btn_Tafel_6
             // 
             this.btn_Tafel_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_6.Location = new System.Drawing.Point(190, 541);
+            this.btn_Tafel_6.Location = new System.Drawing.Point(211, 500);
             this.btn_Tafel_6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_6.Name = "btn_Tafel_6";
-            this.btn_Tafel_6.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_6.Size = new System.Drawing.Size(223, 186);
             this.btn_Tafel_6.TabIndex = 35;
             this.btn_Tafel_6.Text = "6";
             this.btn_Tafel_6.UseVisualStyleBackColor = true;
@@ -189,10 +189,10 @@
             // btn_Tafel_5
             // 
             this.btn_Tafel_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_5.Location = new System.Drawing.Point(1408, 230);
+            this.btn_Tafel_5.Location = new System.Drawing.Point(1411, 223);
             this.btn_Tafel_5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_5.Name = "btn_Tafel_5";
-            this.btn_Tafel_5.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_5.Size = new System.Drawing.Size(226, 196);
             this.btn_Tafel_5.TabIndex = 34;
             this.btn_Tafel_5.Text = "5";
             this.btn_Tafel_5.UseVisualStyleBackColor = true;
@@ -201,10 +201,10 @@
             // btn_Tafel_4
             // 
             this.btn_Tafel_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_4.Location = new System.Drawing.Point(1086, 230);
+            this.btn_Tafel_4.Location = new System.Drawing.Point(1107, 223);
             this.btn_Tafel_4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_4.Name = "btn_Tafel_4";
-            this.btn_Tafel_4.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_4.Size = new System.Drawing.Size(239, 196);
             this.btn_Tafel_4.TabIndex = 33;
             this.btn_Tafel_4.Text = "4";
             this.btn_Tafel_4.UseVisualStyleBackColor = true;
@@ -213,10 +213,10 @@
             // btn_Tafel_3
             // 
             this.btn_Tafel_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_3.Location = new System.Drawing.Point(790, 230);
+            this.btn_Tafel_3.Location = new System.Drawing.Point(811, 223);
             this.btn_Tafel_3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_3.Name = "btn_Tafel_3";
-            this.btn_Tafel_3.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_3.Size = new System.Drawing.Size(234, 196);
             this.btn_Tafel_3.TabIndex = 32;
             this.btn_Tafel_3.Text = "3";
             this.btn_Tafel_3.UseVisualStyleBackColor = true;
@@ -225,10 +225,10 @@
             // btn_Tafel_2
             // 
             this.btn_Tafel_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_2.Location = new System.Drawing.Point(496, 230);
+            this.btn_Tafel_2.Location = new System.Drawing.Point(517, 223);
             this.btn_Tafel_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_2.Name = "btn_Tafel_2";
-            this.btn_Tafel_2.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_2.Size = new System.Drawing.Size(235, 196);
             this.btn_Tafel_2.TabIndex = 31;
             this.btn_Tafel_2.Text = "2";
             this.btn_Tafel_2.UseVisualStyleBackColor = true;
@@ -237,10 +237,10 @@
             // btn_Tafel_1
             // 
             this.btn_Tafel_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btn_Tafel_1.Location = new System.Drawing.Point(190, 230);
+            this.btn_Tafel_1.Location = new System.Drawing.Point(211, 223);
             this.btn_Tafel_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Tafel_1.Name = "btn_Tafel_1";
-            this.btn_Tafel_1.Size = new System.Drawing.Size(201, 152);
+            this.btn_Tafel_1.Size = new System.Drawing.Size(223, 196);
             this.btn_Tafel_1.TabIndex = 30;
             this.btn_Tafel_1.Text = "1";
             this.btn_Tafel_1.UseVisualStyleBackColor = true;

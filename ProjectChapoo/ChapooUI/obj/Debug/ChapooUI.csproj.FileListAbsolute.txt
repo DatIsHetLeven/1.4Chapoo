@@ -63,7 +63,6 @@ C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\Ch
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.AdminAllUsers.resources
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.AdminChangePassword.resources
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.AdminCreateUser.resources
-C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.AdminDashboard.resources
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.BarKitchenDashboard.resources
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.Bestellen.resources
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.BestellenDiner.resources

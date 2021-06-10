@@ -41,6 +41,7 @@
             this.Btn_Go_Diner = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.Lbl_Table_Lunch = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).BeginInit();
             this.SuspendLayout();
@@ -50,10 +51,10 @@
             this.Btn_Delete.BackColor = System.Drawing.Color.Red;
             this.Btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Btn_Delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Delete.Location = new System.Drawing.Point(418, 745);
+            this.Btn_Delete.Location = new System.Drawing.Point(410, 770);
             this.Btn_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(130, 40);
+            this.Btn_Delete.Size = new System.Drawing.Size(143, 40);
             this.Btn_Delete.TabIndex = 45;
             this.Btn_Delete.Text = "Verwijderen";
             this.Btn_Delete.UseVisualStyleBackColor = false;
@@ -62,7 +63,7 @@
             // datagrid_Making
             // 
             this.datagrid_Making.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Making.Location = new System.Drawing.Point(114, 185);
+            this.datagrid_Making.Location = new System.Drawing.Point(114, 210);
             this.datagrid_Making.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datagrid_Making.Name = "datagrid_Making";
             this.datagrid_Making.ReadOnly = true;
@@ -82,7 +83,7 @@
             // drop_InvoerAantal
             // 
             this.drop_InvoerAantal.FormattingEnabled = true;
-            this.drop_InvoerAantal.Location = new System.Drawing.Point(1685, 209);
+            this.drop_InvoerAantal.Location = new System.Drawing.Point(1685, 242);
             this.drop_InvoerAantal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.drop_InvoerAantal.Name = "drop_InvoerAantal";
             this.drop_InvoerAantal.Size = new System.Drawing.Size(148, 28);
@@ -107,7 +108,7 @@
             this.btn_bestellen.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_bestellen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_bestellen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_bestellen.Location = new System.Drawing.Point(1204, 745);
+            this.btn_bestellen.Location = new System.Drawing.Point(1204, 770);
             this.btn_bestellen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_bestellen.Name = "btn_bestellen";
             this.btn_bestellen.Size = new System.Drawing.Size(300, 54);
@@ -119,10 +120,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(1680, 185);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label1.Location = new System.Drawing.Point(1680, 210);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
+            this.label1.Size = new System.Drawing.Size(111, 38);
             this.label1.TabIndex = 38;
             this.label1.Text = "Aantal:";
             // 
@@ -131,7 +133,7 @@
             this.datagrid_Lunch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagrid_Lunch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.datagrid_Lunch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Lunch.Location = new System.Drawing.Point(1028, 185);
+            this.datagrid_Lunch.Location = new System.Drawing.Point(1028, 210);
             this.datagrid_Lunch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.datagrid_Lunch.Name = "datagrid_Lunch";
             this.datagrid_Lunch.ReadOnly = true;
@@ -181,7 +183,7 @@
             this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(297, 822);
+            this.button2.Location = new System.Drawing.Point(297, 847);
             this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(378, 54);
@@ -190,12 +192,22 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // Lbl_Table_Lunch
+            // 
+            this.Lbl_Table_Lunch.AutoSize = true;
+            this.Lbl_Table_Lunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.Lbl_Table_Lunch.Location = new System.Drawing.Point(308, 60);
+            this.Lbl_Table_Lunch.Name = "Lbl_Table_Lunch";
+            this.Lbl_Table_Lunch.Size = new System.Drawing.Size(0, 36);
+            this.Lbl_Table_Lunch.TabIndex = 48;
+            // 
             // Bestellen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1882, 1046);
+            this.Controls.Add(this.Lbl_Table_Lunch);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.datagrid_Making);
@@ -234,5 +246,6 @@
         private System.Windows.Forms.Button Btn_Go_Diner;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label Lbl_Table_Lunch;
     }
 }

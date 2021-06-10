@@ -41,6 +41,7 @@
             this.btn_Go_Drinks = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.Lbl_Table_Diner = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).BeginInit();
             this.SuspendLayout();
@@ -189,11 +190,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Lbl_Table_Diner
+            // 
+            this.Lbl_Table_Diner.AutoSize = true;
+            this.Lbl_Table_Diner.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.Lbl_Table_Diner.Location = new System.Drawing.Point(304, 59);
+            this.Lbl_Table_Diner.Name = "Lbl_Table_Diner";
+            this.Lbl_Table_Diner.Size = new System.Drawing.Size(0, 36);
+            this.Lbl_Table_Diner.TabIndex = 50;
+            // 
             // BestellenDiner
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1896, 958);
+            this.Controls.Add(this.Lbl_Table_Diner);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Btn_Delete);
             this.Controls.Add(this.datagrid_Making);
@@ -233,5 +244,6 @@
         private System.Windows.Forms.Button btn_Go_Drinks;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label Lbl_Table_Diner;
     }
 }

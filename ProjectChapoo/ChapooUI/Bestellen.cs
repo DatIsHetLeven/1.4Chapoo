@@ -27,6 +27,8 @@ namespace ChapooUI
         {
             InitializeComponent();
             this.TableId = tableid;
+            Lbl_Table_Lunch.Text = ("Tafelnummer : " + TableId.ToString());
+
             MenuItem_Service menuItem_Service = new MenuItem_Service();
 
             invoerAantal.Add(1);
@@ -92,7 +94,7 @@ namespace ChapooUI
         private void btn_Back_To_Dashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            TableChoice tableChoiceView = new TableChoice(1);   // voor nu gaat hij altijd terug naar tafel 1 tafel menu
+            TableChoice tableChoiceView = new TableChoice(TableId);
             tableChoiceView.ShowDialog();
             this.Close();
         }
@@ -116,6 +118,7 @@ namespace ChapooUI
                 string menuitem = datagrid_Making.Rows[item].Cells["menuItem"].FormattedValue.ToString();
                 selectedItems_Service.updateStatus(menuitem, TableId, 2);
                 ShowSelectedItems();
+                MessageBox.Show("Item is verzonden!");  // kan alleen van de lijst per item het versturen naar de datbase
             }
             catch (Exception)
             {

@@ -20,7 +20,6 @@ namespace ChapooUI
         List<User> userLists = new List<User>();
         private AdminChangePassword adminChangePassWord;
         private AdminCreateUser adminCreateUser;
-        private AdminDashboard adminDashboard;
 
         public AdminAllUsers()
         {
@@ -51,15 +50,13 @@ namespace ChapooUI
             adminChangePassWord.GetUserList(userLists);
             adminChangePassWord.ShowDialog();
         }
-        //Go back to dashboard
+        //Go back to login screen
         private void btn_BackAdminDasboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            adminDashboard = new AdminDashboard();
-            adminDashboard.ShowDialog();
+            login logindashboard = new login();
+            logindashboard.ShowDialog();
             this.Close();
         }
-
-
     }
 }
