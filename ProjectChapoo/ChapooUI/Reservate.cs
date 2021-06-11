@@ -14,7 +14,6 @@ namespace ChapooUI
     public partial class Reservate : Form
     {
         int TableId;
-        private TableChoice tabelchoice;
         private Table_Service table_Service = new Table_Service();
 
         public Reservate(int tableid)
@@ -55,8 +54,6 @@ namespace ChapooUI
         private void btn_Terug_Click(object sender, EventArgs e)
         {
             this.Hide();
-            tabelchoice = new TableChoice(TableId);
-            tabelchoice.ShowDialog();
             this.Close();
         }
 
@@ -65,8 +62,6 @@ namespace ChapooUI
             this.Hide();
             table_Service.ChangeTableStatus(TableId, 2);
             MessageBox.Show($"Tafel {TableId} is gereserveerd onder naam : {txt_NaamKlant.Text}\nTijd {drop_TijdUren.Text}:{drop_TijdMinuten.Text}");
-            tabelchoice = new TableChoice(TableId);
-            tabelchoice.ShowDialog();
             this.Close();
         }
     }

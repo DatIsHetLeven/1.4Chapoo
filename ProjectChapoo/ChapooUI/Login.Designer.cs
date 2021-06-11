@@ -41,13 +41,13 @@
             // 
             // btn_resetPsswrd
             // 
-            this.btn_resetPsswrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btn_resetPsswrd.Location = new System.Drawing.Point(832, 714);
+            this.btn_resetPsswrd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btn_resetPsswrd.Location = new System.Drawing.Point(803, 715);
             this.btn_resetPsswrd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_resetPsswrd.Name = "btn_resetPsswrd";
-            this.btn_resetPsswrd.Size = new System.Drawing.Size(196, 37);
+            this.btn_resetPsswrd.Size = new System.Drawing.Size(256, 45);
             this.btn_resetPsswrd.TabIndex = 21;
-            this.btn_resetPsswrd.Text = "Forgot Password";
+            this.btn_resetPsswrd.Text = "Wachtwoord vergeten?";
             this.btn_resetPsswrd.UseVisualStyleBackColor = true;
             this.btn_resetPsswrd.Click += new System.EventHandler(this.btn_resetPsswrd_Click);
             // 
@@ -56,7 +56,7 @@
             this.btn_Inloggen.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_Inloggen.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.btn_Inloggen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Inloggen.Location = new System.Drawing.Point(769, 811);
+            this.btn_Inloggen.Location = new System.Drawing.Point(773, 829);
             this.btn_Inloggen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Inloggen.Name = "btn_Inloggen";
             this.btn_Inloggen.Size = new System.Drawing.Size(319, 72);

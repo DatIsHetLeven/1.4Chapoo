@@ -107,6 +107,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Btn_CreateUser);
             this.panel1.Controls.Add(this.Btn_ChangePassword);
             this.panel1.Controls.Add(this.panel3);
@@ -131,9 +132,9 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(763, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(744, 21);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(369, 190);
+            this.pictureBox1.Size = new System.Drawing.Size(389, 214);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 29;
             this.pictureBox1.TabStop = false;

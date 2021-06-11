@@ -53,10 +53,8 @@ namespace ChapooUI
         //Reservate table
         private void btn_Reservate_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Reservate dashboardreserveren = new Reservate(TableId); // opens reservate form 
+            Reservate dashboardreserveren = new Reservate(TableId);
             dashboardreserveren.ShowDialog();
-            this.Close();
         }
         //Make table Free
         private void Btn_FreeTable_Click(object sender, EventArgs e)
