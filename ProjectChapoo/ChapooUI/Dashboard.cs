@@ -14,14 +14,16 @@ namespace ChapooUI
 {
     public partial class Dashboard : Form
     {
+        private int UserId;
+
         Table_Service table_Service = new Table_Service();
         List<Table> tableId = new List<Table>();
-        private int UserId;
+
         public void DashboardUser(User user)
         {
             UserId = user.userId;
             lbl_UserName.Tag = user;
-            lbl_UserName.Text = $"Geberuiker:{user.userName}";
+            lbl_UserName.Text = $"Ingelogd als: {user.userName}";
         }
         public Dashboard()
         {
@@ -39,7 +41,6 @@ namespace ChapooUI
             TableButtonList.Add(btn_Tafel_8);
             TableButtonList.Add(btn_Tafel_9);
             TableButtonList.Add(btn_Tafel_10);
-
 
             // Check status
             foreach (Button btn in TableButtonList)
@@ -59,7 +60,7 @@ namespace ChapooUI
                     break;
                 }
             }
-        }
+        }       
         //Go to TableChoice.cs, method for table buttons
         private void goToTableChoiche(string tableId)
         {
@@ -69,7 +70,6 @@ namespace ChapooUI
             tableChoice.ShowDialog();
             this.Close();
         }
-
         //Table1
         private void btn_Tafel_1_Click(object sender, EventArgs e)
         {

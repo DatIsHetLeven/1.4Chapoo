@@ -24,7 +24,7 @@ namespace ChapooUI
         {
             InitializeComponent();
             this.TableId = tableId;
-            lbl_Show_Table_Number.Text = ("Tablenumber : " + TableId.ToString());
+            lbl_Show_Table_Number.Text = ("Tafelnummer : " + TableId.ToString());
         }
         //Go to menu -> order
         private void btn_bestellen_Click(object sender, EventArgs e)
@@ -53,14 +53,14 @@ namespace ChapooUI
         //Reservate table
         private void btn_Reservate_Click(object sender, EventArgs e)
         {
-            table_Service.ChangeTableStatus(TableId,2);
-            MessageBox.Show("Table has been reservated");
+            Reservate dashboardreserveren = new Reservate(TableId);
+            dashboardreserveren.ShowDialog();
         }
         //Make table Free
         private void Btn_FreeTable_Click(object sender, EventArgs e)
         {
             table_Service.ChangeTableStatus(TableId,1);
-            MessageBox.Show("Table has been cleared");
+            MessageBox.Show("Tafel is vrij gemaakt!");
         }
     }
 }

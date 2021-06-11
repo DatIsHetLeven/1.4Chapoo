@@ -22,3 +22,15 @@ C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.CopyComplete
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.dll
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.pdb
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapooLogic.dll
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapooLogic.pdb
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapoModel.dll
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapooDAL.dll
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapoModel.pdb
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapooDAL.pdb
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\bin\Debug\ChapooDAL.dll.config
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.CoreCompileInputs.cache
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.CopyComplete
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.dll
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.pdb
+C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooLogic\obj\Debug\ChapooLogic.csproj.AssemblyReference.cache

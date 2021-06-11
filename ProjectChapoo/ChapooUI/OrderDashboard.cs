@@ -82,8 +82,8 @@ namespace ChapooUI
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Dashboard menuView = new Dashboard();
-            menuView.ShowDialog();
+            TableChoice tableChoiceView = new TableChoice(TableId);
+            tableChoiceView.ShowDialog();
             this.Close();
         }
     }

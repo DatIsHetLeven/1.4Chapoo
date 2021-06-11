@@ -19,6 +19,7 @@ namespace ChapooLogic
             MaxId = Order_DAO.GetMaxId();
             return MaxId;
         }
+        // service layer to create order
         public void createOrder(int orderId, int tableId, string menuItem, int prijs)
         {
             Order_DAO.InsertOrder(orderId, tableId, menuItem, prijs);

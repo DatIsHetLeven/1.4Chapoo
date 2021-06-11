@@ -15,16 +15,20 @@ namespace ChapooUI
     public partial class Bestellen : Form
     {
         int TableId;
+
         List<ChapoModel.MenuItem> menuItems = new List<ChapoModel.MenuItem>();
         List<SelectedItem> selectedItemsMaking = new List<SelectedItem>();
         Table_Service table_Service = new Table_Service();
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         List<ChapoModel.MenuItem> menuItemList = new List<ChapoModel.MenuItem>();
         List<int> invoerAantal = new List<int>();
+
         public Bestellen(int tableid)
         {
             InitializeComponent();
             this.TableId = tableid;
+            Lbl_Table_Lunch.Text = ("Tafelnummer : " + TableId.ToString());
+
             MenuItem_Service menuItem_Service = new MenuItem_Service();
 
             invoerAantal.Add(1);
@@ -62,20 +66,14 @@ namespace ChapooUI
             if (invoer > 0)
             {
                 //Daadwerklijke prijs berekenen. 
-                int verm = prijs1 * invoer;
-                MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + verm.ToString());
-                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm);
+                int totaalprijs = prijs1 * invoer;
+                MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + totaalprijs.ToString());
+                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), totaalprijs);
                 table_Service.ChangeTableStatus(TableId,3);
             }
             ShowSelectedItems();
         }
-        //Button refresh
-        private void Btn_Refresh_Click(object sender, EventArgs e)
-        {
-            List<SelectedItem> selectedItemsMaking = new List<SelectedItem>();
-            selectedItemsMaking = selectedItems_Service.GetMakingOrder(TableId,1);
-            datagrid_Making.DataSource = selectedItemsMaking;
-        }
+
         //Go Drinks
         private void Btn_Go_Drinks_Click(object sender, EventArgs e)
         {
@@ -96,8 +94,8 @@ namespace ChapooUI
         private void btn_Back_To_Dashboard_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Dashboard dashboardView = new Dashboard();
-            dashboardView.ShowDialog();
+            TableChoice tableChoiceView = new TableChoice(TableId);
+            tableChoiceView.ShowDialog();
             this.Close();
         }
         private void ShowSelectedItems()
@@ -114,20 +112,21 @@ namespace ChapooUI
         private void button2_Click(object sender, EventArgs e)
         {
             ShowSelectedItems();
-            try
+            try  // met nul bestellingen verwijderen geeft een error....
             {
                 int item = datagrid_Making.CurrentCell.RowIndex;
                 string menuitem = datagrid_Making.Rows[item].Cells["menuItem"].FormattedValue.ToString();
                 selectedItems_Service.updateStatus(menuitem, TableId, 2);
                 ShowSelectedItems();
+                MessageBox.Show("Item is verzonden!");  // kan alleen van de lijst per item het versturen naar de datbase
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Niks om te bestellen");
             }
         }
 
+        // delete item van actuele bestelling 
         private void Btn_Delete_Click(object sender, EventArgs e)
         {
             int item = datagrid_Making.CurrentCell.RowIndex;

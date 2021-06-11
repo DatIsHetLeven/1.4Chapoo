@@ -64,12 +64,6 @@
     <Compile Include="AdminCreateUser.Designer.cs">
       <DependentUpon>AdminCreateUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="AdminDashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AdminDashboard.Designer.cs">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="BarKitchenDashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,9 +140,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminCreateUser.resx">
       <DependentUpon>AdminCreateUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="AdminDashboard.resx">
-      <DependentUpon>AdminDashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="BarKitchenDashboard.resx">
       <DependentUpon>BarKitchenDashboard.cs</DependentUpon>

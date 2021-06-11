@@ -69,5 +69,10 @@ namespace ChapooUI
             }
             drop_UserRol.DataSource = userTitle;
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            //
+        }
     }
 }
