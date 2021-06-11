@@ -36,7 +36,7 @@ namespace ChapooUI
                 if (user.userName != "")
                 {
                     //If Admin
-                    if (user.userCode == 3)
+                    if (user.title == "Admin")
                     {
                         this.Hide();
                         AdminAllUsers dashboard = new AdminAllUsers();
@@ -44,7 +44,7 @@ namespace ChapooUI
                         this.Close();
                     }
                     //If bediende 
-                    else if (user.userCode == 1)
+                    else if (user.title == "server")
                     {
                         this.Hide();
                         Dashboard = new Dashboard();
@@ -53,6 +53,13 @@ namespace ChapooUI
                         this.Close();
                     }
                     //if barman
+                    else if (user.title == "Barman")
+                    {
+                        this.Hide();
+                        BarKitchenDashboard = new BarKitchenDashboard(user);
+                        BarKitchenDashboard.ShowDialog();
+                        this.Close();
+                    }
                     else
                     {
                         this.Hide();

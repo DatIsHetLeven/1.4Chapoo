@@ -42,6 +42,8 @@ namespace ChapooUI
                     userRol = 2;
                 else if (rol == "Admin")
                     userRol = 3;
+                else if (rol == "Keuken")
+                    userRol = 4;
 
                 user_Service.createUser(userName, password, userRol);
                 MessageBox.Show("User has been created");

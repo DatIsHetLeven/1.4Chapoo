@@ -16,8 +16,10 @@ namespace ChapooUI
     {
         private int UserId;
 
-        Table_Service table_Service = new Table_Service();
-        List<Table> tableId = new List<Table>();
+        private Table_Service table_Service = new Table_Service();
+        private List<Table> tableId = new List<Table>();
+        private Table table;
+        private bool reservated = false;
 
         public void DashboardUser(User user)
         {
@@ -48,7 +50,7 @@ namespace ChapooUI
                 foreach (var i in tableId)
                 {
                     //Give tag Prop
-                    btn.Tag = i.TableId;
+                    btn.Tag = i;
                     //Check status of table
                     if (i.TableStatus == 1)//Status = free
                         btn.BackColor = Color.Lime;
@@ -62,63 +64,79 @@ namespace ChapooUI
             }
         }       
         //Go to TableChoice.cs, method for table buttons
-        private void goToTableChoiche(string tableId)
+        private void goToTableChoiche(int tableId, int status)
         {
-            int tableNumber = int.Parse(tableId);
+            if (status == 2)
+            {
+                reservated = true;
+            }
+
             this.Hide();
-            TableChoice tableChoice = new TableChoice(tableNumber);
+            TableChoice tableChoice = new TableChoice(tableId);
+            tableChoice.ValidateButons(reservated);
             tableChoice.ShowDialog();
+            
             this.Close();
         }
         //Table1
         private void btn_Tafel_1_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_1.Tag.ToString());
+            table = (Table)btn_Tafel_1.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Table 2
         private void btn_Tafel_2_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_2.Tag.ToString());
+            table = (Table)btn_Tafel_2.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Table3
         private void btn_Tafel_3_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_3.Tag.ToString());
-        } 
+            table = (Table)btn_Tafel_3.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
+        }
         //Table 4
         private void btn_Tafel_4_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_4.Tag.ToString());
+            table = (Table)btn_Tafel_4.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Table 5
         private void btn_Tafel_5_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_5.Tag.ToString());
+            table = (Table)btn_Tafel_5.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Tble 6
         private void btn_Tafel_6_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_6.Tag.ToString());
+            table = (Table)btn_Tafel_6.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Table 7
         private void btn_Tafel_7_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_7.Tag.ToString());
+            table = (Table)btn_Tafel_7.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Table 8
         private void btn_Tafel_8_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_8.Tag.ToString());
+            table = (Table)btn_Tafel_8.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Table 9
         private void btn_Tafel_9_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_9.Tag.ToString());
+            table = (Table)btn_Tafel_9.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Table 10
         private void btn_Tafel_10_Click(object sender, EventArgs e)
         {
-            goToTableChoiche(btn_Tafel_10.Tag.ToString());
+            table = (Table)btn_Tafel_10.Tag;
+            goToTableChoiche(table.TableId, table.TableStatus);
         }
         //Log out -> login page
         private void btn_LogOut_Click(object sender, EventArgs e)

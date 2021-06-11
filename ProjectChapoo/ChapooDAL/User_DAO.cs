@@ -19,7 +19,7 @@ namespace ChapooDAL
         //Check if user does exist.(login)
         public User GetUser(string userName, string password)
         {
-            string query = "select [UserId], [UserName], [userPassword], [UserCode], [userKey] from [User] where UserName = '" + userName + "' and   userPassword =  '" + password + "' ";
+            string query = "select [UserId], [UserName], [userPassword], [UserCode], [userKey], [Title] from [User],[UserRol] where [UserRol].[Rol_Id] = [user].[userCode] and UserName = '" + userName + "' and   userPassword =  '" + password + "' ";
             return RetrieveUser(ExecuteSelectQuery(query));
         }
         //If user exist -> fill all the info
@@ -29,6 +29,7 @@ namespace ChapooDAL
             {
                 userId = (int)i["UserId"];
                 userName = (string)i["userName"].ToString();
+                title = (string)i["Title"].ToString();
                 userPassword = (string)i["userPassword"].ToString();
                 userCode = (int)i["UserCode"];
             }

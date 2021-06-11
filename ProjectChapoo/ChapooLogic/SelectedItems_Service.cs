@@ -14,9 +14,9 @@ namespace ChapooLogic
     {
         SelectedItems_DAO selectedItems_DAO = new SelectedItems_DAO();
         //Create new  -> insert db
-        public void selectedItem(int tableId, string item, int prijs)
+        public void selectedItem(int tableId, string item, int prijs, int itemid)
         {
-            selectedItems_DAO.InsertNewSelectedItem(tableId, item, prijs);
+            selectedItems_DAO.InsertNewSelectedItem(tableId, item, prijs, itemid);
         }
         public void selectedItemToKitchen(int tableId, string item, int prijs)
         {

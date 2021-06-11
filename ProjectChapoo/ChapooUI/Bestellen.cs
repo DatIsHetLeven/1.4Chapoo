@@ -47,7 +47,7 @@ namespace ChapooUI
             menuItemList = menuItem_Service.GetMenuItems();
             foreach (var i in menuItemList)
             {
-                if (i.MenuId == 2)
+                if (i.MenuId == 1)
                 {
                     menuItems.Add(i);
                     datagrid_Lunch.DataSource = menuItems;
@@ -68,7 +68,7 @@ namespace ChapooUI
                 //Daadwerklijke prijs berekenen. 
                 int totaalprijs = prijs1 * invoer;
                 MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + totaalprijs.ToString());
-                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), totaalprijs);
+                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), totaalprijs,1);
                 table_Service.ChangeTableStatus(TableId,3);
             }
             ShowSelectedItems();

@@ -10,9 +10,9 @@ namespace ChapooDAL
     public class SelectedItems_DAO : Base
     {
         //Insert
-        public void InsertNewSelectedItem(int tableid, string item, int prijs)
+        public void InsertNewSelectedItem(int tableid, string item, int prijs, int itemid)
         {
-            string query = $"Insert into[selecteditems] (tableId, menuItem, Prijs, status) Values('{tableid}', '{item}', '{prijs}', 1)";
+            string query = $"Insert into[selecteditems] (tableId, menuItem, Prijs, status, itemid) Values('{tableid}', '{item}', '{prijs}', 1, '{itemid}')";
             ExecuteEditQuery(query);
         }
 
@@ -25,13 +25,13 @@ namespace ChapooDAL
         //Select for bar& kitchen
         public List<SelectedItem> GetSelectedItems()
         {
-            string query = "select tableId, menuItem, Prijs, status from [SelectedItems] where status = 2";
-            return GetItems(ExecuteSelectQuery(query));
+            string query = "select tableId, menuItem, Prijs, status, itemid from [SelectedItems] where status = 2";
+            return GetItemss(ExecuteSelectQuery(query));
         }
         //Select order
         public List<SelectedItem> GetSelectedOrder(int tableid)
         {
-            string query = $"select tableId, menuItem, Prijs, status from [SelectedItems] where tableId = '{tableid}' and status =3";
+            string query = $"select tableId, menuItem, Prijs, status, [itemId] from [SelectedItems] where tableId = '{tableid}' and status =3";
             return GetItems(ExecuteSelectQuery(query));
         }
         //Return
@@ -41,6 +41,7 @@ namespace ChapooDAL
             string menuItem = "";
             int Prijs = 0;
             int status = 0;
+            int itemid = 0;
             List<SelectedItem> selectedItems = new List<SelectedItem>();
             foreach (DataRow item in dataTable.Rows)
             {
@@ -49,7 +50,7 @@ namespace ChapooDAL
                 menuItem = (string)item["menuItem"].ToString();
                 Prijs = (int)item["Prijs"];
                 status = (int)item["status"];
-                SelectedItem selectedItem = new SelectedItem(tableId, menuItem, Prijs, status);
+                SelectedItem selectedItem = new SelectedItem(tableId, menuItem, Prijs, status, itemid);
                 {
                     selectedItems.Add(selectedItem);
                 }
@@ -73,6 +74,31 @@ namespace ChapooDAL
         {
             string query = $"select tableId, menuItem, Prijs, status from [SelectedItems] where tableId = '{tableid}' and status ='{status}'";
             return GetItems(ExecuteSelectQuery(query));
+        }
+
+        //Return
+        private List<SelectedItem> GetItemss(DataTable dataTable)
+        {
+            int tableId = 0;
+            string menuItem = "";
+            int Prijs = 0;
+            int status = 0;
+            int itemid = 0;
+            List<SelectedItem> selectedItems = new List<SelectedItem>();
+            foreach (DataRow item in dataTable.Rows)
+            {
+
+                tableId = (int)item["tableId"];
+                menuItem = (string)item["menuItem"].ToString();
+                Prijs = (int)item["Prijs"];
+                status = (int)item["status"];
+                itemid = (int)item["itemid"];
+                SelectedItem selectedItem = new SelectedItem(tableId, menuItem, Prijs, status, itemid);
+                {
+                    selectedItems.Add(selectedItem);
+                }
+            }
+            return selectedItems;
         }
 
     }

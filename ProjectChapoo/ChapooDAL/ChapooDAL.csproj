@@ -46,6 +46,7 @@
     <Compile Include="MenuItem_DAO.cs" />
     <Compile Include="Order_DAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reservate_DAO.cs" />
     <Compile Include="SelectedItems_DAO.cs" />
     <Compile Include="Table_DAO.cs" />
     <Compile Include="User_DAO.cs" />

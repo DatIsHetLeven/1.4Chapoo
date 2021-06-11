@@ -16,7 +16,10 @@ namespace ChapooUI
     {
         User User;
         List<SelectedItem> selectedItems;
-        SelectedItems_Service selectedItems_Service = new SelectedItems_Service();  
+        SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
+
+        List<SelectedItem> selectedItemsBarman;
+        List<SelectedItem> selectedItemsKeuken;
         public BarKitchenDashboard(User user)
         {
             InitializeComponent();
@@ -27,8 +30,35 @@ namespace ChapooUI
         {
             selectedItems = new List<SelectedItem>();
             selectedItems = selectedItems_Service.GetSelectedItems();
-            datgrid_OpenOrder.DataSource = selectedItems;
+            selectedItemsBarman = new List<SelectedItem>();
+            selectedItemsKeuken = new List<SelectedItem>();
+
+            if (User.userId == 2)
+            {
+                foreach (var item in selectedItems)
+                {
+                    if (item.menuId == 3)
+                    {
+                        selectedItemsBarman.Add(item);
+                    }
+                }
+                datgrid_OpenOrder.DataSource = selectedItemsBarman;
+            }
+            else
+            {
+                foreach (var item in selectedItems)
+                {
+                    if (item.menuId != 3)
+                    {
+                        selectedItemsKeuken.Add(item);
+                    }
+                }
+                datgrid_OpenOrder.DataSource = selectedItemsKeuken;
+            }
+
         }
+
+       
 
         private void btn_UpdateStatus_Click(object sender, EventArgs e)
         {
@@ -39,10 +69,6 @@ namespace ChapooUI
                 string menuitem = datgrid_OpenOrder.Rows[item].Cells["menuItem"].FormattedValue.ToString();
                 string tableId = datgrid_OpenOrder.Rows[item].Cells["tableid"].FormattedValue.ToString();
                 selectedItems_Service.updateStatus(menuitem, int.Parse(tableId), 3);
-
-                // refresh total orders when hit ready button for an item
-                selectedItems = selectedItems_Service.GetSelectedItems();
-                datgrid_OpenOrder.DataSource = selectedItems;
             }
             catch (Exception)
             {

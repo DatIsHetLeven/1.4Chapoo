@@ -40,7 +40,6 @@ C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.Table
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.AdminAllUsers.resources
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.AdminChangePassword.resources
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.AdminCreateUser.resources
-C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.AdminDashboard.resources
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.BarKitchenDashboard.resources
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.Bestellen.resources
 C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.BestellenDiner.resources
@@ -80,3 +79,4 @@ C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\Ch
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.csproj.CopyComplete
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.exe
 C:\Users\twanv\OneDrive\Bureaublad\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.pdb
+C:\Users\Murat\Desktop\1.4Chapoo\ProjectChapoo\ChapooUI\obj\Debug\ChapooUI.ReservationShow.resources

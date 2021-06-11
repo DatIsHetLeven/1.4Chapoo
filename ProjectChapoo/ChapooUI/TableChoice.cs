@@ -15,6 +15,7 @@ namespace ChapooUI
     public partial class TableChoice : Form
     {
         private Table_Service table_Service = new Table_Service();
+        private Reservate_Service reservate_Service = new Reservate_Service();
         private int TableId;
         private Dashboard dashboard;
         private OrderDashboard orderDashboard;
@@ -26,6 +27,17 @@ namespace ChapooUI
             this.TableId = tableId;
             lbl_Show_Table_Number.Text = ("Tafelnummer : " + TableId.ToString());
         }
+
+        public void ValidateButons(bool reservated)
+        {
+            if (reservated == true)
+            {
+                btn_Reservate.Hide();
+                btn_GetReservate.Show();
+                MessageBox.Show("hetw ertk");
+            }
+        }
+
         //Go to menu -> order
         private void btn_bestellen_Click(object sender, EventArgs e)
         {
@@ -60,7 +72,14 @@ namespace ChapooUI
         private void Btn_FreeTable_Click(object sender, EventArgs e)
         {
             table_Service.ChangeTableStatus(TableId,1);
+            reservate_Service.DeleteReservation(TableId);
             MessageBox.Show("Tafel is vrij gemaakt!");
+        }
+
+        private void btn_GetReservate_Click(object sender, EventArgs e)
+        {
+            ReservationShow reservationShow = new ReservationShow(TableId);
+            reservationShow.ShowDialog();
         }
     }
 }

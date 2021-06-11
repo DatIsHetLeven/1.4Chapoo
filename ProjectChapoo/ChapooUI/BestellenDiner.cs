@@ -51,7 +51,7 @@ namespace ChapooUI
             {
                 int verm = prijs1 * invoer;
                 MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + verm.ToString());
-                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm);
+                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm,2);
                 table_Service.ChangeTableStatus(TableId,3);
             }
             ShowSelectedItems();

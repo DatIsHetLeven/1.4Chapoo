@@ -51,10 +51,9 @@
             this.Btn_Delete.BackColor = System.Drawing.Color.Red;
             this.Btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Btn_Delete.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Delete.Location = new System.Drawing.Point(410, 770);
-            this.Btn_Delete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Btn_Delete.Location = new System.Drawing.Point(273, 500);
             this.Btn_Delete.Name = "Btn_Delete";
-            this.Btn_Delete.Size = new System.Drawing.Size(143, 40);
+            this.Btn_Delete.Size = new System.Drawing.Size(95, 26);
             this.Btn_Delete.TabIndex = 45;
             this.Btn_Delete.Text = "Verwijderen";
             this.Btn_Delete.UseVisualStyleBackColor = false;
@@ -63,30 +62,27 @@
             // datagrid_Making
             // 
             this.datagrid_Making.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Making.Location = new System.Drawing.Point(114, 210);
-            this.datagrid_Making.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.datagrid_Making.Location = new System.Drawing.Point(76, 136);
             this.datagrid_Making.Name = "datagrid_Making";
             this.datagrid_Making.ReadOnly = true;
             this.datagrid_Making.RowHeadersWidth = 62;
-            this.datagrid_Making.Size = new System.Drawing.Size(730, 520);
+            this.datagrid_Making.Size = new System.Drawing.Size(487, 338);
             this.datagrid_Making.TabIndex = 44;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Gray;
-            this.panel4.Location = new System.Drawing.Point(933, -34);
-            this.panel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel4.Location = new System.Drawing.Point(622, -22);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(10, 1099);
+            this.panel4.Size = new System.Drawing.Size(7, 714);
             this.panel4.TabIndex = 42;
             // 
             // drop_InvoerAantal
             // 
             this.drop_InvoerAantal.FormattingEnabled = true;
-            this.drop_InvoerAantal.Location = new System.Drawing.Point(1685, 242);
-            this.drop_InvoerAantal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.drop_InvoerAantal.Location = new System.Drawing.Point(1123, 157);
             this.drop_InvoerAantal.Name = "drop_InvoerAantal";
-            this.drop_InvoerAantal.Size = new System.Drawing.Size(148, 28);
+            this.drop_InvoerAantal.Size = new System.Drawing.Size(100, 21);
             this.drop_InvoerAantal.TabIndex = 41;
             // 
             // btn_Back_To_Dashboard
@@ -94,10 +90,9 @@
             this.btn_Back_To_Dashboard.BackColor = System.Drawing.Color.Red;
             this.btn_Back_To_Dashboard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_Back_To_Dashboard.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Back_To_Dashboard.Location = new System.Drawing.Point(42, 43);
-            this.btn_Back_To_Dashboard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_Back_To_Dashboard.Location = new System.Drawing.Point(28, 28);
             this.btn_Back_To_Dashboard.Name = "btn_Back_To_Dashboard";
-            this.btn_Back_To_Dashboard.Size = new System.Drawing.Size(130, 52);
+            this.btn_Back_To_Dashboard.Size = new System.Drawing.Size(87, 34);
             this.btn_Back_To_Dashboard.TabIndex = 40;
             this.btn_Back_To_Dashboard.Text = "Back";
             this.btn_Back_To_Dashboard.UseVisualStyleBackColor = false;
@@ -108,10 +103,9 @@
             this.btn_bestellen.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_bestellen.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_bestellen.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_bestellen.Location = new System.Drawing.Point(1204, 770);
-            this.btn_bestellen.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_bestellen.Location = new System.Drawing.Point(803, 500);
             this.btn_bestellen.Name = "btn_bestellen";
-            this.btn_bestellen.Size = new System.Drawing.Size(300, 54);
+            this.btn_bestellen.Size = new System.Drawing.Size(200, 35);
             this.btn_bestellen.TabIndex = 39;
             this.btn_bestellen.Text = "Toevoegen";
             this.btn_bestellen.UseVisualStyleBackColor = false;
@@ -121,10 +115,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label1.Location = new System.Drawing.Point(1680, 210);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(1120, 136);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 38);
+            this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 38;
             this.label1.Text = "Aantal:";
             // 
@@ -133,21 +126,19 @@
             this.datagrid_Lunch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.datagrid_Lunch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.datagrid_Lunch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Lunch.Location = new System.Drawing.Point(1028, 210);
-            this.datagrid_Lunch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.datagrid_Lunch.Location = new System.Drawing.Point(685, 136);
             this.datagrid_Lunch.Name = "datagrid_Lunch";
             this.datagrid_Lunch.ReadOnly = true;
             this.datagrid_Lunch.RowHeadersWidth = 62;
-            this.datagrid_Lunch.Size = new System.Drawing.Size(622, 520);
+            this.datagrid_Lunch.Size = new System.Drawing.Size(415, 338);
             this.datagrid_Lunch.TabIndex = 37;
             // 
             // Btn_Go_Drinks
             // 
             this.Btn_Go_Drinks.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Btn_Go_Drinks.Location = new System.Drawing.Point(1576, 43);
-            this.Btn_Go_Drinks.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Btn_Go_Drinks.Location = new System.Drawing.Point(1051, 28);
             this.Btn_Go_Drinks.Name = "Btn_Go_Drinks";
-            this.Btn_Go_Drinks.Size = new System.Drawing.Size(202, 75);
+            this.Btn_Go_Drinks.Size = new System.Drawing.Size(135, 49);
             this.Btn_Go_Drinks.TabIndex = 36;
             this.Btn_Go_Drinks.Text = "Dranken";
             this.Btn_Go_Drinks.UseVisualStyleBackColor = true;
@@ -156,10 +147,9 @@
             // Btn_Go_Diner
             // 
             this.Btn_Go_Diner.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Btn_Go_Diner.Location = new System.Drawing.Point(1302, 43);
-            this.Btn_Go_Diner.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Btn_Go_Diner.Location = new System.Drawing.Point(868, 28);
             this.Btn_Go_Diner.Name = "Btn_Go_Diner";
-            this.Btn_Go_Diner.Size = new System.Drawing.Size(202, 75);
+            this.Btn_Go_Diner.Size = new System.Drawing.Size(135, 49);
             this.Btn_Go_Diner.TabIndex = 35;
             this.Btn_Go_Diner.Text = "Diner";
             this.Btn_Go_Diner.UseVisualStyleBackColor = true;
@@ -170,10 +160,9 @@
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(1028, 43);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(685, 28);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(202, 75);
+            this.button1.Size = new System.Drawing.Size(135, 49);
             this.button1.TabIndex = 34;
             this.button1.Text = "Lunch";
             this.button1.UseVisualStyleBackColor = false;
@@ -183,10 +172,9 @@
             this.button2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(297, 847);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button2.Location = new System.Drawing.Point(198, 551);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(378, 54);
+            this.button2.Size = new System.Drawing.Size(252, 35);
             this.button2.TabIndex = 47;
             this.button2.Text = "Bestellen";
             this.button2.UseVisualStyleBackColor = false;
@@ -196,17 +184,17 @@
             // 
             this.Lbl_Table_Lunch.AutoSize = true;
             this.Lbl_Table_Lunch.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.Lbl_Table_Lunch.Location = new System.Drawing.Point(308, 60);
+            this.Lbl_Table_Lunch.Location = new System.Drawing.Point(205, 39);
+            this.Lbl_Table_Lunch.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.Lbl_Table_Lunch.Name = "Lbl_Table_Lunch";
-            this.Lbl_Table_Lunch.Size = new System.Drawing.Size(0, 36);
+            this.Lbl_Table_Lunch.Size = new System.Drawing.Size(0, 25);
             this.Lbl_Table_Lunch.TabIndex = 48;
             // 
             // Bestellen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(1882, 1046);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.Lbl_Table_Lunch);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Btn_Delete);
@@ -221,7 +209,6 @@
             this.Controls.Add(this.Btn_Go_Diner);
             this.Controls.Add(this.button1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Bestellen";
             this.Text = "Bestellen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

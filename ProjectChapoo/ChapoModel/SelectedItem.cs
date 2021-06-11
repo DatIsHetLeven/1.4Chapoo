@@ -12,13 +12,15 @@ namespace ChapoModel
         public string menuItem { get; set; }
         public int prijs { get; set; }
         public int status { get; set; }
+        public int menuId { get; set; }
 
-        public SelectedItem(int TableId, string MenuItem, int Prijs, int Status)
+        public SelectedItem(int TableId, string MenuItem, int Prijs, int Status, int MenuId)
         {
             this.tableid = TableId;
             this.menuItem = MenuItem;
             this.prijs = Prijs;
             this.status = Status;
+            this.menuId = MenuId;
         }
     }
 }
