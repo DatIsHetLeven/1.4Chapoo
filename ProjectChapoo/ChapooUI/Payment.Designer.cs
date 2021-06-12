@@ -65,20 +65,18 @@
             this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.label7);
             this.panel3.Controls.Add(this.pictureBox2);
-            this.panel3.Location = new System.Drawing.Point(1012, 710);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel3.Location = new System.Drawing.Point(675, 461);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(259, 251);
+            this.panel3.Size = new System.Drawing.Size(173, 163);
             this.panel3.TabIndex = 21;
             // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(48, 186);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Location = new System.Drawing.Point(32, 121);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(176, 57);
+            this.button1.Size = new System.Drawing.Size(117, 37);
             this.button1.TabIndex = 17;
             this.button1.Text = "Pay";
             this.button1.UseVisualStyleBackColor = false;
@@ -88,10 +86,9 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(65, 13);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(43, 8);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(136, 29);
+            this.label7.Size = new System.Drawing.Size(89, 20);
             this.label7.TabIndex = 2;
             this.label7.Text = "Credit Card";
             // 
@@ -99,9 +96,10 @@
             // 
             this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(37, 57);
+            this.pictureBox2.Location = new System.Drawing.Point(25, 37);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(192, 115);
+            this.pictureBox2.Size = new System.Drawing.Size(129, 75);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 14;
             this.pictureBox2.TabStop = false;
@@ -112,20 +110,18 @@
             this.panel2.Controls.Add(this.btn_PayIdeal);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(633, 710);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel2.Location = new System.Drawing.Point(422, 461);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(269, 251);
+            this.panel2.Size = new System.Drawing.Size(179, 163);
             this.panel2.TabIndex = 20;
             // 
             // btn_PayIdeal
             // 
             this.btn_PayIdeal.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btn_PayIdeal.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_PayIdeal.Location = new System.Drawing.Point(49, 188);
-            this.btn_PayIdeal.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_PayIdeal.Location = new System.Drawing.Point(33, 122);
             this.btn_PayIdeal.Name = "btn_PayIdeal";
-            this.btn_PayIdeal.Size = new System.Drawing.Size(171, 53);
+            this.btn_PayIdeal.Size = new System.Drawing.Size(114, 34);
             this.btn_PayIdeal.TabIndex = 17;
             this.btn_PayIdeal.Text = "Pay";
             this.btn_PayIdeal.UseVisualStyleBackColor = false;
@@ -135,9 +131,10 @@
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(32, 51);
+            this.pictureBox1.Location = new System.Drawing.Point(21, 33);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(207, 115);
+            this.pictureBox1.Size = new System.Drawing.Size(139, 75);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 14;
             this.pictureBox1.TabStop = false;
@@ -146,10 +143,9 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(102, 13);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(68, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 29);
+            this.label6.Size = new System.Drawing.Size(44, 20);
             this.label6.TabIndex = 1;
             this.label6.Text = "Ideal";
             // 
@@ -157,10 +153,9 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.label5.Location = new System.Drawing.Point(1230, 195);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(820, 127);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 36);
+            this.label5.Size = new System.Drawing.Size(47, 25);
             this.label5.TabIndex = 19;
             this.label5.Text = "Bon";
             // 
@@ -174,19 +169,17 @@
             this.panel1.Controls.Add(this.txt_TipAmount);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(1013, 236);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.panel1.Location = new System.Drawing.Point(675, 153);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(512, 378);
+            this.panel1.Size = new System.Drawing.Size(341, 246);
             this.panel1.TabIndex = 18;
             // 
             // txt_TotalAmount
             // 
-            this.txt_TotalAmount.Location = new System.Drawing.Point(244, 300);
-            this.txt_TotalAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_TotalAmount.Location = new System.Drawing.Point(163, 195);
             this.txt_TotalAmount.Name = "txt_TotalAmount";
             this.txt_TotalAmount.ReadOnly = true;
-            this.txt_TotalAmount.Size = new System.Drawing.Size(208, 26);
+            this.txt_TotalAmount.Size = new System.Drawing.Size(140, 20);
             this.txt_TotalAmount.TabIndex = 20;
             // 
             // Btn_Refresh
@@ -194,10 +187,9 @@
             this.Btn_Refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Btn_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.Btn_Refresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Btn_Refresh.Location = new System.Drawing.Point(244, 185);
-            this.Btn_Refresh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Btn_Refresh.Location = new System.Drawing.Point(163, 120);
             this.Btn_Refresh.Name = "Btn_Refresh";
-            this.Btn_Refresh.Size = new System.Drawing.Size(208, 56);
+            this.Btn_Refresh.Size = new System.Drawing.Size(139, 36);
             this.Btn_Refresh.TabIndex = 48;
             this.Btn_Refresh.Text = "Add Tip";
             this.Btn_Refresh.UseVisualStyleBackColor = false;
@@ -207,39 +199,35 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(42, 300);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(28, 195);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 25);
+            this.label4.Size = new System.Drawing.Size(96, 17);
             this.label4.TabIndex = 19;
             this.label4.Text = "Total Amount ";
             // 
             // txt_Amount
             // 
-            this.txt_Amount.Location = new System.Drawing.Point(244, 68);
-            this.txt_Amount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_Amount.Location = new System.Drawing.Point(163, 44);
             this.txt_Amount.Name = "txt_Amount";
             this.txt_Amount.ReadOnly = true;
-            this.txt_Amount.Size = new System.Drawing.Size(208, 26);
+            this.txt_Amount.Size = new System.Drawing.Size(140, 20);
             this.txt_Amount.TabIndex = 18;
             // 
             // txt_TipAmount
             // 
             this.txt_TipAmount.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.txt_TipAmount.Location = new System.Drawing.Point(244, 137);
-            this.txt_TipAmount.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txt_TipAmount.Location = new System.Drawing.Point(163, 89);
             this.txt_TipAmount.Name = "txt_TipAmount";
-            this.txt_TipAmount.Size = new System.Drawing.Size(208, 26);
+            this.txt_TipAmount.Size = new System.Drawing.Size(140, 20);
             this.txt_TipAmount.TabIndex = 17;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label3.Location = new System.Drawing.Point(42, 136);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(28, 88);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 25);
+            this.label3.Size = new System.Drawing.Size(32, 17);
             this.label3.TabIndex = 16;
             this.label3.Text = "Tip ";
             // 
@@ -247,10 +235,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(42, 67);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(28, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 25);
+            this.label2.Size = new System.Drawing.Size(44, 17);
             this.label2.TabIndex = 14;
             this.label2.Text = "Price ";
             // 
@@ -258,10 +245,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(867, 660);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(578, 429);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(182, 29);
+            this.label1.Size = new System.Drawing.Size(121, 20);
             this.label1.TabIndex = 17;
             this.label1.Text = "Chose Payment";
             // 
@@ -269,11 +255,10 @@
             // 
             this.datagrid_AllInfo.BackgroundColor = System.Drawing.SystemColors.ControlDarkDark;
             this.datagrid_AllInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_AllInfo.Location = new System.Drawing.Point(193, 238);
-            this.datagrid_AllInfo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.datagrid_AllInfo.Location = new System.Drawing.Point(129, 155);
             this.datagrid_AllInfo.Name = "datagrid_AllInfo";
             this.datagrid_AllInfo.RowHeadersWidth = 62;
-            this.datagrid_AllInfo.Size = new System.Drawing.Size(709, 376);
+            this.datagrid_AllInfo.Size = new System.Drawing.Size(473, 244);
             this.datagrid_AllInfo.TabIndex = 22;
             // 
             // btn_LogOut
@@ -281,30 +266,31 @@
             this.btn_LogOut.BackColor = System.Drawing.Color.Red;
             this.btn_LogOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btn_LogOut.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_LogOut.Location = new System.Drawing.Point(62, 49);
-            this.btn_LogOut.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btn_LogOut.Location = new System.Drawing.Point(41, 32);
             this.btn_LogOut.Name = "btn_LogOut";
-            this.btn_LogOut.Size = new System.Drawing.Size(152, 54);
+            this.btn_LogOut.Size = new System.Drawing.Size(101, 35);
             this.btn_LogOut.TabIndex = 49;
             this.btn_LogOut.Text = "Back";
             this.btn_LogOut.UseVisualStyleBackColor = false;
+            this.btn_LogOut.Click += new System.EventHandler(this.btn_LogOut_Click);
             // 
             // pictureBox3
             // 
             this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(783, 12);
+            this.pictureBox3.Location = new System.Drawing.Point(522, 8);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(333, 188);
+            this.pictureBox3.Size = new System.Drawing.Size(223, 123);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 50;
             this.pictureBox3.TabStop = false;
             // 
             // Payment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1896, 1048);
+            this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btn_LogOut);
             this.Controls.Add(this.datagrid_AllInfo);
@@ -314,7 +300,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Payment";
             this.Text = "Payment";
             this.panel3.ResumeLayout(false);

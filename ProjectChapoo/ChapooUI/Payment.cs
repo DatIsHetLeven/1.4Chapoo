@@ -60,11 +60,35 @@ namespace ChapooUI
 
         private void Btn_Refresh_Click(object sender, EventArgs e)
         {
-            int prijsZonderTip = int.Parse(txt_Amount.Text);
-            int Fooi = int.Parse(txt_TipAmount.Text);
-            int totaalPrijs = prijsZonderTip + Fooi;
+            try
+            {
+                int prijsZonderTip = int.Parse(txt_Amount.Text);
+                int Fooi = int.Parse(txt_TipAmount.Text);
 
-            txt_TotalAmount.Text = totaalPrijs.ToString();
+                if (Fooi < 0)
+                {
+                    MessageBox.Show("Fooi kan niet onder de 0");
+                }
+                else
+                {
+                    int totaalPrijs = prijsZonderTip + Fooi;
+                    txt_TotalAmount.Text = totaalPrijs.ToString();
+                }
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Het moet wel een getal zijn!");
+            }
+
+        }
+
+        private void btn_LogOut_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            dashboard = new Dashboard();
+            dashboard.ShowDialog();
+            this.Close();
         }
     }
 }
