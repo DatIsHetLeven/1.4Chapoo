@@ -54,7 +54,7 @@ namespace ChapooUI
             Reservate_Service = new Reservate_Service();
             try
             {
-                Reservate_Service.insertReservation(TableId, Convert.ToDateTime(listboxTime.SelectedItem.ToString()), txt_NaamKlant.Text);
+                Reservate_Service.insertReservation(TableId, (listboxTime.SelectedItem.ToString()), txt_NaamKlant.Text);
                 MessageBox.Show($"Tafel {TableId} is gereserveerd onder naam : {txt_NaamKlant.Text}\nTijd {listboxTime.SelectedItem.ToString()}");
                 table_Service.ChangeTableStatus(TableId, 2);
             }

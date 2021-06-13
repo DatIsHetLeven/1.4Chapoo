@@ -10,7 +10,7 @@ namespace ChapooDAL
     public class Reservate_DAO : Base
     {
         //Insert Reservation
-        public void InsertReservation(int tafelId, DateTime startTijd, string klantNaam)
+        public void InsertReservation(int tafelId, string startTijd, string klantNaam)
         {
             string query = $"Insert into[Reservate] (tafelId, startTijd, klantNaam) Values('{tafelId}', '{startTijd}','{klantNaam}')";
             ExecuteEditQuery(query);
@@ -19,7 +19,7 @@ namespace ChapooDAL
         //Delete reservation
         public void RemoveReservation(int tafelId)
         {
-            string query = $"delete from [reservate] where reservateId = '{tafelId}'";
+            string query = $"delete from [reservate] where tafelId = '{tafelId}'";
             ExecuteEditQuery(query);
         }
 
