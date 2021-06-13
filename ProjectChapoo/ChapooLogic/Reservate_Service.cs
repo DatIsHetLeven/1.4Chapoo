@@ -13,7 +13,7 @@ namespace ChapooLogic
     public class Reservate_Service
     {
         Reservate_DAO Reservate_DAO = new Reservate_DAO();
-        public void insertReservation(int tafelId, DateTime startTijd, string klantNaam)
+        public void insertReservation(int tafelId, string startTijd, string klantNaam)
         {
             Reservate_DAO.InsertReservation(tafelId, startTijd, klantNaam);
         }
