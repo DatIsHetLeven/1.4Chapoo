@@ -67,9 +67,7 @@ namespace ChapooUI
         private void goToTableChoiche(int tableId, int status)
         {
             if (status == 2)
-            {
                 reservated = true;
-            }
 
             this.Hide();
             TableChoice tableChoice = new TableChoice(tableId);

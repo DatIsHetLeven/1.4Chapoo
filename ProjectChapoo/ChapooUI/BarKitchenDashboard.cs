@@ -37,7 +37,7 @@ namespace ChapooUI
             {
                 foreach (var item in selectedItems)
                 {
-                    if (item.menuId == 3)
+                    if (item.itemCategorie == "Drinks")
                     {
                         selectedItemsBarman.Add(item);
                     }
@@ -48,7 +48,7 @@ namespace ChapooUI
             {
                 foreach (var item in selectedItems)
                 {
-                    if (item.menuId != 3)
+                    if (item.itemCategorie != "Drinks")
                     {
                         selectedItemsKeuken.Add(item);
                     }

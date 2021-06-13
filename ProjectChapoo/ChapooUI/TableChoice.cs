@@ -34,7 +34,6 @@ namespace ChapooUI
             {
                 btn_Reservate.Hide();
                 btn_GetReservate.Show();
-                MessageBox.Show("hetw ertk");
             }
         }
 

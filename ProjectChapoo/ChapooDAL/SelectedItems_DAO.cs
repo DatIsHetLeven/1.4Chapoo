@@ -10,9 +10,9 @@ namespace ChapooDAL
     public class SelectedItems_DAO : Base
     {
         //Insert
-        public void InsertNewSelectedItem(int tableid, string item, int prijs, int itemid)
+        public void InsertNewSelectedItem(int tableid, string item, int prijs, int itemid, string itemCategorie)
         {
-            string query = $"Insert into[selecteditems] (tableId, menuItem, Prijs, status, itemid) Values('{tableid}', '{item}', '{prijs}', 1, '{itemid}')";
+            string query = $"Insert into[selecteditems] (tableId, menuItem, Prijs, status, itemid, itemCategorie) Values('{tableid}', '{item}', '{prijs}', 1, '{itemid}', '{itemCategorie}')";
             ExecuteEditQuery(query);
         }
 
@@ -25,7 +25,7 @@ namespace ChapooDAL
         //Select for bar& kitchen
         public List<SelectedItem> GetSelectedItems()
         {
-            string query = "select tableId, menuItem, Prijs, status, itemid from [SelectedItems] where status = 2";
+            string query = "select tableId, menuItem, Prijs, status, itemid,itemCategorie from [SelectedItems] where status = 2";
             return GetItemss(ExecuteSelectQuery(query));
         }
         //Select order
@@ -42,6 +42,7 @@ namespace ChapooDAL
             int Prijs = 0;
             int status = 0;
             int itemid = 0;
+            string itemCategorie = "";
             List<SelectedItem> selectedItems = new List<SelectedItem>();
             foreach (DataRow item in dataTable.Rows)
             {
@@ -50,7 +51,7 @@ namespace ChapooDAL
                 menuItem = (string)item["menuItem"].ToString();
                 Prijs = (int)item["Prijs"];
                 status = (int)item["status"];
-                SelectedItem selectedItem = new SelectedItem(tableId, menuItem, Prijs, status, itemid);
+                SelectedItem selectedItem = new SelectedItem(tableId, menuItem, Prijs, status, itemid, itemCategorie);
                 {
                     selectedItems.Add(selectedItem);
                 }
@@ -84,6 +85,7 @@ namespace ChapooDAL
             int Prijs = 0;
             int status = 0;
             int itemid = 0;
+            string itemCategorie = "";
             List<SelectedItem> selectedItems = new List<SelectedItem>();
             foreach (DataRow item in dataTable.Rows)
             {
@@ -93,7 +95,8 @@ namespace ChapooDAL
                 Prijs = (int)item["Prijs"];
                 status = (int)item["status"];
                 itemid = (int)item["itemid"];
-                SelectedItem selectedItem = new SelectedItem(tableId, menuItem, Prijs, status, itemid);
+                itemCategorie = (string)item["itemCategorie"].ToString();
+                SelectedItem selectedItem = new SelectedItem(tableId, menuItem, Prijs, status, itemid, itemCategorie);
                 {
                     selectedItems.Add(selectedItem);
                 }

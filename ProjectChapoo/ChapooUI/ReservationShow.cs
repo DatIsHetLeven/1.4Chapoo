@@ -25,7 +25,7 @@ namespace ChapooUI
             ChapoModel.Reservate reservate = reservate_service.GetReservates(Tableid);
 
             lbl_Gereserveerd.Text = $"Tafel met tafelnummer {Tableid} is gereserveerd";
-            lbl_KlantNaam.Text = $"Gereserveerd door : {reservate.klantNaam.ToString()}";
+            lbl_KlantNaam.Text = $"Gereserveerd voor klant : {reservate.klantNaam.ToString()}";
             lbl_Tijd.Text = $"Om tijdstip : {reservate.startTijd.ToString()}";
         }
 

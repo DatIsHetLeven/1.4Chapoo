@@ -52,14 +52,7 @@ namespace ChapooUI
                         Dashboard.ShowDialog();
                         this.Close();
                     }
-                    //if barman
-                    else if (user.title == "Barman")
-                    {
-                        this.Hide();
-                        BarKitchenDashboard = new BarKitchenDashboard(user);
-                        BarKitchenDashboard.ShowDialog();
-                        this.Close();
-                    }
+                    //else = barman  or Kitchen 
                     else
                     {
                         this.Hide();
