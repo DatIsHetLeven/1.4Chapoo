@@ -51,32 +51,44 @@ namespace ChapooUI
             //List of all items
             List<SelectedItem> selectedItems = new List<SelectedItem>();
             selectedItems = selectedItems_Service.GetCurrentItems(TableId);
+
             //Max id value
             List<int> listMaxId = order_Service.GetMaxId();
             int number = listMaxId[0];
             int newOrderId = (number + 1);
 
-            //Insert to db
-            foreach (var item in selectedItems)
+            if (datagrid_Making.Rows.Count != 0)
             {
-                int ii = 0;
-                foreach (DataGridViewRow i in datagrid_CurrentOrder.Rows)
-                {
-                    string menuitem = datagrid_CurrentOrder.Rows[ii].Cells["menuItem"].FormattedValue.ToString();
-                    string prijs = datagrid_CurrentOrder.Rows[ii].Cells["prijs"].FormattedValue.ToString();
-                    int prijsToPay = int.Parse(prijs);
-                    order_Service.createOrder(newOrderId, TableId, menuitem, prijsToPay);
-
-                    ii++;
-                }
-                break;
+                MessageBox.Show("Kan niet afrekenen, items nog in de keuken!");
             }
+            else if (datagrid_CurrentOrder.Rows.Count == 0)
+            {
+                MessageBox.Show("Niks om te betalen");
+            }
+            else
+            {
+                //Insert to db
+                foreach (var item in selectedItems)
+                {
+                    int ii = 0;
+                    foreach (DataGridViewRow i in datagrid_CurrentOrder.Rows)
+                    {
+                        string menuitem = datagrid_CurrentOrder.Rows[ii].Cells["menuItem"].FormattedValue.ToString();
+                        string prijs = datagrid_CurrentOrder.Rows[ii].Cells["prijs"].FormattedValue.ToString();
+                        int prijsToPay = int.Parse(prijs);
+                        order_Service.createOrder(newOrderId, TableId, menuitem, prijsToPay);
 
-            selectedItems_Service.removeItems(TableId);
-            this.Hide();
-            Payment payment = new Payment(TotalPrice, TableId, selectedItemsDelivered);
-            payment.ShowDialog();
-            this.Close();
+                        ii++;
+                    }
+                    break;
+                }
+
+                selectedItems_Service.removeItems(TableId);
+                this.Hide();
+                Payment payment = new Payment(TotalPrice, TableId, selectedItemsDelivered);
+                payment.ShowDialog();
+                this.Close();
+            }
         }
 
         private void btn_back_Click(object sender, EventArgs e)
