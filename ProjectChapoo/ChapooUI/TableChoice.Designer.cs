@@ -104,7 +104,7 @@
             this.btn_Reservate.Name = "btn_Reservate";
             this.btn_Reservate.Size = new System.Drawing.Size(252, 84);
             this.btn_Reservate.TabIndex = 12;
-            this.btn_Reservate.Text = "Reservate";
+            this.btn_Reservate.Text = "Reserveren";
             this.btn_Reservate.UseVisualStyleBackColor = true;
             this.btn_Reservate.Click += new System.EventHandler(this.btn_Reservate_Click);
             // 

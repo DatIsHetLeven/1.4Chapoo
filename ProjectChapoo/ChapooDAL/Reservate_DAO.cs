@@ -12,7 +12,7 @@ namespace ChapooDAL
         //Insert Reservation
         public void InsertReservation(int tafelId, DateTime startTijd, string klantNaam)
         {
-            string query = $"Insert into[reservate] (tafelId, startTijd, klantNaam) Values('{tafelId}', '{startTijd}', '{klantNaam}')";
+            string query = $"Insert into[Reservate] (tafelId, startTijd, klantNaam) Values('{tafelId}', '{startTijd}','{klantNaam}')";
             ExecuteEditQuery(query);
         }
 

@@ -9,12 +9,12 @@ namespace ChapoModel
     public class Table
     {
         public int TableId { get; set; }
-        public int TableStatus { get; set; }
+        public string tafelStatus { get; set; }
 
-        public Table(int tableId, int tableStatus)
+        public Table(int tableId, /*int tableStatus,*/ string TafelSatus)
         {
             this.TableId = tableId;
-            this.TableStatus = tableStatus;
+            this.tafelStatus = TafelSatus;
         }
     }
 }

@@ -82,7 +82,7 @@
             this.drop_InvoerAantal.FormattingEnabled = true;
             this.drop_InvoerAantal.Location = new System.Drawing.Point(1123, 157);
             this.drop_InvoerAantal.Name = "drop_InvoerAantal";
-            this.drop_InvoerAantal.Size = new System.Drawing.Size(100, 21);
+            this.drop_InvoerAantal.Size = new System.Drawing.Size(129, 21);
             this.drop_InvoerAantal.TabIndex = 41;
             // 
             // btn_Back_To_Dashboard

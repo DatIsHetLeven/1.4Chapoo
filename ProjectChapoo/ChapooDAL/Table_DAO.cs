@@ -21,20 +21,20 @@ namespace ChapooDAL
         //Get all table info 
         public List<Table> TableInfo()
         {
-            string query = "select [TableId], [TableStatus] from[table]";
+            string query = "select [TableId], [TafelStatus] from[table],[TafelStatus] where [Table].TableStatus = [TafelStatus].TafelStatusId";
             return TableInfo(ExecuteSelectQuery(query));
         }
         //Return all tables
         private List<Table> TableInfo(DataTable datatable)
         {
             int TableId = 0;
-            int TableStatus = 0;
+            string TableStatus = "";
 
             List<Table> TableList = new List<Table>();
             foreach (DataRow item in datatable.Rows)
             {
                 TableId = (int)item["TableId"];
-                TableStatus = (int)item["TableStatus"];
+                TableStatus = (string)item["TafelStatus"].ToString();
                 Table table = new Table(TableId, TableStatus);
                 TableList.Add(table);
             }
