@@ -35,31 +35,70 @@ namespace ChapooUI
                 //If user exist
                 if (user.userName != "")
                 {
-                    //If Admin
-                    if (user.title == "Admin")
+                    switch (user.userTitle)
                     {
-                        this.Hide();
-                        AdminAllUsers dashboard = new AdminAllUsers();
-                        dashboard.ShowDialog();
-                        this.Close();
+                        case UserTitle.server:
+                            MessageBox.Show("Het werkt, bediende");
+                            this.Hide();
+                            Dashboard = new Dashboard();
+                            Dashboard.DashboardUser(user);
+                            Dashboard.ShowDialog();
+                            this.Close();
+                            break;
+                        case UserTitle.Barman:
+                            MessageBox.Show("Dit is de bar");
+                                this.Hide();
+                                BarKitchenDashboard = new BarKitchenDashboard(user);
+                                BarKitchenDashboard.ShowDialog();
+                                this.Close();
+                            break;
+                        case UserTitle.Admin:
+                            MessageBox.Show("Dit is Admin");
+                            //    this.Hide();
+                            //    AdminAllUsers dashboard = new AdminAllUsers();
+                            //    dashboard.ShowDialog();
+                            //    this.Close();
+                            break;
+                        case UserTitle.Keuken:
+                            MessageBox.Show("Dit is de keuken");
+                            //    this.Hide();
+                            //    BarKitchenDashboard = new BarKitchenDashboard(user);
+                            //    BarKitchenDashboard.ShowDialog();
+                            //    this.Close();
+                            break;
+                        default:
+                            break;
                     }
-                    //If bediende 
-                    else if (user.title == "server")
-                    {
-                        this.Hide();
-                        Dashboard = new Dashboard();
-                        Dashboard.DashboardUser(user);
-                        Dashboard.ShowDialog();
-                        this.Close();
-                    }
-                    //else = barman  or Kitchen 
-                    else
-                    {
-                        this.Hide();
-                        BarKitchenDashboard = new BarKitchenDashboard(user);
-                        BarKitchenDashboard.ShowDialog();
-                        this.Close();
-                    }
+
+
+
+
+
+                    ////If Admin
+                    //if (user.title == "Admin")
+                    //{
+                    //    this.Hide();
+                    //    AdminAllUsers dashboard = new AdminAllUsers();
+                    //    dashboard.ShowDialog();
+                    //    this.Close();
+                    //}
+                    ////If bediende 
+                    //else if (user.title == "server")
+                    //{
+                    //    this.Hide();
+                    //    Dashboard = new Dashboard();
+                    //    Dashboard.DashboardUser(user);
+                    //    Dashboard.ShowDialog();
+                    //    this.Close();
+                    //}
+                    ////else = barman  or Kitchen 
+                    //else
+                    //{
+                    //    this.Hide();
+                    //    BarKitchenDashboard = new BarKitchenDashboard(user);
+                    //    BarKitchenDashboard.ShowDialog();
+                    //    this.Close();
+                    //}
                 }
                 else
                     MessageBox.Show("error occured : User does not exist");

@@ -8,19 +8,21 @@ namespace ChapoModel
 {
     public class User
     {
+        private int userid;
 
-        public int userId { get; set; }
+
+        public int userId { get { return userid; } }
         public string userName { get; set; }
         public int userCode { get; set; }
         public string userKey { get; set; }
-        public string title { get; set; }
+        public UserTitle userTitle { get; set; }
         public string userPassword { get; set; }
 
-        public User(int UserId, string UserName, string Title, int UserCode, string UserKey, string UserPassword)
+        public User(int UserId, string UserName, UserTitle UserTitle, int UserCode, string UserKey, string UserPassword)
         {
-            this.userId = UserId;
+            this.userid = UserId;
             this.userName = UserName;
-            this.title = Title;
+            this.userTitle = UserTitle;
             this.userCode = UserCode;
             this.userKey = UserKey;
             this.userPassword = UserPassword;

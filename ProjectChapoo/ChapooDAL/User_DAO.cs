@@ -13,7 +13,7 @@ namespace ChapooDAL
         int userId = 0;
         string userName = "";
         string userPassword = "";
-        string title = "";
+        UserTitle title;
         int userCode = 0;
         string userKey = "";
         //Check if user does exist.(login)
@@ -29,51 +29,51 @@ namespace ChapooDAL
             {
                 userId = (int)i["UserId"];
                 userName = (string)i["userName"].ToString();
-                title = (string)i["Title"].ToString();
+                title = (UserTitle)Enum.Parse(typeof(UserTitle),(string)i["Title"].ToString());
                 userPassword = (string)i["userPassword"].ToString();
                 userCode = (int)i["UserCode"];
             }
             return new User(userId, userName, title, userCode, userKey, userPassword);
         }
-        //Create new user /Insert new user in db
-        public void InserNewUser(string userName, string password, int rol)
-        {
-            string query = $"Insert into [User] (userName, userPassword, UserCode) Values('{userName}', '{password}', '{rol}')";
-            ExecuteEditQuery(query);
-        }
-        //Create private key -> so user can reset password.
-        public void InsertPrivateKey(string privateKey, int userId)
-        {
-            string query = $"update [user]set userKey='{privateKey}' where userid='{userId}'";
-            ExecuteEditQuery(query);
-        }
-        //Reset password by User
-        public void ResetPassword(string privateKey, int userId, string Password)
-        {
-            string query = $"update [user] set [userPassword] = '{Password}' where [userId]= '{userId}' AND [userKey] ='{privateKey}' ";
-            ExecuteEditQuery(query);
-        }
-        //Return List of players -> Admin panel.
-        public List<User> getAllUsers()
-        {
-            string query = "select [UserId], [UserName], [title], [UserCode], [userKey] from [User], [UserRol] where userCode = Rol_Id Order By [userId]";
-            return RetrieveAllUsersList(ExecuteSelectQuery(query));
-        }
-        //Return users values for list(admin page)
-        private List<User> RetrieveAllUsersList(DataTable dataTable)
-        {
-            List<User> UserList = new List<User>();
-            foreach (DataRow dr in dataTable.Rows)
-            {
-                userId = (int)dr["UserId"];
-                userName = (string)dr["userName"].ToString();
-                title = (string)dr["title"].ToString();
-                userCode = (int)dr["UserCode"];
-                userKey = (string)dr["userKey"].ToString();
-                User user = new User(userId, userName, title, userCode, userKey, userPassword);
-                UserList.Add(user);
-            }
-            return UserList;
-        }
+        ////Create new user /Insert new user in db
+        //public void InserNewUser(string userName, string password, int rol)
+        //{
+        //    string query = $"Insert into [User] (userName, userPassword, UserCode) Values('{userName}', '{password}', '{rol}')";
+        //    ExecuteEditQuery(query);
+        //}
+        ////Create private key -> so user can reset password.
+        //public void InsertPrivateKey(string privateKey, int userId)
+        //{
+        //    string query = $"update [user]set userKey='{privateKey}' where userid='{userId}'";
+        //    ExecuteEditQuery(query);
+        //}
+        ////Reset password by User
+        //public void ResetPassword(string privateKey, int userId, string Password)
+        //{
+        //    string query = $"update [user] set [userPassword] = '{Password}' where [userId]= '{userId}' AND [userKey] ='{privateKey}' ";
+        //    ExecuteEditQuery(query);
+        //}
+        ////Return List of players -> Admin panel.
+        //public List<User> getAllUsers()
+        //{
+        //    string query = "select [UserId], [UserName], [title], [UserCode], [userKey] from [User], [UserRol] where userCode = Rol_Id Order By [userId]";
+        //    return RetrieveAllUsersList(ExecuteSelectQuery(query));
+        //}
+        ////Return users values for list(admin page)
+        //private List<User> RetrieveAllUsersList(DataTable dataTable)
+        //{
+        //    List<User> UserList = new List<User>();
+        //    foreach (DataRow dr in dataTable.Rows)
+        //    {
+        //        userId = (int)dr["UserId"];
+        //        userName = (string)dr["userName"].ToString();
+        //        title = (string)dr["title"].ToString();
+        //        userCode = (int)dr["UserCode"];
+        //        userKey = (string)dr["userKey"].ToString();
+        //        User user = new User(userId, userName, title, userCode, userKey, userPassword);
+        //        UserList.Add(user);
+        //    }
+        //    return UserList;
+        //}
     }
 }

@@ -8,15 +8,15 @@ namespace ChapoModel
 {
     public class MenuItem
     {
-        public int Prijs { get; set; }
+        public double Prijs { get; set; }
         public string MenuItemNaam { get; set; }
-        public int MenuId { get; set; }
+        public string menuItemCategorie { get; set; }
 
-        public MenuItem(int prijs, string menuItemNaam, int menuId)
+        public MenuItem(int prijs, string menuItemNaam, string MenuItemCategorie)
         {
             this.Prijs = prijs;
             this.MenuItemNaam = menuItemNaam;
-            this.MenuId = menuId;
+            this.menuItemCategorie = MenuItemCategorie;
         }
 
     }

@@ -20,6 +20,7 @@ namespace ChapooUI
         private List<Table> tableId = new List<Table>();
         private Table table;
         private bool reservated = false;
+        private TableStatus TableStatus;
 
         public void DashboardUser(User user)
         {
@@ -44,97 +45,70 @@ namespace ChapooUI
             TableButtonList.Add(btn_Tafel_9);
             TableButtonList.Add(btn_Tafel_10);
 
-            // Check status
-            foreach (Button btn in TableButtonList)
+            //1E
+            //// Check status
+            //foreach (Button btn in TableButtonList)
+            //{
+            //    foreach (var i in tableId)
+            //    {
+            //        //Give tag Prop
+            //        btn.Tag = i;
+            //        //Check status of table
+            //        if (i.tafelStatus == "Free")
+            //            btn.BackColor = Color.Lime;
+            //        else if (i.tafelStatus == "CurrentOrder")
+            //            btn.BackColor = Color.Blue;
+            //        else//status = reservated
+            //            btn.BackColor = Color.Red;
+            //        tableId.Remove(i);
+            //        break;
+            //    }
+            //}
+
+            for (int i = 0; i < tableId.Count; i++)
             {
-                foreach (var i in tableId)
+                Button btn = TableButtonList[i];
+                btn.Tag = tableId[i];
+                Table table = tableId[i];
+                //Check status of table
+                switch (table.tafelStatus)
                 {
-                    //Give tag Prop
-                    btn.Tag = i;
-                    //Check status of table
-                    if (i.tafelStatus == "Free")
+                    case TableStatus.Free:
                         btn.BackColor = Color.Lime;
-                    else if (i.tafelStatus == "CurrentOrder")
-                        btn.BackColor = Color.Blue;
-                    else//status = reservated
+                        break;
+                    case TableStatus.Reservated:
                         btn.BackColor = Color.Red;
-                    tableId.Remove(i);
-                    break;
+                        break;
+                    case TableStatus.CurrentOrder:
+                        btn.BackColor = Color.Blue;
+                        break;
+                    default:
+                        break;
                 }
+                //if (tableId[i].tafelStatus == TableStatus.Free)
+                //    btn.BackColor = Color.Lime;
+                //else if (tableId[i].tafelStatus == TableStatus.CurrentOrder)
+                //    btn.BackColor = Color.Blue;
+                //else
+                //    btn.BackColor = Color.Red;
+                //i++;
             }
-        }       
-        //Go to TableChoice.cs, method for table buttons
-        private void goToTableChoiche(int tableId, string status)
+        }
+
+        void ButtonEvent(object sender, EventArgs e)
         {
-            if (status == "Reservated")
+            Button button = sender as Button;
+            table = (Table)button.Tag;
+
+            if (table.tafelStatus == TableStatus.Reservated)
                 reservated = true;
 
             this.Hide();
-            TableChoice tableChoice = new TableChoice(tableId);
+            TableChoice tableChoice = new TableChoice(table.TableId);
             tableChoice.ValidateButons(reservated);
             tableChoice.ShowDialog();
-            
             this.Close();
-        }
-        //Table1
-        private void btn_Tafel_1_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_1.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Table 2
-        private void btn_Tafel_2_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_2.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Table3
-        private void btn_Tafel_3_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_3.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Table 4
-        private void btn_Tafel_4_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_4.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Table 5
-        private void btn_Tafel_5_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_5.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Tble 6
-        private void btn_Tafel_6_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_6.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Table 7
-        private void btn_Tafel_7_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_7.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Table 8
-        private void btn_Tafel_8_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_8.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Table 9
-        private void btn_Tafel_9_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_9.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
-        }
-        //Table 10
-        private void btn_Tafel_10_Click(object sender, EventArgs e)
-        {
-            table = (Table)btn_Tafel_10.Tag;
-            goToTableChoiche(table.TableId, table.tafelStatus);
+
         }
         //Log out -> login page
         private void btn_LogOut_Click(object sender, EventArgs e)
@@ -144,5 +118,80 @@ namespace ChapooUI
             login.ShowDialog();
             this.Close();
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        ////Table1
+        //private void btn_Tafel_1_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+        ////Table 2
+        //private void btn_Tafel_2_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+        ////Table3
+        //private void btn_Tafel_3_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+        ////Table 4
+        //private void btn_Tafel_4_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+        ////Table 5
+        //private void btn_Tafel_5_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+
+
+        ////Tble 6
+        //private void btn_Tafel_6_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+
+        ////Table 7
+        //private void btn_Tafel_7_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+        ////Table 8
+        //private void btn_Tafel_8_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+        ////Table 9
+        //private void btn_Tafel_9_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
+        ////Table 10
+        //private void btn_Tafel_10_Click(object sender, EventArgs e)
+        //{
+        //    table = (Table)btn_Tafel_1.Tag;
+        //    goToTableChoiche(table);
+        //}
     }
 }

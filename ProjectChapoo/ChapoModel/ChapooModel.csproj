@@ -47,7 +47,9 @@
     <Compile Include="Reservate.cs" />
     <Compile Include="SelectedItem.cs" />
     <Compile Include="Table.cs" />
+    <Compile Include="TableStatus.cs" />
     <Compile Include="User.cs" />
+    <Compile Include="UserTitle.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,7 +32,7 @@ namespace ChapooUI
         //Get all data -> fill in lists
         public void GetAllData()
         {
-            userLists = user_Service.getAllUsers();
+            //userLists = user_Service.getAllUsers();
             //Show data of all users
             dataGridView1.DataSource = userLists;
         }

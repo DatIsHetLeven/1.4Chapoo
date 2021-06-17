@@ -20,26 +20,21 @@ namespace ChapooUI
         Table_Service table_Service = new Table_Service();
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         List<ChapoModel.MenuItem> allMenuItems = new List<ChapoModel.MenuItem>();
+        List<ChapoModel.MenuItem> menuItemList = new List<ChapoModel.MenuItem>();
         List<int> invoerAantal = new List<int>();
         int TableId;
-        public BestellenDranken(int tableId, List<ChapoModel.MenuItem> menuItem, List<int> invoeraantal)
+        public BestellenDranken(int tableId, List<int> invoeraantal)
         {
             InitializeComponent();
-            this.allMenuItems = menuItem;
             this.TableId = tableId;
             this.invoerAantal = invoeraantal;
             Lbl_Table_Drank.Text = ("Tafelnummer : " + TableId.ToString());
 
+            MenuItem_Service menuItem_Service = new MenuItem_Service();
             drop_InvoerAantal.DataSource = invoerAantal;
-            foreach (var item in menuItem)
-            {
-                if (item.MenuId == 3)
-                {
-                    MenuItem.Add(item);
-                    datagrid_Lunch.DataSource = MenuItem;
+            menuItemList = menuItem_Service.GetDrinkItems();
+            datagrid_Lunch.DataSource = menuItemList;
 
-                }
-            }
         }
 
         private void btn_bestellen_Click(object sender, EventArgs e)
@@ -62,7 +57,7 @@ namespace ChapooUI
         private void Btn_GoDiner_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestellenDiner bestellenDiner = new BestellenDiner(TableId, allMenuItems, invoerAantal);
+            BestellenDiner bestellenDiner = new BestellenDiner(TableId,invoerAantal);
             bestellenDiner.ShowDialog();
             this.Close();
         }

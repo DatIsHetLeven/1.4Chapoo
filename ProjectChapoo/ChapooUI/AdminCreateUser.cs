@@ -45,7 +45,7 @@ namespace ChapooUI
                 else if (rol == "Keuken")
                     userRol = 4;
 
-                user_Service.createUser(userName, password, userRol);
+                //user_Service.createUser(userName, password, userRol);
                 MessageBox.Show("User has been created");
 
                 this.Hide();
@@ -59,17 +59,17 @@ namespace ChapooUI
         }
         public void GetAllData()
         {
-            string titel;
-            List<string> userTitle = new List<string>();
+            //string titel;
+            //List<string> userTitle = new List<string>();
 
-            //Adding titles data form object to list
-            foreach (var item in UserLists)
-            {
-                titel = item.title;
-                if (!userTitle.Contains(titel))
-                    userTitle.Add(item.title);
-            }
-            drop_UserRol.DataSource = userTitle;
+            ////Adding titles data form object to list
+            //foreach (var item in UserLists)
+            //{
+            //    titel = item.title;
+            //    if (!userTitle.Contains(titel))
+            //        userTitle.Add(item.title);
+            //}
+            //drop_UserRol.DataSource = userTitle;
         }
 
         private void label1_Click(object sender, EventArgs e)

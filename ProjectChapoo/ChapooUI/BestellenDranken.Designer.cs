@@ -223,7 +223,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BestellenDranken";
             this.Text = "BestellenDranken";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.BestellenDranken_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).EndInit();

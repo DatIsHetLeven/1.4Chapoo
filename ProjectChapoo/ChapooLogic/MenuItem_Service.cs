@@ -20,5 +20,19 @@ namespace ChapooLogic
             menuItemsList = menuItem_DAO.GetMenuItems();
             return menuItemsList;
         }
+
+        public List<MenuItem> GetDinerItems()
+        {
+            List<MenuItem> menuItemsList;
+            menuItemsList = menuItem_DAO.GetDinerItems();
+            return menuItemsList;
+        }
+
+        public List<MenuItem> GetDrinkItems()
+        {
+            List<MenuItem> menuItemsList;
+            menuItemsList = menuItem_DAO.GetDrinktems();
+            return menuItemsList;
+        }
     }
 }

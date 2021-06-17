@@ -45,15 +45,8 @@ namespace ChapooUI
             drop_InvoerAantal.DataSource = invoerAantal;
 
             menuItemList = menuItem_Service.GetMenuItems();
-            foreach (var i in menuItemList)
-            {
-                if (i.MenuId == 1)
-                {
 
-                    menuItems.Add(i);
-                    datagrid_Lunch.DataSource = menuItems;
-                }
-            }
+            datagrid_Lunch.DataSource = menuItemList;
         }
         //Button bestellen
         private void btn_bestellen_Click(object sender, EventArgs e)
@@ -79,7 +72,7 @@ namespace ChapooUI
         private void Btn_Go_Drinks_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestellenDranken bestellenDiner = new BestellenDranken(TableId, menuItemList, invoerAantal);
+            BestellenDranken bestellenDiner = new BestellenDranken(TableId,  invoerAantal);
             bestellenDiner.ShowDialog();
             this.Close();
         }
@@ -87,7 +80,7 @@ namespace ChapooUI
         private void Btn_Go_Diner_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestellenDiner bestellenDiner = new BestellenDiner(TableId, menuItemList, invoerAantal);
+            BestellenDiner bestellenDiner = new BestellenDiner(TableId, invoerAantal);
             bestellenDiner.ShowDialog();
             this.Close();
         }

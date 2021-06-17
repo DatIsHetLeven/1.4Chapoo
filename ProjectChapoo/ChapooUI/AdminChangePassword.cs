@@ -34,7 +34,7 @@ namespace ChapooUI
             string privateKey = txt_PrivateKey.Text;
             if (privateKey != "")
             {
-                user_Service.createPrivateKey(privateKey, userId);
+               // user_Service.createPrivateKey(privateKey, userId);
                 txt_PrivateKey.Clear();
                 this.Hide();
                 admin = new AdminAllUsers();

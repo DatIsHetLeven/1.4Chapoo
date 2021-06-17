@@ -28,13 +28,13 @@ namespace ChapooDAL
         private List<Table> TableInfo(DataTable datatable)
         {
             int TableId = 0;
-            string TableStatus = "";
+            TableStatus TableStatus;
 
             List<Table> TableList = new List<Table>();
             foreach (DataRow item in datatable.Rows)
             {
                 TableId = (int)item["TableId"];
-                TableStatus = (string)item["TafelStatus"].ToString();
+                TableStatus = (TableStatus)Enum.Parse(typeof(TableStatus), (string)item["TafelStatus"].ToString()); 
                 Table table = new Table(TableId, TableStatus);
                 TableList.Add(table);
             }

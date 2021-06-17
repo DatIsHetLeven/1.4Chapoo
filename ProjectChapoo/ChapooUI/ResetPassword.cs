@@ -31,7 +31,7 @@ namespace ChapooUI
         private void btn_ResetPassword_Click(object sender, EventArgs e)
         {
             List<User> userList = new List<User>();
-            userList = User_Service.getAllUsers();
+            //userList = User_Service.getAllUsers();
             bool checkUserKey = false;
 
             string userKey = txtUserKey.Text.ToString();
@@ -54,7 +54,7 @@ namespace ChapooUI
                 {
                     if (checkUserKey)
                     {
-                        User_Service.ResetPassword(userKey, userId, password);
+                        //User_Service.ResetPassword(userKey, userId, password);
                         MessageBox.Show("Password changed successfully");
                     }
                     else

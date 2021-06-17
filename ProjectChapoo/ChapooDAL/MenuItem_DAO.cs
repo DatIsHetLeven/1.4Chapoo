@@ -9,16 +9,34 @@ namespace ChapooDAL
 {
     public class MenuItem_DAO : Base
     {
+        //Get all lunch Items
         public List<MenuItem> GetMenuItems()
         {
-            string query = "Select [menuItemId], [menuId], [prijs], [menuItemNaam], [menuItemCategorie] from[MenuItem]";
+            string query = "Select [prijs], [menuItemNaam], [menuItemCategorie] from[MenuItem] where menuItemCategorie = 'Lunch'";
             return MenuItems(ExecuteSelectQuery(query));
         }
+        //get all Diner Items
+        public List<MenuItem> GetDinerItems()
+        {
+            string query = "Select [prijs], [menuItemNaam], [menuItemCategorie] from[MenuItem] where menuItemCategorie = 'Diner'";
+            return MenuItems(ExecuteSelectQuery(query));
+        }
+        //Get all Drink items
+        public List<MenuItem> GetDrinktems()
+        {
+            string query = "Select [prijs], [menuItemNaam], [menuItemCategorie] from[MenuItem] where menuItemCategorie = 'Drank'";
+            return MenuItems(ExecuteSelectQuery(query));
+        }
+
+
+
+
+
+
+
         //Return MenuItems
         private List<MenuItem> MenuItems(DataTable datatable)
         {
-            int MenuItemId = 0;
-            int MenuId = 0;
             int Prijs = 0;
             string MenuItemNaam = "";
             string MenuItemCategorie = "";
@@ -27,14 +45,11 @@ namespace ChapooDAL
 
             foreach (DataRow item in datatable.Rows)
             {
-                MenuItem menuItem = new MenuItem(Prijs, MenuItemNaam, MenuId);
+                MenuItem menuItem = new MenuItem(Prijs, MenuItemNaam, MenuItemCategorie);
                 {
-                    //MenuItemId = (int)item["menuItemId"];
-                    MenuId = (int)item["menuId"];
                     Prijs = (int)item["prijs"];
                     MenuItemNaam = (string)item["menuItemNaam"].ToString();
-                    //MenuItemCategorie = (string)item["menuItemCategorie"].ToString();
-                    //ListMenuItem.Add(menuItem);
+                    MenuItemCategorie = (string)item["menuItemCategorie"].ToString();
                     if (menuItem.Prijs != 0)
                     {
                         ListMenuItem.Add(menuItem);
