@@ -24,41 +24,56 @@ namespace ChapooUI
         {
             InitializeComponent();
             this.User = user;
+
         }
+
+        private void Refresh(object sender, EventArgs e)
+        {
+            switch (User.userTitle)
+            {
+                case UserTitle.Barman:
+                    selectedItemsBarman = selectedItems_Service.GetSelectedItemsBar();
+                    datgrid_OpenOrder.DataSource = selectedItemsBarman;
+                    break;
+                case UserTitle.Keuken:
+                    selectedItemsKeuken = selectedItems_Service.GetSelectedItemsKeuken();
+                    datgrid_OpenOrder.DataSource = selectedItemsKeuken;
+                    break;
+            }
+        }
+
 
         private void Btn_Refresh_Click(object sender, EventArgs e)
         {
-            selectedItems = new List<SelectedItem>();
-            selectedItems = selectedItems_Service.GetSelectedItems();
-            selectedItemsBarman = new List<SelectedItem>();
-            selectedItemsKeuken = new List<SelectedItem>();
+            //selectedItems = new List<SelectedItem>();
+            //selectedItems = selectedItems_Service.GetSelectedItems();
+            //selectedItemsBarman = new List<SelectedItem>();
+            //selectedItemsKeuken = new List<SelectedItem>();
 
-            if (User.userId == 2)
-            {
-                foreach (var item in selectedItems)
-                {
-                    if (item.itemCategorie == "Drinks")
-                    {
-                        selectedItemsBarman.Add(item);
-                    }
-                }
-                datgrid_OpenOrder.DataSource = selectedItemsBarman;
-            }
-            else
-            {
-                foreach (var item in selectedItems)
-                {
-                    if (item.itemCategorie != "Drinks")
-                    {
-                        selectedItemsKeuken.Add(item);
-                    }
-                }
-                datgrid_OpenOrder.DataSource = selectedItemsKeuken;
-            }
+            //if (User.userId == 2)
+            //{
+            //    //foreach (var item in selectedItems)
+            //    //{
+            //    //    if (item.itemCategorie == "Drinks")
+            //    //    {
+            //    //        selectedItemsBarman.Add(item);
+            //    //    }
+            //    //}
+            //    datgrid_OpenOrder.DataSource = selectedItems;
+            //}
+            //else
+            //{
+            //    //foreach (var item in selectedItems)
+            //    //{
+            //    //    if (item.itemCategorie != "Drinks")
+            //    //    {
+            //    //        selectedItemsKeuken.Add(item);
+            //    //    }
+            //    //}
+            //    datgrid_OpenOrder.DataSource = selectedItems;
+            //}
 
         }
-
-       
 
         private void btn_UpdateStatus_Click(object sender, EventArgs e)
         {

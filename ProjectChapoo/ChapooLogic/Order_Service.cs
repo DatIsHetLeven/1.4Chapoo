@@ -26,6 +26,12 @@ namespace ChapooLogic
         }
 
         //Getrunningorder
+        public bool GetRunningOrder(int tableid)
+        {
+            bool runningorder;
+            runningorder = Order_DAO.GetRunningOrder(tableid);
+            return runningorder;
+        }
 
     }
 }

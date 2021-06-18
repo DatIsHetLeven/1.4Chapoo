@@ -34,5 +34,27 @@ namespace ChapooDAL
             string query = $"insert into [order] values('{orderId}', '{tableId}', '{menuItem}', '{prijs}', '{thisDay}')";
             ExecuteEditQuery(query);
         }
+
+        //Get Running order
+        public bool GetRunningOrder(int tableid)
+        {
+            string query = $" select tableId, menuItem, Prijs, aantal from [SelectedItems] where status = 2 and tableId ='{tableid}'";
+            return RunningOrder(ExecuteSelectQuery(query));
+        }
+
+        private bool RunningOrder(DataTable dataTable)
+        {
+            bool runningOrder = false;
+
+
+            foreach (DataRow item in dataTable.Rows)
+            {
+                runningOrder = true;
+            }
+            return runningOrder;
+        }
+        
+
+        //Get finished order
     }
 }

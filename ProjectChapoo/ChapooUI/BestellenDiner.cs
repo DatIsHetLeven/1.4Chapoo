@@ -44,12 +44,14 @@ namespace ChapooUI
             int item = datagrid_Lunch.CurrentCell.RowIndex;
             string prijs = datagrid_Lunch.Rows[item].Cells[0].FormattedValue.ToString();
             int prijs1 = int.Parse(prijs);
+            decimal BTW = 0.21m;
 
             if (invoer > 0)
             {
                 int verm = prijs1 * invoer;
+                BTW = BTW * verm;
                 MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + verm.ToString());
-                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm,2,"Diner");
+                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm,2,"Diner",invoer, BTW);
                 table_Service.ChangeTableStatus(TableId,3);
             }
             ShowSelectedItems();

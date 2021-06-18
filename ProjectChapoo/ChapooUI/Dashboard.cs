@@ -17,6 +17,8 @@ namespace ChapooUI
         private int UserId;
 
         private Table_Service table_Service = new Table_Service();
+        private Order_Service order_Service = new Order_Service();
+        private SelectedItems_Service SelectedItems_Service = new SelectedItems_Service();
         private List<Table> tableId = new List<Table>();
         private Table table;
         private bool reservated = false;
@@ -65,11 +67,17 @@ namespace ChapooUI
             //    }
             //}
 
+
             for (int i = 0; i < tableId.Count; i++)
             {
+                Table table = tableId[i];
+                int tafelnummer = table.TableId;
+
+                bool runningOrder = order_Service.GetRunningOrder(table.TableId);
+
                 Button btn = TableButtonList[i];
                 btn.Tag = tableId[i];
-                Table table = tableId[i];
+
                 //Check status of table
                 switch (table.tafelStatus)
                 {
@@ -85,13 +93,18 @@ namespace ChapooUI
                     default:
                         break;
                 }
+                if (runningOrder == true)
+                {
+                    btn.BackColor = Color.Purple;
+                }
                 //if (tableId[i].tafelStatus == TableStatus.Free)
                 //    btn.BackColor = Color.Lime;
                 //else if (tableId[i].tafelStatus == TableStatus.CurrentOrder)
                 //    btn.BackColor = Color.Blue;
+                //else if (runningOrder == true)
+                //    btn.BackColor = Color.Purple;
                 //else
                 //    btn.BackColor = Color.Red;
-                //i++;
             }
         }
 

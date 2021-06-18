@@ -14,7 +14,7 @@ namespace ChapooLogic
     {
         MenuItem_DAO menuItem_DAO = new MenuItem_DAO();
 
-        public List<MenuItem> GetMenuItems()
+        public List<MenuItem> GetLunchItems()
         {
             List<MenuItem> menuItemsList;
             menuItemsList = menuItem_DAO.GetMenuItems();

@@ -11,18 +11,16 @@ namespace ChapoModel
         public int tableid { get; set; }
         public string menuItem { get; set; }
         public int prijs { get; set; }
-        public int status { get; set; }
-        public int menuId { get; set; }
-        public string itemCategorie { get; set; }
+        public int aantal { get; set; }
 
-        public SelectedItem(int TableId, string MenuItem, int Prijs, int Status, int MenuId, string ItemCategorie)
+        public SelectedItem(int TableId, string MenuItem, int Prijs, int Aantal )
         {
             this.tableid = TableId;
             this.menuItem = MenuItem;
             this.prijs = Prijs;
-            this.status = Status;
-            this.menuId = MenuId;
-            this.itemCategorie = ItemCategorie;
+            this.aantal = Aantal;
+
         }
+
     }
 }
