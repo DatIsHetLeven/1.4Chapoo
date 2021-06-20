@@ -35,6 +35,12 @@
             this.btn_UpdateStatus = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.datgrid_OpenOrder = new System.Windows.Forms.DataGridView();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button2 = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datgrid_OpenOrder)).BeginInit();
             this.SuspendLayout();
@@ -101,18 +107,75 @@
             // datgrid_OpenOrder
             // 
             this.datgrid_OpenOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datgrid_OpenOrder.Location = new System.Drawing.Point(272, 242);
+            this.datgrid_OpenOrder.Location = new System.Drawing.Point(886, 1);
             this.datgrid_OpenOrder.Name = "datgrid_OpenOrder";
             this.datgrid_OpenOrder.ReadOnly = true;
             this.datgrid_OpenOrder.RowHeadersWidth = 62;
-            this.datgrid_OpenOrder.Size = new System.Drawing.Size(714, 327);
+            this.datgrid_OpenOrder.Size = new System.Drawing.Size(356, 194);
             this.datgrid_OpenOrder.TabIndex = 15;
+            this.datgrid_OpenOrder.Visible = false;
+            // 
+            // listView1
+            // 
+            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2});
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(397, 242);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(413, 278);
+            this.listView1.TabIndex = 21;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Item";
+            this.columnHeader1.Width = 323;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Aantal";
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button2.Location = new System.Drawing.Point(397, 599);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(143, 46);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Show";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(12, 225);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(80, 251);
+            this.listBox1.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(9, 209);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Tafel met orders";
             // 
             // BarKitchenDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.Btn_Refresh);
             this.Controls.Add(this.button1);
@@ -137,5 +200,11 @@
         private System.Windows.Forms.Button btn_UpdateStatus;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView datgrid_OpenOrder;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

@@ -13,16 +13,24 @@ namespace ChapooLogic
     public class Order_Service
     {
         Order_DAO Order_DAO = new Order_DAO();
-        public List<int> GetMaxId()
+        public int GetMaxId()
         {
-            List<int> MaxId;
+            int MaxId;
             MaxId = Order_DAO.GetMaxId();
             return MaxId;
         }
-        // service layer to create order
-        public void createOrder(int orderId, int tableId, string menuItem, int prijs)
+        //Write order
+        public void WriteOrder(int orderId, int tafelId, int prijs, DateTime dateTime, string BTW)
         {
-            Order_DAO.InsertOrder(orderId, tableId, menuItem, prijs);
+            Order_DAO.WriteOrder(orderId, tafelId, prijs, dateTime, BTW);
+        }
+
+        //Get
+        public List<Order> GetSelectedItemsKeuken()
+        {
+            List<Order> selectedItemsList;
+            selectedItemsList = Order_DAO.GetSelectedItemKeuken();
+            return selectedItemsList;
         }
 
         //Getrunningorder

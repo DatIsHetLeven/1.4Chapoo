@@ -21,81 +21,57 @@ namespace ChapooUI
 
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         List<SelectedItem> selectedItemsDelivered = new List<SelectedItem>();
+        List<SelectedItem> IItemsReadyList;
 
         public OrderDashboard(int tableId)
         {
             InitializeComponent();
             this.TableId = tableId;
-            int totalAmount = 0;
-
-
-            List<SelectedItem> selectedItemsMaking = new List<SelectedItem>();
-            selectedItemsMaking = selectedItems_Service.GetMakingOrder(tableId, 2);
-            datagrid_Making.DataSource = selectedItemsMaking;
-
-
-            selectedItemsDelivered = selectedItems_Service.GetCurrentItems(tableId);
-            datagrid_CurrentOrder.DataSource = selectedItemsDelivered;
-
-
-            for (int i = 0; i < datagrid_CurrentOrder.Rows.Count; i++)
-            {
-                totalAmount += Convert.ToInt32(datagrid_CurrentOrder.Rows[i].Cells[2].Value);
-            }
-            this.TotalPrice = totalAmount;
-
+            RefreshMethod();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //List of all items
-            List<SelectedItem> selectedItems = new List<SelectedItem>();
-            selectedItems = selectedItems_Service.GetCurrentItems(TableId);
-
-            //Max id value
-            List<int> listMaxId = order_Service.GetMaxId();
-            int number = listMaxId[0];
-            int newOrderId = (number + 1);
-
-            if (datagrid_Making.Rows.Count != 0)
+            if (IItemsReadyList.Count >= 1)
+                MessageBox.Show("Kan niet betalen, Lever eerst de items af");
+            else 
             {
-                MessageBox.Show("Kan niet afrekenen, items nog in de keuken!");
-            }
-            else if (datagrid_CurrentOrder.Rows.Count == 0)
-            {
-                MessageBox.Show("Niks om te betalen");
-            }
-            else
-            {
-                //Insert to db
-                foreach (var item in selectedItems)
-                {
-                    int ii = 0;
-                    foreach (DataGridViewRow i in datagrid_CurrentOrder.Rows)
-                    {
-                        string menuitem = datagrid_CurrentOrder.Rows[ii].Cells["menuItem"].FormattedValue.ToString();
-                        string prijs = datagrid_CurrentOrder.Rows[ii].Cells["prijs"].FormattedValue.ToString();
-                        int prijsToPay = int.Parse(prijs);
-                        order_Service.createOrder(newOrderId, TableId, menuitem, prijsToPay);
-
-                        ii++;
-                    }
-                    break;
-                }
-
-                selectedItems_Service.removeItems(TableId);
+                Payment payment = new Payment();
                 this.Hide();
-                Payment payment = new Payment(TotalPrice, TableId, selectedItemsDelivered);
                 payment.ShowDialog();
                 this.Close();
             }
         }
+
         private void btn_back_Click(object sender, EventArgs e)
         {
             this.Hide();
             TableChoice tableChoiceView = new TableChoice(TableId);
             tableChoiceView.ShowDialog();
             this.Close();
+        }
+        //Items van ready naar geleverd
+        private void btn_AllesGeleverd_Click(object sender, EventArgs e)
+        {
+            //Status veranderen van ready naar geleverd
+            selectedItems_Service.updateStatus2(TableId,3,4);
+            RefreshMethod();
+        }
+
+        private void RefreshMethod()
+        {
+            listView_KlaarOmServeren.Items.Clear();
+            IItemsReadyList = new List<SelectedItem>();
+
+            IItemsReadyList = selectedItems_Service.GetMakingOrder(TableId, 4);
+
+            foreach (var i in IItemsReadyList)
+            {
+                ListViewItem item = new ListViewItem(i.menuItem);
+                item.SubItems.Add(i.aantal.ToString());
+                item.SubItems.Add(i.prijs.ToString());
+                listView_KlaarOmServeren.Items.Add(item);
+            }
         }
     }
 }

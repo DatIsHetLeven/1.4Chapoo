@@ -20,6 +20,7 @@ namespace ChapooUI
         private Order_Service order_Service = new Order_Service();
         private SelectedItems_Service SelectedItems_Service = new SelectedItems_Service();
         private List<Table> tableId = new List<Table>();
+        List<Button> TableButtonList;
         private Table table;
         private bool reservated = false;
         private TableStatus TableStatus;
@@ -33,9 +34,9 @@ namespace ChapooUI
         public Dashboard()
         {
             InitializeComponent();
-            tableId = table_Service.GetTables();
 
-            List<Button> TableButtonList = new List<Button>();
+
+            TableButtonList = new List<Button>();
             TableButtonList.Add(btn_Tafel_1);
             TableButtonList.Add(btn_Tafel_2);
             TableButtonList.Add(btn_Tafel_3);
@@ -68,14 +69,25 @@ namespace ChapooUI
             //}
 
 
+
+            System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
+            timer1.Interval = 20000;
+            timer1.Tick += new System.EventHandler(RefreshForm);
+            timer1.Start();
+        }
+
+        private void RefreshForm(object sender, EventArgs e)
+        {
+            tableId = table_Service.GetTables();
             for (int i = 0; i < tableId.Count; i++)
             {
+                Button btn = TableButtonList[i];
                 Table table = tableId[i];
-                int tafelnummer = table.TableId;
 
                 bool runningOrder = order_Service.GetRunningOrder(table.TableId);
+                bool gereserveerd;
+                bool lopendeOrder;
 
-                Button btn = TableButtonList[i];
                 btn.Tag = tableId[i];
 
                 //Check status of table
@@ -91,11 +103,11 @@ namespace ChapooUI
                         btn.BackColor = Color.Blue;
                         break;
                     default:
-                        break;
+                        break; 
                 }
                 if (runningOrder == true)
                 {
-                    btn.BackColor = Color.Purple;
+                    btn.BackColor = Color.Orange;
                 }
                 //if (tableId[i].tafelStatus == TableStatus.Free)
                 //    btn.BackColor = Color.Lime;
@@ -105,6 +117,7 @@ namespace ChapooUI
                 //    btn.BackColor = Color.Purple;
                 //else
                 //    btn.BackColor = Color.Red;
+
             }
         }
 
@@ -132,7 +145,7 @@ namespace ChapooUI
             this.Close();
         }
 
-
+        
 
 
 

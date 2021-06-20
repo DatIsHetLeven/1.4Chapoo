@@ -29,7 +29,7 @@ namespace ChapooDAL
             {
                 userId = (int)i["UserId"];
                 userName = (string)i["userName"].ToString();
-                title = (UserTitle)Enum.Parse(typeof(UserTitle),(string)i["Title"].ToString());
+                title = (UserTitle)Enum.Parse(typeof(UserTitle), (string)i["Title"].ToString());
                 userPassword = (string)i["userPassword"].ToString();
                 userCode = (int)i["UserCode"];
             }

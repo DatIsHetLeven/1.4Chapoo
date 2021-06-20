@@ -47,6 +47,8 @@
             this.btn_Tafel_2 = new System.Windows.Forms.Button();
             this.btn_Tafel_1 = new System.Windows.Forms.Button();
             this.lbl_UserName = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -238,11 +240,32 @@
             this.lbl_UserName.Size = new System.Drawing.Size(0, 17);
             this.lbl_UserName.TabIndex = 47;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Orange;
+            this.button3.Location = new System.Drawing.Point(993, 634);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(42, 35);
+            this.button3.TabIndex = 48;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(1040, 643);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(138, 17);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "= Bestelling ligt klaar";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.lbl_UserName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.button2);
@@ -264,6 +287,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.RefreshForm);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +313,7 @@
         private System.Windows.Forms.Button btn_Tafel_2;
         private System.Windows.Forms.Button btn_Tafel_1;
         private System.Windows.Forms.Label lbl_UserName;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label4;
     }
 }

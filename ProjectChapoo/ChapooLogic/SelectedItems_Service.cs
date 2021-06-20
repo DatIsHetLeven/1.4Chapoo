@@ -14,20 +14,9 @@ namespace ChapooLogic
     {
         SelectedItems_DAO selectedItems_DAO = new SelectedItems_DAO();
         //Create new  -> insert db
-        public void selectedItem(int tableId, string item, int prijs, int itemid, string itemCategorie, int invoer, decimal BTW)
+        public void selectedItem(int tableId, string item, int prijs, int itemid, string itemCategorie, int invoer, decimal BTW, int menuid, int orderid)
         {
-            selectedItems_DAO.InsertNewSelectedItem(tableId, item, prijs, itemid, itemCategorie, invoer, BTW);
-        }
-        public void selectedItemToKitchen(int tableId, string item, int prijs)
-        {
-            selectedItems_DAO.InsertNewSelectedItemToKitchen(tableId, item, prijs);
-        }
-        //Get
-        public List<SelectedItem> GetSelectedItemsKeuken()
-        {
-            List<SelectedItem> selectedItemsList;
-            selectedItemsList = selectedItems_DAO.GetSelectedItemKeuken();
-            return selectedItemsList;
+            selectedItems_DAO.InsertNewSelectedItem(tableId, item, prijs, itemid, itemCategorie, invoer, BTW, menuid,orderid);
         }
         //Get
         public List<SelectedItem> GetSelectedItemsBar()
@@ -37,24 +26,18 @@ namespace ChapooLogic
             return selectedItemsList;
         }
 
-
         //Update
         public void updateStatus(string menuItem, int tableId, int status)
         {
             selectedItems_DAO.UpdateStatus(menuItem, tableId, status);
         }
         //
-        public List<SelectedItem> GetCurrentItems(int tableid)
+        //Update2
+        public void updateStatus2(int tableId, int status, int currentstatus)
         {
-            List<SelectedItem> selectedItemsList;
-            selectedItemsList = selectedItems_DAO.GetSelectedOrder(tableid);
-            return selectedItemsList;
+            selectedItems_DAO.UpdateStatus2(tableId, status, currentstatus);
         }
-        //delete
-        public void removeItems(int tableId)
-        {
-            selectedItems_DAO.ClearItems(tableId);
-        }
+
         //Get Order in making
         public List<SelectedItem> GetMakingOrder(int tableid, int status)
         {
@@ -63,9 +46,10 @@ namespace ChapooLogic
             return selectedItemsList;
         }
 
-        public void SendItemsToKitchen(int tableid)
+        public void SendItemsToKitchen(int tableid, int orderid)
         {
-            selectedItems_DAO.SendItemsToKitchen(tableid);
+            selectedItems_DAO.SendItemsToKitchen(tableid, orderid);
         }
+
     }
 }

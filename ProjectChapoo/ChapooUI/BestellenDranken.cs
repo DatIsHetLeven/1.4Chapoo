@@ -18,6 +18,7 @@ namespace ChapooUI
         List<SelectedItem> selectedItemsMaking = new List<SelectedItem>();
         List<ChapoModel.MenuItem> MenuItem = new List<ChapoModel.MenuItem>();
         Table_Service table_Service = new Table_Service();
+        Order_Service order_Service = new Order_Service();
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();
         List<ChapoModel.MenuItem> allMenuItems = new List<ChapoModel.MenuItem>();
         List<ChapoModel.MenuItem> menuItemList = new List<ChapoModel.MenuItem>();
@@ -44,13 +45,19 @@ namespace ChapooUI
             string prijs = datagrid_Lunch.Rows[item].Cells[0].FormattedValue.ToString();
             int prijs1 = int.Parse(prijs);
             decimal BTW = 0.09m;
+            string menuid = (datagrid_Lunch.Rows[item].Cells[3].FormattedValue.ToString());
+
+            int number = order_Service.GetMaxId();
+            int newOrderId = (number + 1);
 
             if (invoer > 0)
             {
+                //Daadwerklijke prijs berekenen. 
+                int Menuid = int.Parse(menuid);
                 int verm = prijs1 * invoer;
                 BTW = BTW * verm;
                 MessageBox.Show("Gerecht : " + datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString() + ", Aantal " + invoer + " , Prijs : " + verm.ToString());
-                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm,3,"Drinks",invoer, BTW);
+                selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), verm,3,"Drinks",invoer, BTW, Menuid, newOrderId);
                 table_Service.ChangeTableStatus(TableId,3);
             }
             ShowSelectedItems();

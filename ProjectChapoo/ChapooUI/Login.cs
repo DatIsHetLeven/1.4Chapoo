@@ -54,10 +54,10 @@ namespace ChapooUI
                             break;
                         case UserTitle.Admin:
                             MessageBox.Show("Dit is Admin");
-                            //    this.Hide();
-                            //    AdminAllUsers dashboard = new AdminAllUsers();
-                            //    dashboard.ShowDialog();
-                            //    this.Close();
+                            this.Hide();
+                            AdminAllUsers dashboard = new AdminAllUsers();
+                            dashboard.ShowDialog();
+                            this.Close();
                             break;
                         case UserTitle.Keuken:
                             MessageBox.Show("Dit is de keuken");

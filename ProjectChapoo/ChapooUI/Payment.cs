@@ -20,20 +20,20 @@ namespace ChapooUI
         Dashboard dashboard;
         Table_Service table_Service = new Table_Service();
         List<SelectedItem> SelectedItems = new List<SelectedItem>();
-        public Payment(int totalAmount, int tableId, List<SelectedItem> selectedItems)
+        public Payment()
         {
             InitializeComponent();
-            this.TotalAmount = totalAmount;
-            this.TableId = tableId;
-            this.SelectedItems = selectedItems;
+            //this.TotalAmount = totalAmount;
+            //this.TableId = tableId;
+            //this.SelectedItems = selectedItems;
 
             datagrid_AllInfo.DataSource = SelectedItems;
 
             txt_Amount.Text = TotalAmount.ToString();
 
             string tip = txt_TipAmount.Text.ToString();
-            string totalToPay = totalAmount.ToString() + tip;
-            txt_TotalAmount.Text = totalToPay.ToString();
+            //string totalToPay = totalAmount.ToString() + tip;
+            //txt_TotalAmount.Text = totalToPay.ToString();
         }
 
         private void btn_PayIdeal_Click(object sender, EventArgs e)

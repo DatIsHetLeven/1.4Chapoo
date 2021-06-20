@@ -21,7 +21,7 @@ namespace ChapooDAL
         //Get all table info 
         public List<Table> TableInfo()
         {
-            string query = "select [TableId], [TafelStatus] from[table],[TafelStatus] where [Table].TableStatus = [TafelStatus].TafelStatusId";
+            string query = "select [TableId], [TafelStatus] from[table],[TafelStatus] where [Table].TableStatus = [TafelStatus].TafelStatusId Order By TableId";
             return TableInfo(ExecuteSelectQuery(query));
         }
         //Return all tables
