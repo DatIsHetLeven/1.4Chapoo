@@ -14,8 +14,9 @@ namespace ChapoModel
         public int Prijs { get; set; }
         public int aantal { get; set; }
         public string BTW { get; set; }
+        public DateTime startTijd { get; set; }
 
-        public Order(int orderId, int tableId, string menuItem, int prijs, int Aantal, string BTw )
+        public Order(int orderId, int tableId, string menuItem, int prijs, int Aantal, string BTw, DateTime StartTijd )
         {
             this.OrderId = orderId;
             this.TableId = tableId;
@@ -23,6 +24,7 @@ namespace ChapoModel
             this.Prijs = prijs;
             this.aantal = Aantal;
             this.BTW = BTw;
+            this.startTijd = StartTijd;
         }
     }
 }

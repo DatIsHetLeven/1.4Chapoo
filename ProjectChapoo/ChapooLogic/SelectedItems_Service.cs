@@ -18,6 +18,10 @@ namespace ChapooLogic
         {
             selectedItems_DAO.InsertNewSelectedItem(tableId, item, prijs, itemid, itemCategorie, invoer, BTW, menuid,orderid);
         }
+        public void selectedItem2(SelectedItem selectedItem, int itemid, MenuItem menuItem, int orderid)
+        {
+            selectedItems_DAO.InsertNewSelectedItem2(selectedItem, itemid, menuItem, orderid);
+        }
         //Get
         public List<SelectedItem> GetSelectedItemsBar()
         {

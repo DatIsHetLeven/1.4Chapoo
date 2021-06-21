@@ -24,6 +24,13 @@ namespace ChapooDAL
             ExecuteEditQuery(query);
         }
 
+        //Insert
+        public void InsertNewSelectedItem2(SelectedItem selectedItem, int itemid, MenuItem menuItem,int orderid)
+        {
+            string query = $"Insert into[selecteditems] (tableId, menuItem, Prijs, status, itemid, itemCategorie, Aantal, [BTWTot], menuid, orderid) Values('{selectedItem.tableid}', '{selectedItem.menuItem}', '{selectedItem.prijs}', 1, '{itemid}', '{menuItem.menuItemCategorie}', '{selectedItem.aantal}', '{selectedItem.BTW}', '{menuItem.menuitemId}', '{orderid}')";
+            ExecuteEditQuery(query);
+        }
+
         //Select for bar
         public List<SelectedItem> GetSelectedItemsBar()
         {

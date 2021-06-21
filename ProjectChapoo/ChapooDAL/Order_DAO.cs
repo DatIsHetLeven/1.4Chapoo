@@ -10,7 +10,7 @@ namespace ChapooDAL
     public class Order_DAO : Base
     {
         //Insert order
-        public void WriteOrder(int orderId, int tafelId, int prijs, DateTime dateTime, string BTW)
+        public void WriteOrder(int orderId, int tafelId, int prijs, string dateTime, string BTW)
         {
             string query = $"Insert into[order] (orderId, TableId, prijs, Date, BTWt) Values('{orderId}','{tafelId}','{prijs}', '{dateTime}','{BTW}')";
             ExecuteEditQuery(query);
@@ -27,18 +27,23 @@ namespace ChapooDAL
             bool runningOrder = false;
 
             if (dataTable.Rows.Count >= 1)
-            {
                 runningOrder = true;
-            }
+
             return runningOrder;
         }
         //Get finished order
 
 
+        ////Select for kitchen
+        //public List<Order> GetSelectedItemKeuken()
+        //{
+        //    string query = "select OrderId, tableId, menuItem, Prijs, aantal,[status],[BTWTot] from [SelectedItems] where status = 2 and itemcategorie = 'Lunch' or itemcategorie= 'Diner'";
+        //    return GetItemss(ExecuteSelectQuery(query));
+        //}
         //Select for kitchen
         public List<Order> GetSelectedItemKeuken()
         {
-            string query = "select OrderId, tableId, menuItem, Prijs, aantal,[status],[BTWTot] from [SelectedItems] where status = 2 and itemcategorie = 'Lunch' or itemcategorie= 'Diner'";
+            string query = "select * from [SelectedItems], [order] where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Lunch' or itemcategorie= 'Diner'";
             return GetItemss(ExecuteSelectQuery(query));
         }
         private List<Order> GetItemss(DataTable dataTable)
@@ -49,6 +54,7 @@ namespace ChapooDAL
             int Prijs = 0;
             int aantal = 0;
             string Btw = "";
+            DateTime tijd = Convert.ToDateTime("12:00".ToString());
             List<Order> selectedItems = new List<Order>();
             if (dataTable.Rows.Count >= 1)
             {
@@ -60,7 +66,8 @@ namespace ChapooDAL
                     Prijs = (int)item["Prijs"];
                     aantal = (int)item["aantal"];
                     Btw = (string)item["BTWTot"].ToString();
-                    Order selectedItem = new Order(orderId,tableId, menuItem, Prijs, aantal, Btw);
+                    tijd = Convert.ToDateTime(item["Date"].ToString());
+                    Order selectedItem = new Order(orderId,tableId, menuItem, Prijs, aantal, Btw, tijd);
                     {
                         selectedItems.Add(selectedItem);
                     }

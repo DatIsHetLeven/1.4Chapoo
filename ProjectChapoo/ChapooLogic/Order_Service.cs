@@ -20,7 +20,7 @@ namespace ChapooLogic
             return MaxId;
         }
         //Write order
-        public void WriteOrder(int orderId, int tafelId, int prijs, DateTime dateTime, string BTW)
+        public void WriteOrder(int orderId, int tafelId, int prijs, string dateTime, string BTW)
         {
             Order_DAO.WriteOrder(orderId, tafelId, prijs, dateTime, BTW);
         }

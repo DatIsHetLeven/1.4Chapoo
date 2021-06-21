@@ -29,6 +29,9 @@ namespace ChapooUI
 
         private void Refresh(object sender, EventArgs e)
         {
+            listView2.Items.Clear();
+            List<Order> ShowOpenOrders = new List<Order>();
+
             List<int> tafelNummer = new List<int>();
             listBox1.Items.Clear();
             switch (User.userTitle)
@@ -49,22 +52,55 @@ namespace ChapooUI
                         if (!tafelNummer.Contains(item.TableId))
                         {
                             tafelNummer.Add(item.TableId);
+                            ShowOpenOrders.Add(item);
                         }
                     }
-                    foreach (int item in tafelNummer)
-                    {
-                        listBox1.Items.Add(item);
-                    }
                     break;
+            }
+
+            foreach (var item in ShowOpenOrders)
+            {
+                ListViewItem listitem = new ListViewItem(item.TableId.ToString());
+                //DateTime time = DateTime.Parse(item.startTijd);
+                listitem.SubItems.Add(item.startTijd.ToString());
+                //listBox1.Items.Add(item);
+                listView2.Items.Add(listitem);
+
+                //tafelNummer.Remove(itemm);
+            }
+
+            foreach (var item in tafelNummer)
+            {
+                listBox1.Items.Add(item);
             }
         }
 
 
         private void btn_UpdateStatus_Click(object sender, EventArgs e)
         {
-            int tafelReady = int.Parse(listBox1.GetItemText(listBox1.SelectedItem));
-            selectedItems_Service.updateStatus2(tafelReady,4,2);
-            listView1.Items.Clear();
+            MessageBox.Show(listView2.SelectedItems[0].SubItems[0].Text);
+
+            foreach (var item in selectedItemsKeuken)
+            {
+                if (item.TableId == int.Parse(listView2.SelectedItems[0].SubItems[0].Text))
+                {
+                    Order order2 = item;
+                    selectedItems_Service.updateStatus2(order2.TableId, 4, 2);
+                    listView1.Items.Clear();
+                }     
+            } 
+
+
+            //try
+            //{
+            //    int tafelReady = int.Parse(listView2.SelectedItems[0].SubItems[0].Text);
+            //    selectedItems_Service.updateStatus2(tafelReady, 4, 2);
+            //    listView1.Items.Clear();
+            //}
+            //catch (Exception)
+            //{
+            //    MessageBox.Show("Niks om ready te melden");
+            //}
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,10 +113,29 @@ namespace ChapooUI
 
         private void button2_Click(object sender, EventArgs e)
         {
-            int gekozenTafel = int.Parse(listBox1.GetItemText(listBox1.SelectedItem));
-            ShowOrder(gekozenTafel);
-            MessageBox.Show(listBox1.GetItemText(listBox1.SelectedItem).ToString());
-           
+            try
+            {
+                int gekozenTafel = int.Parse(listView2.SelectedItems[0].SubItems[0].Text);
+                ShowOrder(gekozenTafel);
+                MessageBox.Show(listView2.SelectedItems[0].SubItems[0].Text);
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Geen order geselecteerd");
+            }
+            //try
+            //{
+            //    int gekozenTafel = int.Parse(listBox1.GetItemText(listBox1.SelectedItem));
+            //    ShowOrder(gekozenTafel);
+            //    MessageBox.Show(listBox1.GetItemText(listBox1.SelectedItem).ToString());
+            //}
+            //catch (Exception)
+            //{
+
+            //    MessageBox.Show("Geen order geselecteerd");
+            //}
+
         }
 
         private void ShowOrder(int tafelNummer)
@@ -102,7 +157,6 @@ namespace ChapooUI
                     }
                     break;
             }
-
         }
     }
 }

@@ -42,6 +42,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.Lbl_Table_Lunch = new System.Windows.Forms.Label();
+            this.listView_Lunch = new System.Windows.Forms.ListView();
+            this.ItemId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.txt_Opmerking = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).BeginInit();
             this.SuspendLayout();
@@ -190,11 +197,66 @@
             this.Lbl_Table_Lunch.Size = new System.Drawing.Size(0, 25);
             this.Lbl_Table_Lunch.TabIndex = 48;
             // 
+            // listView_Lunch
+            // 
+            this.listView_Lunch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ItemId,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView_Lunch.HideSelection = false;
+            this.listView_Lunch.Location = new System.Drawing.Point(668, 157);
+            this.listView_Lunch.Name = "listView_Lunch";
+            this.listView_Lunch.Size = new System.Drawing.Size(415, 198);
+            this.listView_Lunch.TabIndex = 49;
+            this.listView_Lunch.UseCompatibleStateImageBehavior = false;
+            this.listView_Lunch.View = System.Windows.Forms.View.Details;
+            // 
+            // ItemId
+            // 
+            this.ItemId.Text = "ItemId";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "MenuItem";
+            this.columnHeader1.Width = 115;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Categorie";
+            this.columnHeader2.Width = 128;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Prijs";
+            this.columnHeader3.Width = 94;
+            // 
+            // txt_Opmerking
+            // 
+            this.txt_Opmerking.Location = new System.Drawing.Point(1123, 206);
+            this.txt_Opmerking.Multiline = true;
+            this.txt_Opmerking.Name = "txt_Opmerking";
+            this.txt_Opmerking.Size = new System.Drawing.Size(129, 113);
+            this.txt_Opmerking.TabIndex = 50;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(1120, 186);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(77, 17);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Opmerking";
+            // 
             // Bestellen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1264, 681);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.txt_Opmerking);
+            this.Controls.Add(this.listView_Lunch);
             this.Controls.Add(this.Lbl_Table_Lunch);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.Btn_Delete);
@@ -233,5 +295,12 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label Lbl_Table_Lunch;
+        private System.Windows.Forms.ListView listView_Lunch;
+        private System.Windows.Forms.ColumnHeader ItemId;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.TextBox txt_Opmerking;
+        private System.Windows.Forms.Label label2;
     }
 }

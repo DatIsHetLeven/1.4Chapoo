@@ -23,7 +23,6 @@ namespace ChapooUI
         List<Button> TableButtonList;
         private Table table;
         private bool reservated = false;
-        private TableStatus TableStatus;
 
         public void DashboardUser(User user)
         {
@@ -70,10 +69,10 @@ namespace ChapooUI
 
 
 
-            System.Windows.Forms.Timer timer1 = new System.Windows.Forms.Timer();
-            timer1.Interval = 20000;
-            timer1.Tick += new System.EventHandler(RefreshForm);
-            timer1.Start();
+            System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
+            timer.Interval = 30000;
+            timer.Tick += new System.EventHandler(RefreshForm);
+            timer.Start();
         }
 
         private void RefreshForm(object sender, EventArgs e)
@@ -117,7 +116,6 @@ namespace ChapooUI
                 //    btn.BackColor = Color.Purple;
                 //else
                 //    btn.BackColor = Color.Red;
-
             }
         }
 
