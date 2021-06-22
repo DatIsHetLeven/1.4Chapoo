@@ -33,11 +33,19 @@ namespace ChapooLogic
             return selectedItemsList;
         }
 
+        public List<Order> GetSelectedItemsBar()
+        {
+            List<Order> selectedItemsList;
+            selectedItemsList = Order_DAO.selectedItemsBarman();
+            return selectedItemsList;
+        }
+
+        
         //Getrunningorder
-        public bool GetRunningOrder(int tableid)
+        public bool CheckOrderStatus(int tableid, SelectedItemStatus status)
         {
             bool runningorder;
-            runningorder = Order_DAO.GetRunningOrder(tableid);
+            runningorder = Order_DAO.CheckOrderStatus(tableid, status);
             return runningorder;
         }
 

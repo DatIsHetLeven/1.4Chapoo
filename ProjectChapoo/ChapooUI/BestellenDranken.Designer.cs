@@ -36,15 +36,18 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.btn_Go_Lunch = new System.Windows.Forms.Button();
             this.btn_bestellen = new System.Windows.Forms.Button();
-            this.datagrid_Lunch = new System.Windows.Forms.DataGridView();
             this.btn_Go_Drinks = new System.Windows.Forms.Button();
             this.Btn_GoDiner = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.Lbl_Table_Drank = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.listView_Lunch = new System.Windows.Forms.ListView();
+            this.ItemId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).BeginInit();
             this.SuspendLayout();
             // 
             // drop_InvoerAantal
@@ -123,17 +126,6 @@
             this.btn_bestellen.UseVisualStyleBackColor = false;
             this.btn_bestellen.Click += new System.EventHandler(this.btn_bestellen_Click);
             // 
-            // datagrid_Lunch
-            // 
-            this.datagrid_Lunch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.datagrid_Lunch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Lunch.Location = new System.Drawing.Point(687, 130);
-            this.datagrid_Lunch.Name = "datagrid_Lunch";
-            this.datagrid_Lunch.ReadOnly = true;
-            this.datagrid_Lunch.RowHeadersWidth = 62;
-            this.datagrid_Lunch.Size = new System.Drawing.Size(415, 338);
-            this.datagrid_Lunch.TabIndex = 42;
-            // 
             // btn_Go_Drinks
             // 
             this.btn_Go_Drinks.BackColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -201,11 +193,47 @@
             this.label1.TabIndex = 57;
             this.label1.Text = "Aantal:";
             // 
+            // listView_Lunch
+            // 
+            this.listView_Lunch.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.ItemId,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3});
+            this.listView_Lunch.HideSelection = false;
+            this.listView_Lunch.Location = new System.Drawing.Point(687, 130);
+            this.listView_Lunch.Name = "listView_Lunch";
+            this.listView_Lunch.Size = new System.Drawing.Size(416, 338);
+            this.listView_Lunch.TabIndex = 58;
+            this.listView_Lunch.UseCompatibleStateImageBehavior = false;
+            this.listView_Lunch.View = System.Windows.Forms.View.Details;
+            // 
+            // ItemId
+            // 
+            this.ItemId.Text = "ItemId";
+            this.ItemId.Width = 69;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "MenuItem";
+            this.columnHeader1.Width = 115;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "Categorie";
+            this.columnHeader2.Width = 128;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "Prijs";
+            this.columnHeader3.Width = 94;
+            // 
             // BestellenDranken
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1272, 634);
+            this.Controls.Add(this.listView_Lunch);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Lbl_Table_Drank);
@@ -217,7 +245,6 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.btn_Go_Lunch);
             this.Controls.Add(this.btn_bestellen);
-            this.Controls.Add(this.datagrid_Lunch);
             this.Controls.Add(this.btn_Go_Drinks);
             this.Controls.Add(this.Btn_GoDiner);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -225,7 +252,6 @@
             this.Text = "BestellenDranken";
             this.Load += new System.EventHandler(this.BestellenDranken_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -240,12 +266,16 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btn_Go_Lunch;
         private System.Windows.Forms.Button btn_bestellen;
-        private System.Windows.Forms.DataGridView datagrid_Lunch;
         private System.Windows.Forms.Button btn_Go_Drinks;
         private System.Windows.Forms.Button Btn_GoDiner;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label Lbl_Table_Drank;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListView listView_Lunch;
+        private System.Windows.Forms.ColumnHeader ItemId;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
     }
 }

@@ -13,7 +13,7 @@ namespace ChapooDAL
         int userId = 0;
         string userName = "";
         string userPassword = "";
-        UserTitle title;
+        UserTitle userTitle;
         int userCode = 0;
         string userKey = "";
         //Check if user does exist.(login)
@@ -25,15 +25,32 @@ namespace ChapooDAL
         //If user exist -> fill all the info
         private User RetrieveUser(DataTable dataTable)
         {
-            foreach (DataRow i in dataTable.Rows)
+            User user = null;
+
+            if (dataTable.Rows.Count ==1)
             {
-                userId = (int)i["UserId"];
-                userName = (string)i["userName"].ToString();
-                title = (UserTitle)Enum.Parse(typeof(UserTitle), (string)i["Title"].ToString());
-                userPassword = (string)i["userPassword"].ToString();
-                userCode = (int)i["UserCode"];
+                DataRow dataRow = dataTable.Rows[0];
+                userId = (int)dataRow["UserId"];
+                userName = (string)dataRow["userName"];
+                userTitle = (UserTitle)Enum.Parse(typeof(UserTitle), (string)dataRow["Title"]);
+                userCode = (int)dataRow["UserCode"];
+                userKey = (string)dataRow["userKey"];
+                userPassword = (string)dataRow["userPassword"].ToString();
+
+                user = new User(userId, userName, userTitle, userCode, userKey, userPassword);
             }
-            return new User(userId, userName, title, userCode, userKey, userPassword);
+            return user;
+
+            //// return 1 (use if statement) if  count = 0 retun NULL
+            //foreach (DataRow i in dataTable.Rows)
+            //{
+            //    userId = (int)i["UserId"];
+            //    userName = (string)i["userName"].ToString();
+            //    userTitle = (UserTitle)Enum.Parse(typeof(UserTitle), (string)i["Title"].ToString());
+            //    userPassword = (string)i["userPassword"].ToString();
+            //    userCode = (int)i["UserCode"];
+            //}
+            //return new User(userId, userName, userTitle, userCode, userKey, userPassword);
         }
         ////Create new user /Insert new user in db
         //public void InserNewUser(string userName, string password, int rol)

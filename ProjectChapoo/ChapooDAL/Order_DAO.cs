@@ -15,10 +15,18 @@ namespace ChapooDAL
             string query = $"Insert into[order] (orderId, TableId, prijs, Date, BTWt) Values('{orderId}','{tafelId}','{prijs}', '{dateTime}','{BTW}')";
             ExecuteEditQuery(query);
         }
-        //Get Running order
-        public bool GetRunningOrder(int tableid)
+        ////Get order -> finished
+        //public bool GetRunningOrder(int tableid, int status)
+        //{
+        //    string query = $"select OrderId from [SelectedItems] where status ='{status}' and tableId ='{tableid}'";
+        //    return RunningOrder(ExecuteSelectQuery(query));
+        //}
+        //Get order -> finished
+        public bool CheckOrderStatus(int tableid, SelectedItemStatus status)
         {
-            string query = $" select tableId, menuItem, Prijs, aantal from [SelectedItems] where status = 4 and tableId ='{tableid}'";
+            string query = $"select SelectedItemsStatus.StatusNaam from [SelectedItems] inner " +
+                           $"join SelectedItemsStatus on SelectedItems.[status] = SelectedItemsStatus.[Status] " +
+                           $"where SelectedItemsStatus.statusnaam = '{status}' and [SelectedItems].tableid = '{tableid}'";
             return RunningOrder(ExecuteSelectQuery(query));
         }
         //Check if there is a running order
@@ -31,21 +39,20 @@ namespace ChapooDAL
 
             return runningOrder;
         }
+
         //Get finished order
 
-
-        ////Select for kitchen
-        //public List<Order> GetSelectedItemKeuken()
-        //{
-        //    string query = "select OrderId, tableId, menuItem, Prijs, aantal,[status],[BTWTot] from [SelectedItems] where status = 2 and itemcategorie = 'Lunch' or itemcategorie= 'Diner'";
-        //    return GetItemss(ExecuteSelectQuery(query));
-        //}
-        //Select for kitchen
         public List<Order> GetSelectedItemKeuken()
         {
             string query = "select * from [SelectedItems], [order] where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Lunch' or itemcategorie= 'Diner'";
             return GetItemss(ExecuteSelectQuery(query));
         }
+        public List<Order> selectedItemsBarman()
+        {
+            string query = "select * from [SelectedItems], [order] where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Drank' ";
+            return GetItemss(ExecuteSelectQuery(query));
+        }
+
         private List<Order> GetItemss(DataTable dataTable)
         {
             int orderId = 0;

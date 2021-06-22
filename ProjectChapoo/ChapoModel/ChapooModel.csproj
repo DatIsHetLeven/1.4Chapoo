@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reservate.cs" />
     <Compile Include="SelectedItem.cs" />
+    <Compile Include="SelectedItemStatus.cs" />
     <Compile Include="Table.cs" />
     <Compile Include="TableStatus.cs" />
     <Compile Include="User.cs" />

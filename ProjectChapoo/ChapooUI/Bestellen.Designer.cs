@@ -36,7 +36,6 @@
             this.btn_Back_To_Dashboard = new System.Windows.Forms.Button();
             this.btn_bestellen = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.datagrid_Lunch = new System.Windows.Forms.DataGridView();
             this.Btn_Go_Drinks = new System.Windows.Forms.Button();
             this.Btn_Go_Diner = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -47,10 +46,7 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.txt_Opmerking = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).BeginInit();
             this.SuspendLayout();
             // 
             // Btn_Delete
@@ -69,11 +65,11 @@
             // datagrid_Making
             // 
             this.datagrid_Making.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Making.Location = new System.Drawing.Point(76, 136);
+            this.datagrid_Making.Location = new System.Drawing.Point(28, 136);
             this.datagrid_Making.Name = "datagrid_Making";
             this.datagrid_Making.ReadOnly = true;
             this.datagrid_Making.RowHeadersWidth = 62;
-            this.datagrid_Making.Size = new System.Drawing.Size(487, 338);
+            this.datagrid_Making.Size = new System.Drawing.Size(563, 338);
             this.datagrid_Making.TabIndex = 44;
             // 
             // panel4
@@ -127,18 +123,6 @@
             this.label1.Size = new System.Drawing.Size(52, 17);
             this.label1.TabIndex = 38;
             this.label1.Text = "Aantal:";
-            // 
-            // datagrid_Lunch
-            // 
-            this.datagrid_Lunch.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.datagrid_Lunch.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.datagrid_Lunch.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.datagrid_Lunch.Location = new System.Drawing.Point(685, 136);
-            this.datagrid_Lunch.Name = "datagrid_Lunch";
-            this.datagrid_Lunch.ReadOnly = true;
-            this.datagrid_Lunch.RowHeadersWidth = 62;
-            this.datagrid_Lunch.Size = new System.Drawing.Size(415, 338);
-            this.datagrid_Lunch.TabIndex = 37;
             // 
             // Btn_Go_Drinks
             // 
@@ -205,9 +189,9 @@
             this.columnHeader2,
             this.columnHeader3});
             this.listView_Lunch.HideSelection = false;
-            this.listView_Lunch.Location = new System.Drawing.Point(668, 157);
+            this.listView_Lunch.Location = new System.Drawing.Point(670, 136);
             this.listView_Lunch.Name = "listView_Lunch";
-            this.listView_Lunch.Size = new System.Drawing.Size(415, 198);
+            this.listView_Lunch.Size = new System.Drawing.Size(416, 338);
             this.listView_Lunch.TabIndex = 49;
             this.listView_Lunch.UseCompatibleStateImageBehavior = false;
             this.listView_Lunch.View = System.Windows.Forms.View.Details;
@@ -215,6 +199,7 @@
             // ItemId
             // 
             this.ItemId.Text = "ItemId";
+            this.ItemId.Width = 69;
             // 
             // columnHeader1
             // 
@@ -231,31 +216,11 @@
             this.columnHeader3.Text = "Prijs";
             this.columnHeader3.Width = 94;
             // 
-            // txt_Opmerking
-            // 
-            this.txt_Opmerking.Location = new System.Drawing.Point(1123, 206);
-            this.txt_Opmerking.Multiline = true;
-            this.txt_Opmerking.Name = "txt_Opmerking";
-            this.txt_Opmerking.Size = new System.Drawing.Size(129, 113);
-            this.txt_Opmerking.TabIndex = 50;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label2.Location = new System.Drawing.Point(1120, 186);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 17);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Opmerking";
-            // 
             // Bestellen
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1264, 681);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_Opmerking);
             this.Controls.Add(this.listView_Lunch);
             this.Controls.Add(this.Lbl_Table_Lunch);
             this.Controls.Add(this.button2);
@@ -266,7 +231,6 @@
             this.Controls.Add(this.btn_Back_To_Dashboard);
             this.Controls.Add(this.btn_bestellen);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.datagrid_Lunch);
             this.Controls.Add(this.Btn_Go_Drinks);
             this.Controls.Add(this.Btn_Go_Diner);
             this.Controls.Add(this.button1);
@@ -275,7 +239,6 @@
             this.Text = "Bestellen";
             this.Load += new System.EventHandler(this.Bestellen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.datagrid_Making)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.datagrid_Lunch)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,7 +252,6 @@
         private System.Windows.Forms.Button btn_Back_To_Dashboard;
         private System.Windows.Forms.Button btn_bestellen;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView datagrid_Lunch;
         private System.Windows.Forms.Button Btn_Go_Drinks;
         private System.Windows.Forms.Button Btn_Go_Diner;
         private System.Windows.Forms.Button button1;
@@ -300,7 +262,5 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.TextBox txt_Opmerking;
-        private System.Windows.Forms.Label label2;
     }
 }

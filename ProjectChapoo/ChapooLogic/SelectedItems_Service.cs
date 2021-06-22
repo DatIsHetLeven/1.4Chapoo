@@ -14,20 +14,9 @@ namespace ChapooLogic
     {
         SelectedItems_DAO selectedItems_DAO = new SelectedItems_DAO();
         //Create new  -> insert db
-        public void selectedItem(int tableId, string item, int prijs, int itemid, string itemCategorie, int invoer, decimal BTW, int menuid, int orderid)
-        {
-            selectedItems_DAO.InsertNewSelectedItem(tableId, item, prijs, itemid, itemCategorie, invoer, BTW, menuid,orderid);
-        }
         public void selectedItem2(SelectedItem selectedItem, int itemid, MenuItem menuItem, int orderid)
         {
             selectedItems_DAO.InsertNewSelectedItem2(selectedItem, itemid, menuItem, orderid);
-        }
-        //Get
-        public List<SelectedItem> GetSelectedItemsBar()
-        {
-            List<SelectedItem> selectedItemsList;
-            selectedItemsList = selectedItems_DAO.GetSelectedItemsBar();
-            return selectedItemsList;
         }
 
         //Update

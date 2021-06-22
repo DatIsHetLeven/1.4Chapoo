@@ -18,11 +18,10 @@ namespace ChapooUI
 
         private Table_Service table_Service = new Table_Service();
         private Order_Service order_Service = new Order_Service();
-        private SelectedItems_Service SelectedItems_Service = new SelectedItems_Service();
-        private List<Table> tableId = new List<Table>();
+        private List<Table> tables = new List<Table>();
         List<Button> TableButtonList;
-        private Table table;
-        private bool reservated = false;
+        
+       
 
         public void DashboardUser(User user)
         {
@@ -33,7 +32,6 @@ namespace ChapooUI
         public Dashboard()
         {
             InitializeComponent();
-
 
             TableButtonList = new List<Button>();
             TableButtonList.Add(btn_Tafel_1);
@@ -67,8 +65,6 @@ namespace ChapooUI
             //    }
             //}
 
-
-
             System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
             timer.Interval = 30000;
             timer.Tick += new System.EventHandler(RefreshForm);
@@ -77,37 +73,47 @@ namespace ChapooUI
 
         private void RefreshForm(object sender, EventArgs e)
         {
-            tableId = table_Service.GetTables();
-            for (int i = 0; i < tableId.Count; i++)
+            tables = table_Service.GetTables();
+            for (int i = 0; i < tables.Count; i++)
             {
                 Button btn = TableButtonList[i];
-                Table table = tableId[i];
+                Table table = tables[i];
 
-                bool runningOrder = order_Service.GetRunningOrder(table.TableId);
-                bool gereserveerd;
-                bool lopendeOrder;
+                bool orderReadyToBeServed = order_Service.CheckOrderStatus(table.TableId, SelectedItemStatus.ReadyToBeServed);
+                bool OrderInKitchen = order_Service.CheckOrderStatus(table.TableId, SelectedItemStatus.OrderInKitchen);
 
-                btn.Tag = tableId[i];
-
-                //Check status of table
-                switch (table.tafelStatus)
-                {
-                    case TableStatus.Free:
-                        btn.BackColor = Color.Lime;
-                        break;
-                    case TableStatus.Reservated:
-                        btn.BackColor = Color.Red;
-                        break;
-                    case TableStatus.CurrentOrder:
-                        btn.BackColor = Color.Blue;
-                        break;
-                    default:
-                        break; 
-                }
-                if (runningOrder == true)
+                btn.Tag = tables[i];
+                // Check if an order is in kitchen, ready to be served or reservated 
+                if (orderReadyToBeServed == true)
                 {
                     btn.BackColor = Color.Orange;
                 }
+                else if (OrderInKitchen == true)
+                {
+                    btn.BackColor = Color.Blue;
+                }
+                else if (table.tafelStatus == TableStatus.Reservated)
+                {
+                    btn.BackColor = Color.Red;
+                }
+                else
+                {
+                    btn.BackColor = Color.Lime;
+                }
+
+                //Check status of table (Free or Reserved)
+                //switch (table.tafelStatus)
+                //{
+                //    case TableStatus.Free:
+                //        btn.BackColor = Color.Lime;
+                //        break;
+                //    case TableStatus.Reservated:
+                //        btn.BackColor = Color.Red;
+                //        break;
+                //    default:
+                //        break; 
+                //}
+
                 //if (tableId[i].tafelStatus == TableStatus.Free)
                 //    btn.BackColor = Color.Lime;
                 //else if (tableId[i].tafelStatus == TableStatus.CurrentOrder)
@@ -121,8 +127,9 @@ namespace ChapooUI
 
         void ButtonEvent(object sender, EventArgs e)
         {
+            bool reservated = false;
             Button button = sender as Button;
-            table = (Table)button.Tag;
+            Table table = (Table)button.Tag;
 
             if (table.tafelStatus == TableStatus.Reservated)
                 reservated = true;
@@ -132,7 +139,6 @@ namespace ChapooUI
             tableChoice.ValidateButons(reservated);
             tableChoice.ShowDialog();
             this.Close();
-
         }
         //Log out -> login page
         private void btn_LogOut_Click(object sender, EventArgs e)

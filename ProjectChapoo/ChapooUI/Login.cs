@@ -15,8 +15,8 @@ namespace ChapooUI
 {
     public partial class login : Form
     {
-        private Dashboard Dashboard;
-        private BarKitchenDashboard BarKitchenDashboard;
+        
+        
         private User_Service user_Service = new User_Service();
         public login()
         {
@@ -33,27 +33,24 @@ namespace ChapooUI
                 string password = txt_LoginPassword.Text;
                 User user = user_Service.GetUser(userName, password);
                 //If user exist
-                if (user.userName != "")
+                if (user != null)
                 {
                     switch (user.userTitle)
                     {
                         case UserTitle.server:
-                            MessageBox.Show("Het werkt, bediende");
                             this.Hide();
-                            Dashboard = new Dashboard();
+                            Dashboard Dashboard = new Dashboard();
                             Dashboard.DashboardUser(user);
                             Dashboard.ShowDialog();
                             this.Close();
                             break;
                         case UserTitle.Barman:
-                            MessageBox.Show("Dit is de bar");
                                 this.Hide();
-                                BarKitchenDashboard = new BarKitchenDashboard(user);
+                                BarKitchenDashboard BarKitchenDashboard = new BarKitchenDashboard(user);
                                 BarKitchenDashboard.ShowDialog();
                                 this.Close();
                             break;
                         case UserTitle.Admin:
-                            MessageBox.Show("Dit is Admin");
                             this.Hide();
                             AdminAllUsers dashboard = new AdminAllUsers();
                             dashboard.ShowDialog();
@@ -62,43 +59,13 @@ namespace ChapooUI
                         case UserTitle.Keuken:
                             MessageBox.Show("Dit is de keuken");
                             //    this.Hide();
-                            //    BarKitchenDashboard = new BarKitchenDashboard(user);
+                            //    BarKitchenDashboard BarKitchenDashboard = new BarKitchenDashboard(user);
                             //    BarKitchenDashboard.ShowDialog();
                             //    this.Close();
                             break;
                         default:
                             break;
                     }
-
-
-
-
-
-                    ////If Admin
-                    //if (user.title == "Admin")
-                    //{
-                    //    this.Hide();
-                    //    AdminAllUsers dashboard = new AdminAllUsers();
-                    //    dashboard.ShowDialog();
-                    //    this.Close();
-                    //}
-                    ////If bediende 
-                    //else if (user.title == "server")
-                    //{
-                    //    this.Hide();
-                    //    Dashboard = new Dashboard();
-                    //    Dashboard.DashboardUser(user);
-                    //    Dashboard.ShowDialog();
-                    //    this.Close();
-                    //}
-                    ////else = barman  or Kitchen 
-                    //else
-                    //{
-                    //    this.Hide();
-                    //    BarKitchenDashboard = new BarKitchenDashboard(user);
-                    //    BarKitchenDashboard.ShowDialog();
-                    //    this.Close();
-                    //}
                 }
                 else
                     MessageBox.Show("error occured : User does not exist");

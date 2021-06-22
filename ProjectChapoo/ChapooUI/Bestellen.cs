@@ -44,7 +44,6 @@ namespace ChapooUI
             drop_InvoerAantal.DataSource = invoerAantal;
             //Haal alle lunch items op
             menuItemList = menuItem_Service.GetLunchItems();
-            datagrid_Lunch.DataSource = menuItemList;
 
             foreach (var item in menuItemList)
             {
@@ -64,12 +63,12 @@ namespace ChapooUI
             int number = order_Service.GetMaxId();
             int newOrderId = (number + 1);
 
-            MessageBox.Show(listView_Lunch.SelectedItems[0].SubItems[0].Text);
             int invoer = drop_InvoerAantal.SelectedIndex + 1;
             decimal BTW = 0.21m;
 
             foreach (var menuItem in menuItemList)
             {
+                //zoekt gekozen menuid met de menuid in de list van alle menuitems
                 if (menuItem.menuitemId == int.Parse(listView_Lunch.SelectedItems[0].SubItems[0].Text))
                 {
                     //Select object from list
@@ -79,32 +78,11 @@ namespace ChapooUI
                     BTW = BTW * totaalprijs;
                     //Create selecteditem ('orderitem')
                     SelectedItem selectedItem = new SelectedItem(TableId, gekozenItem.MenuItemNaam, totaalprijs, invoer, BTW.ToString());
+                    //Insert selecteditem naar database
                     selectedItems_Service.selectedItem2(selectedItem, 1, gekozenItem, newOrderId);
                 }
             }
-
-
-
-            ////Gekozen aantal
-            //int item = datagrid_Lunch.CurrentCell.RowIndex;
-            //double prijs = int.Parse(datagrid_Lunch.Rows[item].Cells[0].FormattedValue.ToString());
-            //int menuid = int.Parse((datagrid_Lunch.Rows[item].Cells[3].FormattedValue.ToString()));
-            //string gekozenMenuItem = datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString();
-
-
-
-            //if (invoer > 0)
-            //{
-            //    //Daadwerklijke prijs & BTW berekenen. 
-            //    int totaalprijs = prijs * invoer;
-            //    BTW = BTW * totaalprijs;
-            //    //Show confirmation
-            //    MessageBox.Show("Gerecht : " + gekozenMenuItem + ", Aantal " + invoer + " , Prijs : " + totaalprijs.ToString());
-            //    //Send selecteditems to db
-            //    SelectedItem selectedItem = new SelectedItem(TableId, gekozenMenuItem, totaalprijs, invoer, BTW.ToString());
-            //    selectedItems_Service.selectedItem2(selectedItem, 1, "Lunch", menuid, newOrderId);
-            //    //selectedItems_Service.selectedItem(TableId, datagrid_Lunch.Rows[item].Cells["menuItemNaam"].FormattedValue.ToString(), totaalprijs, 1, "Lunch", invoer, BTW, Menuid, newOrderId);
-            //}
+            //refresh list
             ShowSelectedItems();
         }
 
@@ -139,7 +117,6 @@ namespace ChapooUI
                 //Write order 
                 order_Service.WriteOrder(newOrderId, TableId, TotaalPrijs, tijd, totaalBtw.ToString());
                 selectedItems_Service.SendItemsToKitchen(TableId, newOrderId);
-                table_Service.ChangeTableStatus(TableId, 3);
                 MessageBox.Show("Verzonden naar de keuken");
             }
             else
@@ -175,7 +152,7 @@ namespace ChapooUI
         private void Btn_Go_Drinks_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestellenDranken bestellenDiner = new BestellenDranken(TableId, invoerAantal);
+            BestellenDranken bestellenDiner = new BestellenDranken(TableId);
             bestellenDiner.ShowDialog();
             this.Close();
         }
@@ -183,7 +160,7 @@ namespace ChapooUI
         private void Btn_Go_Diner_Click(object sender, EventArgs e)
         {
             this.Hide();
-            BestellenDiner bestellenDiner = new BestellenDiner(TableId, invoerAantal);
+            BestellenDiner bestellenDiner = new BestellenDiner(TableId);
             bestellenDiner.ShowDialog();
             this.Close();
         }

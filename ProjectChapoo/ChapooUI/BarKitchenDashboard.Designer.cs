@@ -40,7 +40,6 @@
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button2 = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
             this.listView2 = new System.Windows.Forms.ListView();
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -154,14 +153,6 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(12, 225);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(80, 251);
-            this.listBox1.TabIndex = 24;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -179,7 +170,7 @@
             this.listView2.HideSelection = false;
             this.listView2.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1});
-            this.listView2.Location = new System.Drawing.Point(98, 225);
+            this.listView2.Location = new System.Drawing.Point(12, 225);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(230, 207);
             this.listView2.TabIndex = 26;
@@ -203,7 +194,6 @@
             this.ClientSize = new System.Drawing.Size(1264, 681);
             this.Controls.Add(this.listView2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBox1);
@@ -234,7 +224,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListView listView2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
