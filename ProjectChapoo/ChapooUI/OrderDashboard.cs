@@ -16,7 +16,6 @@ namespace ChapooUI
     public partial class OrderDashboard : Form
     {
         private int TableId;
-        private int TotalPrice;
         Order_Service order_Service = new Order_Service();
 
         SelectedItems_Service selectedItems_Service = new SelectedItems_Service();

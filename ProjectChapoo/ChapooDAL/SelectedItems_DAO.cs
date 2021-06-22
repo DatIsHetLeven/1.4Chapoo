@@ -87,7 +87,6 @@ namespace ChapooDAL
             int tableId = 0;
             string menuItem = "";
             int Prijs = 0;
-            int status = 0;
             string BTWTot = "";
             int aantal = 0;
             List<SelectedItem> selectedItems = new List<SelectedItem>();

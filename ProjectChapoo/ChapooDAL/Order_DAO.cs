@@ -44,12 +44,14 @@ namespace ChapooDAL
 
         public List<Order> GetSelectedItemKeuken()
         {
-            string query = "select * from [SelectedItems], [order] where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Lunch' or itemcategorie= 'Diner'";
+            string query = "select * from [SelectedItems] inner join [order] on [SelectedItems].OrderId = [order].OrderId  " +
+                "where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Lunch' or itemcategorie= 'Diner'";
             return GetItemss(ExecuteSelectQuery(query));
         }
         public List<Order> selectedItemsBarman()
         {
-            string query = "select * from [SelectedItems], [order] where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Drank' ";
+            string query = "select * from [SelectedItems] inner join [order] on [SelectedItems].OrderId = [order].OrderId  " +
+                "where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Drank'";
             return GetItemss(ExecuteSelectQuery(query));
         }
 

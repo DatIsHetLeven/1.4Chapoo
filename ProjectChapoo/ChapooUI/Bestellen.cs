@@ -58,7 +58,6 @@ namespace ChapooUI
         //Button bestellen
         private void btn_bestellen_Click(object sender, EventArgs e)
         {
-            string opmerkingKlant = txt_Opmerking.Text;
 
             int number = order_Service.GetMaxId();
             int newOrderId = (number + 1);
