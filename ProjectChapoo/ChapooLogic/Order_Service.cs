@@ -49,5 +49,17 @@ namespace ChapooLogic
             return runningorder;
         }
 
+        //p
+        public Order GetOrderToPay(int tableid)
+        {
+            Order order = Order_DAO.GetSingleOrder(tableid);
+            return order;
+        }
+
+        public void MarkOrderAsFinished(Order order)
+        {
+            Order_DAO.MarkOrderAsFinished(order);
+        }
+
     }
 }

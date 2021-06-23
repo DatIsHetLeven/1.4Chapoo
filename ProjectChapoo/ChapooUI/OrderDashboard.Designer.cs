@@ -39,10 +39,8 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btn_AllesGeleverd = new System.Windows.Forms.Button();
             this.Geleverd = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -141,27 +139,17 @@
             // 
             this.Geleverd.AutoSize = true;
             this.Geleverd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Geleverd.Location = new System.Drawing.Point(911, 199);
+            this.Geleverd.Location = new System.Drawing.Point(913, 199);
             this.Geleverd.Name = "Geleverd";
             this.Geleverd.Size = new System.Drawing.Size(73, 20);
             this.Geleverd.TabIndex = 11;
             this.Geleverd.Text = "Geleverd";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Items nog in de keuken :";
-            // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ControlLight;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(719, 222);
+            this.panel1.Location = new System.Drawing.Point(721, 222);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(414, 270);
             this.panel1.TabIndex = 26;
@@ -183,8 +171,6 @@
             this.Name = "OrderDashboard";
             this.Text = "OrderDashboard";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -201,7 +187,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.Button btn_AllesGeleverd;
         private System.Windows.Forms.Label Geleverd;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
     }
 }

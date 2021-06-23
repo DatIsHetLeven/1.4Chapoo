@@ -69,28 +69,41 @@ namespace ChapooUI
 
         private void btn_UpdateStatus_Click(object sender, EventArgs e)
         {
-            foreach (var item in selectedItemsKeuken)
+            if (selectedItemsKeuken.Count > 0)
             {
-                //Als gekozen tafelnummer gelijk staat met tafelnummer in lijt met alle items
-                if (item.TableId == int.Parse(listView2.SelectedItems[0].SubItems[0].Text))
+                foreach (var item in selectedItemsKeuken)
                 {
-                    //De hele order updaten 
-                    Order order2 = item;
-                    selectedItems_Service.updateStatus2(order2.TableId, 4, 2);
-                    listView1.Items.Clear();
-                }     
-            }
-            foreach (var item in selectedItemsBarman)
-            {
-                //Als gekozen tafelnummer gelijk staat met tafelnummer in lijt met alle items
-                if (item.TableId == int.Parse(listView2.SelectedItems[0].SubItems[0].Text))
-                {
-                    //De hele order updaten 
-                    Order order2 = item;
-                    selectedItems_Service.updateStatus2(order2.TableId, 4, 2);
-                    listView1.Items.Clear();
+                    //Als gekozen tafelnummer gelijk staat met tafelnummer in lijt met alle items
+                    if (item.TableId == int.Parse(listView2.SelectedItems[0].SubItems[0].Text))
+                    {
+                        //De hele order updaten 
+                        Order order2 = item;
+                        selectedItems_Service.updateStatus2(order2.TableId, 4, 2);
+                        listView1.Items.Clear();
+                        Refresh();
+                    }
                 }
             }
+            else if (selectedItemsBarman.Count != 0)
+            {
+                foreach (var item in selectedItemsBarman)
+                {
+                    //Als gekozen tafelnummer gelijk staat met tafelnummer in lijt met alle items
+                    if (item.TableId == int.Parse(listView2.SelectedItems[0].SubItems[0].Text))
+                    {
+                        //De hele order updaten 
+                        Order order2 = item;
+                        selectedItems_Service.updateStatus2(order2.TableId, 4, 2);
+                        listView1.Items.Clear();
+                        Refresh();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Niks om te refreshen");
+            }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -243,7 +243,7 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Orange;
-            this.button3.Location = new System.Drawing.Point(993, 634);
+            this.button3.Location = new System.Drawing.Point(993, 625);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(42, 35);
             this.button3.TabIndex = 48;
@@ -253,7 +253,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label4.Location = new System.Drawing.Point(1040, 643);
+            this.label4.Location = new System.Drawing.Point(1040, 634);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 17);
             this.label4.TabIndex = 49;

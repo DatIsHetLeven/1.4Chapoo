@@ -31,14 +31,22 @@ namespace ChapooUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool CheckForOrderToPay = order_Service.CheckOrderStatus(TableId, SelectedItemStatus.ReadyToPay);
+
             if (IItemsReadyList.Count >= 1)
-                MessageBox.Show("Kan niet betalen, Lever eerst de items af");
-            else 
             {
-                Payment payment = new Payment();
+                MessageBox.Show("Kan niet betalen, Lever eerst de items af");
+            }
+            else if (CheckForOrderToPay == true)
+            {
+                Payment payment = new Payment(TableId);
                 this.Hide();
                 payment.ShowDialog();
                 this.Close();
+            }   
+            else 
+            {
+                MessageBox.Show("Plaats eerst een bestelling voor je betaald");
             }
         }
 

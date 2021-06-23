@@ -10,7 +10,8 @@ namespace ChapoModel
     {
         Selected,
         OrderInKitchen,
-        Finished,
-        ReadyToBeServed
+        ReadyToPay,
+        ReadyToBeServed,
+        Finished
     }
 }

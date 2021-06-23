@@ -55,10 +55,10 @@ namespace ChapooUI
                 listView_Lunch.Items.Add(LunchItem);
             }
         }
+
         //Button bestellen
         private void btn_bestellen_Click(object sender, EventArgs e)
         {
-
             int number = order_Service.GetMaxId();
             int newOrderId = (number + 1);
 

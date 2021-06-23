@@ -15,12 +15,6 @@ namespace ChapooDAL
             string query = $"Insert into[order] (orderId, TableId, prijs, Date, BTWt) Values('{orderId}','{tafelId}','{prijs}', '{dateTime}','{BTW}')";
             ExecuteEditQuery(query);
         }
-        ////Get order -> finished
-        //public bool GetRunningOrder(int tableid, int status)
-        //{
-        //    string query = $"select OrderId from [SelectedItems] where status ='{status}' and tableId ='{tableid}'";
-        //    return RunningOrder(ExecuteSelectQuery(query));
-        //}
         //Get order -> finished
         public bool CheckOrderStatus(int tableid, SelectedItemStatus status)
         {
@@ -29,28 +23,24 @@ namespace ChapooDAL
                            $"where SelectedItemsStatus.statusnaam = '{status}' and [SelectedItems].tableid = '{tableid}'";
             return RunningOrder(ExecuteSelectQuery(query));
         }
-        //Check if there is a running order
+        //Check if there is a order in the kitchen or ready to be served
         private bool RunningOrder(DataTable dataTable)
         {
-            bool runningOrder = false;
-
-            if (dataTable.Rows.Count >= 1)
-                runningOrder = true;
-
-            return runningOrder;
+            return dataTable.Rows.Count >= 1;
         }
 
         //Get finished order
-
         public List<Order> GetSelectedItemKeuken()
         {
-            string query = "select * from [SelectedItems] inner join [order] on [SelectedItems].OrderId = [order].OrderId  " +
+            string query = "select * from [SelectedItems] inner " +
+                "join [order] on [SelectedItems].OrderId = [order].OrderId  " +
                 "where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Lunch' or itemcategorie= 'Diner'";
             return GetItemss(ExecuteSelectQuery(query));
         }
         public List<Order> selectedItemsBarman()
         {
-            string query = "select * from [SelectedItems] inner join [order] on [SelectedItems].OrderId = [order].OrderId  " +
+            string query = "select * from [SelectedItems] inner " +
+                "join [order] on [SelectedItems].OrderId = [order].OrderId  " +
                 "where [SelectedItems].[status] = 2 And [SelectedItems].OrderId = [order].OrderId and itemcategorie = 'Drank'";
             return GetItemss(ExecuteSelectQuery(query));
         }
@@ -100,6 +90,49 @@ namespace ChapooDAL
         {
             string query = $"select max([OrderId]) AS [id] from[order]";
             return MaxId(ExecuteSelectQuery(query));
+        }
+
+        //Get single order
+        public Order GetSingleOrder(int tableid)
+        {
+            string query = $"select * from [order] inner join [SelectedItems] on [order].OrderId = [SelectedItems].OrderId where [SelectedItems].[status] = 3 and [order].TableId ='{tableid}'";
+            return GetOrder(ExecuteSelectQuery(query));
+        }
+
+        private Order GetOrder(DataTable dataTable)
+        {
+            int orderId = 0;
+            int tableId = 0;
+            string menuItem = "";
+            int Prijs = 0;
+            int aantal = 0;
+            string Btw = "";
+            DateTime tijd = Convert.ToDateTime("12:00".ToString());
+
+            Order selectedItem = null;
+            if (dataTable.Rows.Count >= 1)
+            {
+                foreach (DataRow item in dataTable.Rows)
+                {
+                    orderId = (int)item["OrderId"];
+                    tableId = (int)item["tableId"];
+                    menuItem = (string)item["menuItem"].ToString();
+                    Prijs = (int)item["Prijs"];
+                    aantal = (int)item["aantal"];
+                    Btw = (string)item["BTWt"].ToString();
+                    tijd = Convert.ToDateTime(item["Date"].ToString());
+                    selectedItem = new Order(orderId, tableId, menuItem, Prijs, aantal, Btw, tijd);
+                }
+            }
+            return selectedItem;
+        }
+
+        public void MarkOrderAsFinished(Order order)
+        {
+            string query = $"update [SelectedItems] set SelectedItems.status = 5 from SelectedItems " +
+                $"inner join [order] on SelectedItems.orderid = [order].OrderId " +
+                $"where [SelectedItems].tableid = '{order.TableId}' and SelectedItems.status =3";
+            ExecuteEditQuery(query);
         }
     }
 }

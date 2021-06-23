@@ -10,7 +10,5 @@ namespace ChapoModel
     {
         Free,
         Reservated,
-        CurrentOrder,
-        Ready
     }
 }

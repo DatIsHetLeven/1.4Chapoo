@@ -40,17 +40,6 @@ namespace ChapooDAL
                 user = new User(userId, userName, userTitle, userCode, userKey, userPassword);
             }
             return user;
-
-            //// return 1 (use if statement) if  count = 0 retun NULL
-            //foreach (DataRow i in dataTable.Rows)
-            //{
-            //    userId = (int)i["UserId"];
-            //    userName = (string)i["userName"].ToString();
-            //    userTitle = (UserTitle)Enum.Parse(typeof(UserTitle), (string)i["Title"].ToString());
-            //    userPassword = (string)i["userPassword"].ToString();
-            //    userCode = (int)i["UserCode"];
-            //}
-            //return new User(userId, userName, userTitle, userCode, userKey, userPassword);
         }
         ////Create new user /Insert new user in db
         //public void InserNewUser(string userName, string password, int rol)
